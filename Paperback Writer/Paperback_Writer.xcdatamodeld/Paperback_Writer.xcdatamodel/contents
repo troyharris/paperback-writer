@@ -1,4 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Character" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appearance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="character" inverseEntity="Note" syncable="YES"/>
+        <relationship name="project" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="characters" inverseEntity="Project" syncable="YES"/>
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="characters" inverseEntity="Scene" syncable="YES"/>
+    </entity>
+    <entity name="Note" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="notes" inverseEntity="Character" syncable="YES"/>
+        <relationship name="research" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Research" inverseName="notes" inverseEntity="Research" syncable="YES"/>
+    </entity>
+    <entity name="Outline" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="outlines" inverseEntity="Project" syncable="YES"/>
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="outline" inverseEntity="Scene" syncable="YES"/>
+    </entity>
+    <entity name="Project" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="project" inverseEntity="Character" syncable="YES"/>
+        <relationship name="outlines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outline" inverseName="project" inverseEntity="Outline" syncable="YES"/>
+        <relationship name="researches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Research" inverseName="project" inverseEntity="Research" syncable="YES"/>
+    </entity>
+    <entity name="Research" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="research" inverseEntity="Note" syncable="YES"/>
+        <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="researches" inverseEntity="Project" syncable="YES"/>
+    </entity>
+    <entity name="Scene" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderNum" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="setting" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="scenes" inverseEntity="Character" syncable="YES"/>
+        <relationship name="outline" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Outline" inverseName="scenes" inverseEntity="Outline" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Character" positionX="-72" positionY="405" width="128" height="165"/>
+        <element name="Outline" positionX="-45" positionY="42" width="128" height="90"/>
+        <element name="Project" positionX="198" positionY="273" width="128" height="165"/>
+        <element name="Scene" positionX="-63" positionY="204" width="128" height="135"/>
+        <element name="Research" positionX="423" positionY="456" width="128" height="90"/>
+        <element name="Note" positionX="234" positionY="537" width="128" height="90"/>
+    </elements>
 </model>
