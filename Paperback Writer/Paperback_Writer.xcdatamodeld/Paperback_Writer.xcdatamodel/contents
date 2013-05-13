@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="11G63" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Character" syncable="YES">
+    <entity name="Character" representedClassName="Character" syncable="YES">
         <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="appearance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +20,7 @@
         <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="outlines" inverseEntity="Project" syncable="YES"/>
         <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="outline" inverseEntity="Scene" syncable="YES"/>
     </entity>
-    <entity name="Project" syncable="YES">
+    <entity name="Project" representedClassName="Project" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,10 +45,10 @@
     </entity>
     <elements>
         <element name="Character" positionX="-72" positionY="405" width="128" height="165"/>
+        <element name="Note" positionX="234" positionY="537" width="128" height="90"/>
         <element name="Outline" positionX="-45" positionY="42" width="128" height="90"/>
         <element name="Project" positionX="198" positionY="273" width="128" height="165"/>
-        <element name="Scene" positionX="-63" positionY="204" width="128" height="135"/>
         <element name="Research" positionX="423" positionY="456" width="128" height="90"/>
-        <element name="Note" positionX="234" positionY="537" width="128" height="90"/>
+        <element name="Scene" positionX="-63" positionY="204" width="128" height="135"/>
     </elements>
 </model>

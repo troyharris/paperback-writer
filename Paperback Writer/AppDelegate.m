@@ -7,19 +7,29 @@
 //
 
 #import "AppDelegate.h"
+#import "IPadRootViewController.h"
+#import "IPadGridRootViewController.h"
 
 @implementation AppDelegate
 
+@synthesize navController = _navController;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;   
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        IPadGridRootViewController *rootController = [[IPadGridRootViewController alloc] init];
+        self.navController = [[UINavigationController alloc] initWithRootViewController:rootController];
+        [self.window setRootViewController:_navController];
+        [self.window makeKeyAndVisible];
+    } else {
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+    }
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
 
