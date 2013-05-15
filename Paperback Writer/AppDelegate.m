@@ -22,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         IPadGridRootViewController *rootController = [[IPadGridRootViewController alloc] init];
-        self.navController = [[UINavigationController alloc] initWithRootViewController:rootController];
+       self.navController = [[UINavigationController alloc] initWithRootViewController:rootController];
         [self.window setRootViewController:_navController];
         [self.window makeKeyAndVisible];
     } else {

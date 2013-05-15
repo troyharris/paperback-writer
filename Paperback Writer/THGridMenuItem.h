@@ -13,9 +13,6 @@
 
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UILabel *type;
-@property (nonatomic, strong) NSString *titleText;
-@property (nonatomic, strong) NSString *typeText;
-@property (nonatomic, strong) NSString *genreText;
-@property (nonatomic, strong) Project *project;
+
 
 @end

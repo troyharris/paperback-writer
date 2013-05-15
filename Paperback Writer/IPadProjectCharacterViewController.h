@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "THGridMenu.h"
+#import "Project.h"
 
 @interface IPadProjectCharacterViewController : UIViewController
+
+@property (nonatomic, strong) THGridMenu *menuView;
+@property (nonatomic, strong) Project *project;
+@property (nonatomic, strong) NSMutableArray *characters;
+
 
 @end

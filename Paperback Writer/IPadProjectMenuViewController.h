@@ -8,9 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IPadProjectMenuViewController : UIViewController
+@protocol ProjectMenuDelegate <NSObject>
 
--(IBAction)pressInfo;
--(IBAction)pressCharacter;
+-(void)didSelectMenuItem:(int)index;
+
+@end
+
+@interface IPadProjectMenuViewController : UIViewController {
+    __weak id<ProjectMenuDelegate> delegate;
+}
+
+@property (weak, nonatomic) id<ProjectMenuDelegate> delegate;
+
+-(void)pressInfo;
+-(void)pressCharacter;
+-(void)closeProject;
 
 @end

@@ -19,6 +19,12 @@
 @synthesize cancel = _cancel;
 @synthesize projectTitle = _projectTitle;
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+	return YES;
+}
+
 -(AppDelegate *)ad {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }

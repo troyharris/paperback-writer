@@ -12,10 +12,6 @@
 
 @synthesize title = _title;
 @synthesize type = _type;
-@synthesize titleText = _titleText;
-@synthesize typeText = _typeText;
-@synthesize genreText = _genreText;
-@synthesize project = _project;
 
 - (id)initWithFrame:(CGRect)frame
 {

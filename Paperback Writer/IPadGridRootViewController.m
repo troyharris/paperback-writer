@@ -8,22 +8,16 @@
 
 #import "IPadGridRootViewController.h"
 #import "THGridMenu.h"
-#import "THGridMenuItem.h"
-#import "IIViewDeckController.h"
+#import "THGridMenuItem+ProjectItem.h"
 #import "IPadProjectMenuViewController.h"
 #import "IPadProjectInfoViewController.h"
 #import "AppDelegate.h"
 #import "Project.h"
 #import "IPadNewProjectViewController.h"
+#import "IPadSlideViewController.h"
+#import "GlobalProject.h"
 
-@interface IPadGridRootViewController () <IIViewDeckControllerDelegate> {
-    IIViewDeckPanningMode _panning;
-    IIViewDeckCenterHiddenInteractivity _centerHidden;
-    IIViewDeckNavigationControllerBehavior _navBehavior;
-    IIViewDeckSizeMode _sizeMode;
-    BOOL _elastic;
-    CGFloat _maxLedge;
-}
+@interface IPadGridRootViewController ()
 
 @end
 
@@ -33,6 +27,12 @@
 
 -(AppDelegate *)ad {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return YES; // UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 -(void)addProject {
@@ -78,12 +78,6 @@
     self = [super init];
     if (self) {
         [self menuReset];
-        _panning = IIViewDeckNoPanning;
-        _centerHidden = IIViewDeckCenterHiddenUserInteractive;
-        _navBehavior = IIViewDeckNavigationControllerIntegrated;
-        _sizeMode = IIViewDeckLedgeSizeMode;
-        _elastic = YES;
-        _maxLedge = 200;
         [self viewDidLoad];
     }
     return self;
@@ -96,21 +90,15 @@
 }
 
 -(void)pressProject:(THGridMenuItem *)sender {
-    IPadProjectMenuViewController *menuController = [[IPadProjectMenuViewController alloc] initWithNibName:@"IPadProjectMenuViewController" bundle:nil];
-    IPadProjectInfoViewController *infoController = [[IPadProjectInfoViewController alloc] initWithNibName:@"IPadProjectInfoViewController" bundle:nil];
-    infoController.project = sender.project;
-    IIViewDeckController *controller = [[IIViewDeckController alloc] initWithCenterViewController:infoController leftViewController:menuController];
-    controller.panningMode = _panning;
-    controller.centerhiddenInteractivity = _centerHidden;
-    controller.navigationControllerBehavior = _navBehavior;
-    controller.maxSize = _maxLedge > 0 ? self.view.bounds.size.width-_maxLedge : 0;
-    controller.sizeMode = _sizeMode;
-    controller.elastic = _elastic;
-    controller.leftSize = 320;
-    controller.delegate = self;
-    
-    [controller openLeftView];
-    [self.navigationController pushViewController:controller animated:YES];
+//    IPadProjectMenuViewController *menuController = [[IPadProjectMenuViewController alloc] initWithNibName:@"IPadProjectMenuViewController" bundle:nil];
+//    IPadProjectInfoViewController *infoController = [[IPadProjectInfoViewController alloc] initWithNibName:@"IPadProjectInfoViewController" bundle:nil];
+//    infoController.project = sender.project;
+
+//    [self.navigationController pushViewController:controller animated:YES];
+    GlobalProject *gp = [GlobalProject sharedProject];
+    gp.project = sender.project;
+    IPadSlideViewController *slideController = [[IPadSlideViewController alloc] init];
+    [self presentViewController:slideController animated:YES completion:nil];
 }
 
 -(void)populateMenu {

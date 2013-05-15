@@ -7,6 +7,7 @@
 //
 
 #import "IPadProjectInfoViewController.h"
+#import "GlobalProject.h"
 
 @interface IPadProjectInfoViewController ()
 
@@ -15,6 +16,12 @@
 @implementation IPadProjectInfoViewController
 @synthesize project = _project;
 @synthesize projectTitle = _projectTitle;
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _projectTitle.text = _project.title;
+    GlobalProject *gp = [GlobalProject sharedProject];
+    _projectTitle.text = gp.project.title;
     // Do any additional setup after loading the view from its nib.
 }
 
