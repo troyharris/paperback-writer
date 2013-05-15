@@ -11,6 +11,7 @@
 #import "GlobalProject.h"
 #import "AppDelegate.h"
 #import "THGridMenuItem+CharacterItem.h"
+#import "IPadNewCharacterViewController.h"
 
 @interface IPadProjectCharacterViewController ()
 
@@ -44,6 +45,7 @@
 }
 
 -(void)buildCharactersList {
+    _characters = [[NSMutableArray alloc] init];
     /*
     AppDelegate *apd = [self ad];
     NSManagedObjectContext *context = apd.managedObjectContext;
@@ -58,8 +60,16 @@
     }
 }
 
+-(void)showNewCharacter {
+    IPadNewCharacterViewController *controller = [[IPadNewCharacterViewController alloc] init];
+    [controller setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+
 -(void)populateMenu {
     for (Character *c in _characters) {
+        NSLog(@"I'm gonna populate");
         THGridMenuItem *box = [_menuView createMenuItem];
         box.title.text = c.name;
         box.type.text = @"Science Fiction Short Story";
@@ -79,10 +89,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(showNewCharacter)];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    _project = [GlobalProject sharedProject];
+    GlobalProject *gp = [GlobalProject sharedProject];
+    _project = gp.project;
+    [self buildCharactersList];
+    [self menuReset];
+    [self populateMenu];
 }
 
 - (void)didReceiveMemoryWarning

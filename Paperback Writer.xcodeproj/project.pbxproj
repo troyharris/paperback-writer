@@ -35,6 +35,8 @@
 		2A1BD498173FF66200E2CE33 /* THGridMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD497173FF66200E2CE33 /* THGridMenuItem.m */; };
 		2A2A8E851742FC5300D00631 /* THGridMenuItem+ProjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E841742FC5300D00631 /* THGridMenuItem+ProjectItem.m */; };
 		2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */; };
+		2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */; };
+		2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */; };
 		2ACC4ED517405EBB00450083 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED417405EBB00450083 /* Project.m */; };
 		2ACC4ED817405ED100450083 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED717405ED100450083 /* Character.m */; };
 		2ACC4EDC1740812D00450083 /* IPadNewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */; };
@@ -97,6 +99,9 @@
 		2A2A8E841742FC5300D00631 /* THGridMenuItem+ProjectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "THGridMenuItem+ProjectItem.m"; sourceTree = "<group>"; };
 		2A2A8E871743047900D00631 /* THGridMenuItem+CharacterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "THGridMenuItem+CharacterItem.h"; sourceTree = "<group>"; };
 		2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "THGridMenuItem+CharacterItem.m"; sourceTree = "<group>"; };
+		2A2A8E8A174314E500D00631 /* IPadNewCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNewCharacterViewController.h; sourceTree = "<group>"; };
+		2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNewCharacterViewController.m; sourceTree = "<group>"; };
+		2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadNewCharacterViewController.xib; sourceTree = "<group>"; };
 		2ACC4ED317405EBB00450083 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		2ACC4ED417405EBB00450083 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		2ACC4ED617405ED100450083 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -251,6 +256,9 @@
 				2ACC4EDB1740812D00450083 /* IPadNewProjectViewController.xib */,
 				2ACC4EE41742954A00450083 /* IPadSlideViewController.h */,
 				2ACC4EE51742954A00450083 /* IPadSlideViewController.m */,
+				2A2A8E8A174314E500D00631 /* IPadNewCharacterViewController.h */,
+				2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */,
+				2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */,
 			);
 			name = IPadViewControllers;
 			sourceTree = "<group>";
@@ -355,6 +363,7 @@
 				2A1BD47F173DBC0F00E2CE33 /* IPadRootViewController.xib in Resources */,
 				2A1BD489173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib in Resources */,
 				2ACC4EDD1740812D00450083 /* IPadNewProjectViewController.xib in Resources */,
+				2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +444,7 @@
 				2ACC4EE91742B99B00450083 /* GlobalProject.m in Sources */,
 				2A2A8E851742FC5300D00631 /* THGridMenuItem+ProjectItem.m in Sources */,
 				2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */,
+				2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
