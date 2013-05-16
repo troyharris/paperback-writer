@@ -9,6 +9,9 @@
 #import "IPadProjectMenuViewController.h"
 #import "IPadProjectInfoViewController.h"
 #import "IPadProjectCharacterViewController.h"
+#import "AppDelegate.h"
+#import "GlobalProject.h"
+#import "Project.h"
 
 @interface IPadProjectMenuViewController ()
 
@@ -16,6 +19,10 @@
 
 @implementation IPadProjectMenuViewController
 @synthesize delegate;
+
+-(AppDelegate *)ad {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -41,6 +48,18 @@
 
 -(void)pressResearch {
     [self.delegate didSelectMenuItem:4];
+}
+
+-(void)pressDelete {
+    GlobalProject *gp = [GlobalProject sharedProject];
+    Project *project = gp.project;
+    AppDelegate *apd = [self ad];
+    NSManagedObjectContext *context = apd.managedObjectContext;
+    [context deleteObject:project];
+    gp.project = nil;
+    NSError *error;
+    [context save:&error];
+    [self.delegate didSelectMenuItem:5];
 }
 
 
@@ -103,7 +122,7 @@
     outlineButton.showsTouchWhenHighlighted = NO;
     outlineButton.reversesTitleShadowWhenHighlighted = YES;
     [outlineButton setTitle:@"Outline" forState:UIControlStateNormal];
-    [outlineButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
+    [outlineButton addTarget:self action:@selector(pressOutline) forControlEvents:UIControlEventTouchUpInside];
     
     CGRect researchFrame = CGRectMake(20, 220, 100, 40);
     UIButton *researchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -113,11 +132,20 @@
     [researchButton setTitle:@"Research" forState:UIControlStateNormal];
     [researchButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
     
+    CGRect deleteFrame = CGRectMake(20, 270, 100, 40);
+    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    deleteButton.frame = deleteFrame;
+    deleteButton.showsTouchWhenHighlighted = NO;
+    deleteButton.reversesTitleShadowWhenHighlighted = YES;
+    [deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(pressDelete) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:closeButton];
     [self.view addSubview:characterButton];
     [self.view addSubview:infoButton];
     [self.view addSubview:outlineButton];
     [self.view addSubview:researchButton];
+    [self.view addSubview:deleteButton];
     // Do any additional setup after loading the view from its nib.
     /*self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:
                                               [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back)],

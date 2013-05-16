@@ -15,7 +15,7 @@
         <relationship name="character" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Character" inverseName="notes" inverseEntity="Character" syncable="YES"/>
         <relationship name="research" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Research" inverseName="notes" inverseEntity="Research" syncable="YES"/>
     </entity>
-    <entity name="Outline" syncable="YES">
+    <entity name="Outline" representedClassName="Outline" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="outlines" inverseEntity="Project" syncable="YES"/>
         <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="outline" inverseEntity="Scene" syncable="YES"/>
@@ -35,7 +35,7 @@
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="research" inverseEntity="Note" syncable="YES"/>
         <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="researches" inverseEntity="Project" syncable="YES"/>
     </entity>
-    <entity name="Scene" syncable="YES">
+    <entity name="Scene" representedClassName="Scene" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orderNum" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="setting" optional="YES" attributeType="String" syncable="YES"/>

@@ -8,6 +8,7 @@
 
 #import "IPadSlideViewController.h"
 #import "IPadProjectCharacterViewController.h"
+#import "IPadProjectSceneTableViewController.h"
 #import <objc/runtime.h>
 
 @interface IPadSlideViewController (private)
@@ -37,7 +38,7 @@
         }
             break;
         case 3: {
-            _slideController = [[IPadProjectCharacterViewController alloc] init];
+            _slideController = [[IPadProjectSceneTableViewController alloc] init];
             [self buildSlideNav];
         }
             break;
@@ -45,6 +46,9 @@
             _slideController = [[IPadProjectCharacterViewController alloc] init];
             [self buildSlideNav];
         }
+            break;
+        case 5:
+            [self dismissViewControllerAnimated:YES completion:nil];
             break;
     }
     
@@ -73,7 +77,7 @@
 //        UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressedMenuButton)];
         
 //        _infoController.navigationItem.leftBarButtonItem = button;
-//        self.allowInteractiveSliding = YES;
+        self.allowInteractiveSliding = NO;
         self.leftStaticViewWidth = 320 - 55;
         self.leftStaticViewController = _menuController;
 //        self.slidingViewController = nav;
