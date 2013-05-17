@@ -165,6 +165,7 @@
     } else if (indexPath.section == 1 && indexPath.row == 0) {
         return tableView.rowHeight+ 300.0 + [PrettyTableViewCell tableView:tableView neededHeightForIndexPath:indexPath];
     }
+    return tableView.rowHeight + [PrettyTableViewCell tableView:tableView neededHeightForIndexPath:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
