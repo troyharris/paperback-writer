@@ -10,7 +10,6 @@
 #import "THGridMenu.h"
 #import "THGridMenuItem+ProjectItem.h"
 #import "IPadProjectMenuViewController.h"
-#import "IPadProjectInfoViewController.h"
 #import "AppDelegate.h"
 #import "Project.h"
 #import "IPadNewProjectViewController.h"

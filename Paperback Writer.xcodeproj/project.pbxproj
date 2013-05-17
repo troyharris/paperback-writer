@@ -24,8 +24,6 @@
 		2A1BD465173C805C00E2CE33 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD444173C805C00E2CE33 /* CoreData.framework */; };
 		2A1BD46D173C805C00E2CE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BD46B173C805C00E2CE33 /* InfoPlist.strings */; };
 		2A1BD470173C805C00E2CE33 /* Paperback_WriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD46F173C805C00E2CE33 /* Paperback_WriterTests.m */; };
-		2A1BD47E173DBC0F00E2CE33 /* IPadRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD47C173DBC0F00E2CE33 /* IPadRootViewController.m */; };
-		2A1BD47F173DBC0F00E2CE33 /* IPadRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BD47D173DBC0F00E2CE33 /* IPadRootViewController.xib */; };
 		2A1BD483173DBDBF00E2CE33 /* IPadProjectMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */; };
 		2A1BD489173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BD487173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib */; };
 		2A1BD48D173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD48B173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m */; };
@@ -96,9 +94,6 @@
 		2A1BD46C173C805C00E2CE33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A1BD46E173C805C00E2CE33 /* Paperback_WriterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Paperback_WriterTests.h; sourceTree = "<group>"; };
 		2A1BD46F173C805C00E2CE33 /* Paperback_WriterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Paperback_WriterTests.m; sourceTree = "<group>"; };
-		2A1BD47B173DBC0F00E2CE33 /* IPadRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadRootViewController.h; sourceTree = "<group>"; };
-		2A1BD47C173DBC0F00E2CE33 /* IPadRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadRootViewController.m; sourceTree = "<group>"; };
-		2A1BD47D173DBC0F00E2CE33 /* IPadRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadRootViewController.xib; sourceTree = "<group>"; };
 		2A1BD480173DBDBF00E2CE33 /* IPadProjectMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectMenuViewController.h; sourceTree = "<group>"; };
 		2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectMenuViewController.m; sourceTree = "<group>"; };
 		2A1BD487173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadProjectInfoViewController.xib; sourceTree = "<group>"; };
@@ -292,9 +287,6 @@
 		2A1BD47A173DBBB700E2CE33 /* IPadViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2A1BD47B173DBC0F00E2CE33 /* IPadRootViewController.h */,
-				2A1BD47C173DBC0F00E2CE33 /* IPadRootViewController.m */,
-				2A1BD47D173DBC0F00E2CE33 /* IPadRootViewController.xib */,
 				2A1BD480173DBDBF00E2CE33 /* IPadProjectMenuViewController.h */,
 				2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */,
 				2A1BD487173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib */,
@@ -421,7 +413,6 @@
 				2A1BD453173C805C00E2CE33 /* Default.png in Resources */,
 				2A1BD455173C805C00E2CE33 /* Default@2x.png in Resources */,
 				2A1BD457173C805C00E2CE33 /* Default-568h@2x.png in Resources */,
-				2A1BD47F173DBC0F00E2CE33 /* IPadRootViewController.xib in Resources */,
 				2A1BD489173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib in Resources */,
 				2ACC4EDD1740812D00450083 /* IPadNewProjectViewController.xib in Resources */,
 				2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */,
@@ -502,7 +493,6 @@
 				2A1BD44D173C805C00E2CE33 /* main.m in Sources */,
 				2A1BD451173C805C00E2CE33 /* AppDelegate.m in Sources */,
 				2A1BD45A173C805C00E2CE33 /* Paperback_Writer.xcdatamodeld in Sources */,
-				2A1BD47E173DBC0F00E2CE33 /* IPadRootViewController.m in Sources */,
 				2A1BD483173DBDBF00E2CE33 /* IPadProjectMenuViewController.m in Sources */,
 				2A1BD48D173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m in Sources */,
 				2A1BD492173FEC4800E2CE33 /* THGridMenu.m in Sources */,

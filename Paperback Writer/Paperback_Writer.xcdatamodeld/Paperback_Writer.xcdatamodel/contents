@@ -8,7 +8,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="character" inverseEntity="Note" syncable="YES"/>
         <relationship name="project" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="characters" inverseEntity="Project" syncable="YES"/>
-        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Scene" inverseName="characters" inverseEntity="Scene" syncable="YES"/>
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="characters" inverseEntity="Scene" syncable="YES"/>
     </entity>
     <entity name="Note" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>

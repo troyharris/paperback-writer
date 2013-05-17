@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "IPadRootViewController.h"
 #import "IPadGridRootViewController.h"
 
 @implementation AppDelegate
