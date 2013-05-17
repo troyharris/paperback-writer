@@ -105,7 +105,7 @@
     for (Project *p in _projects) {
         THGridMenuItem *box = [_menuView createMenuItem];
         box.title.text = p.title;
-        box.type.text = @"Science Fiction Short Story";
+        box.type.text = [NSString stringWithFormat:@"%@ %@", p.genre, p.type];
         box.project = p;
         [box addTarget:self action:@selector(pressProject:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:box];

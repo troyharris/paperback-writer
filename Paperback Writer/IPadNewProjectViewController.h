@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <V8HorizontalPickerView.h>
 
-@interface IPadNewProjectViewController : UIViewController
+@class V8HorizontalPickerView;
+
+@interface IPadNewProjectViewController : UIViewController <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *add;
 @property (nonatomic, strong) IBOutlet UIButton *cancel;
 @property (nonatomic, strong) IBOutlet UITextField *projectTitle;
+@property (nonatomic, strong) IBOutlet V8HorizontalPickerView *typePicker;
+@property (nonatomic, strong) IBOutlet V8HorizontalPickerView *genrePicker;
+@property (nonatomic, strong) NSArray *genres;
+@property (nonatomic, strong) NSArray *types;
+@property (nonatomic, strong) NSString *selectedType;
+@property (nonatomic, strong) NSString *selectedGenre;
 
 -(IBAction)pressAdd;
 -(IBAction)pressCancel;

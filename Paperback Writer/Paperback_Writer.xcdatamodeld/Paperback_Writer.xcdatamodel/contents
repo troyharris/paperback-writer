@@ -6,9 +6,9 @@
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="character" inverseEntity="Note" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="character" inverseEntity="Note" syncable="YES"/>
         <relationship name="project" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="characters" inverseEntity="Project" syncable="YES"/>
-        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="characters" inverseEntity="Scene" syncable="YES"/>
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Scene" inverseName="characters" inverseEntity="Scene" syncable="YES"/>
     </entity>
     <entity name="Note" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,7 +18,7 @@
     <entity name="Outline" representedClassName="Outline" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="outlines" inverseEntity="Project" syncable="YES"/>
-        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Scene" inverseName="outline" inverseEntity="Scene" syncable="YES"/>
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Scene" inverseName="outline" inverseEntity="Scene" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName="Project" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
@@ -26,13 +26,13 @@
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Character" inverseName="project" inverseEntity="Character" syncable="YES"/>
-        <relationship name="outlines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Outline" inverseName="project" inverseEntity="Outline" syncable="YES"/>
-        <relationship name="researches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Research" inverseName="project" inverseEntity="Research" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Character" inverseName="project" inverseEntity="Character" syncable="YES"/>
+        <relationship name="outlines" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Outline" inverseName="project" inverseEntity="Outline" syncable="YES"/>
+        <relationship name="researches" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Research" inverseName="project" inverseEntity="Research" syncable="YES"/>
     </entity>
     <entity name="Research" syncable="YES">
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="research" inverseEntity="Note" syncable="YES"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="research" inverseEntity="Note" syncable="YES"/>
         <relationship name="project" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="researches" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="Scene" representedClassName="Scene" syncable="YES">

@@ -57,8 +57,12 @@
     NSManagedObjectContext *context = apd.managedObjectContext;
     [context deleteObject:project];
     gp.project = nil;
-    NSError *error;
-    [context save:&error];
+    NSError *error = nil;
+    if ([context save:&error]) {
+        NSLog(@"The delete was successful!");
+    } else {
+        NSLog(@"The delete wasn't successful: %@", [error userInfo]);
+    }
     [self.delegate didSelectMenuItem:5];
 }
 

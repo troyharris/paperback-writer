@@ -74,6 +74,7 @@
         NSLog(@"Added an outline");
     }
     [self buildScenes];
+    [self.tableView reloadData];
 }
 
 
@@ -290,6 +291,7 @@
     NSNumber *toNum = toScene.orderNum;
     [self moveScene:scene to:toNum];
     [self buildScenes];
+    [self.tableView reloadData];
 }
 
 @end

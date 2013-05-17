@@ -28,7 +28,9 @@
             [self dismissViewControllerAnimated:YES completion:nil];
             break;
         case 1: {
-            _slideController = [[IPadProjectInfoViewController alloc] init];
+         //   UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ProjectInfoStoryboard" bundle:nil];
+         //   IPadProjectInfoTableViewController *info = [sb instantiateViewControllerWithIdentifier:@"IPadProjectInfoTableViewController"];
+            _slideController = [[IPadProjectInfoTableViewController alloc] init];
             [self buildSlideNav];
         }
             break;
@@ -67,7 +69,11 @@
     self = [super init];
     if (self) {
         _menuController = [[IPadProjectMenuViewController alloc] init];
-        _slideController = [[IPadProjectInfoViewController alloc] init];
+        _slideController = [[IPadProjectInfoTableViewController alloc] init];
+ //       UIStoryboard *sb = [UIStoryboard storyboardWithName:@"ProjectInfoStoryboard" bundle:nil];
+     //   IPadProjectInfoTableViewController *info = [sb instantiateViewControllerWithIdentifier:@"IPadProjectInfoTableViewController"];
+     //   _slideController = info;
+
         
         _menuController.delegate = self;
         
