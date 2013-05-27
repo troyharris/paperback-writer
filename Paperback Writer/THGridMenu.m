@@ -111,7 +111,6 @@
     CGFloat itemWidth = (menuWidth / _columns) - adjustedMargin;
     CGRect itemFrame = CGRectMake(_xOffset, _yOffset, itemWidth, _rowHeight);
     THGridMenuItem *item = [[THGridMenuItem alloc] initWithFrame:itemFrame];
-    item.backgroundColor = [[UIColor alloc] initWithRed:0.1 green:0.1 blue:0.5 alpha:1.0];
     _columnInc++;
     if (_columnInc >= _columns) {
         _columnInc = 0;

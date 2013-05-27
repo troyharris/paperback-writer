@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "GlobalProject.h"
 #import "Project.h"
+#import <UIColor+THColor.h>
+#import "ProjectButton.h"
 
 @interface IPadProjectMenuViewController ()
 
@@ -94,7 +96,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+    self.view.backgroundColor = [UIColor colorFromHex:@"45200d" withAlpha:1.0];
+    
+    UIImage *infoIcon = [UIImage imageNamed:@"ipad-info"];
+    CGPoint infoOrigin = CGPointMake(20, 20);
+    ProjectButton *infoButton = [[ProjectButton alloc] initWithOrigin:infoOrigin image:infoIcon buttonText:@"Information"];
+    [infoButton addTarget:self action:@selector(pressInfo) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:infoButton];
+    
+    UIImage *characterIcon = [UIImage imageNamed:@"ipad-characters"];
+    CGPoint characterOrigin = CGPointMake(20, 120);
+    ProjectButton *characterButton = [[ProjectButton alloc] initWithOrigin:characterOrigin image:characterIcon buttonText:@"Characters"];
+    [characterButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:characterButton];
+    
+    UIImage *outlineIcon = [UIImage imageNamed:@"ipad-outline2"];
+    CGPoint outlineOrigin = CGPointMake(20, 220);
+    ProjectButton *outlineButton = [[ProjectButton alloc] initWithOrigin:outlineOrigin image:outlineIcon buttonText:@"Outline"];
+    [outlineButton addTarget:self action:@selector(pressOutline) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:outlineButton];
+    
+    UIImage *researchIcon = [UIImage imageNamed:@"ipad-research"];
+    CGPoint researchOrigin = CGPointMake(20, 320);
+    ProjectButton *researchButton = [[ProjectButton alloc] initWithOrigin:researchOrigin image:researchIcon buttonText:@"Research"];
+    [researchButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
+        [researchButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:researchButton];
+    
+    UIImage *closeIcon = [UIImage imageNamed:@"ipad-close"];
+    CGPoint closeOrigin = CGPointMake(20, 420);
+    ProjectButton *closeButton = [[ProjectButton alloc] initWithOrigin:closeOrigin image:closeIcon buttonText:@"Close"];
+    [closeButton addTarget:self action:@selector(closeProject) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:closeButton];
+    
+    
+    /*
     CGRect closeFrame = CGRectMake(20, 20, 100, 40);
     UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     closeButton.frame = closeFrame;
@@ -149,6 +185,7 @@
     [self.view addSubview:outlineButton];
     [self.view addSubview:researchButton];
     [self.view addSubview:deleteButton];
+     */
     // Do any additional setup after loading the view from its nib.
     /*self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:
                                               [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back)],

@@ -15,6 +15,8 @@
 #import "IPadNewProjectViewController.h"
 #import "IPadSlideViewController.h"
 #import "GlobalProject.h"
+#import "UIColor+THColor.h"
+#import <UIImage+FlatUI.h>
 
 @interface IPadGridRootViewController ()
 
@@ -85,6 +87,7 @@
 -(void)menuReset {
     _menuView = nil;
     _menuView = [[THGridMenu alloc] initWithColumns:2 marginSize:30 gutterSize:30 rowHeight:100];
+    _menuView.backgroundColor = [UIColor colorFromHex:@"c4f6ea" withAlpha:1.0];
     self.view = _menuView;
 }
 
@@ -104,7 +107,7 @@
     for (Project *p in _projects) {
         THGridMenuItem *box = [_menuView createMenuItem];
         box.title.text = p.title;
-        box.type.text = [NSString stringWithFormat:@"%@ %@", p.genre, p.type];
+        box.type.text = [NSString stringWithFormat:@"A %@ %@", p.genre, p.type];
         box.project = p;
         [box addTarget:self action:@selector(pressProject:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:box];
@@ -114,7 +117,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStyleBordered target:self action:@selector(showNewProject)];
+    self.navigationItem.title = @"Proser";
     [self buildProjectsList];
     [self populateMenu];
 	// Do any additional setup after loading the view.

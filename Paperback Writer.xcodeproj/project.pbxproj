@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A00E513174D9A7E00C35F14 /* Lato-Bla.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E509174D9A7E00C35F14 /* Lato-Bla.ttf */; };
+		2A00E514174D9A7E00C35F14 /* Lato-BlaIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E50A174D9A7E00C35F14 /* Lato-BlaIta.ttf */; };
+		2A00E515174D9A7E00C35F14 /* Lato-Bol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E50B174D9A7E00C35F14 /* Lato-Bol.ttf */; };
+		2A00E516174D9A7E00C35F14 /* Lato-BolIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E50C174D9A7E00C35F14 /* Lato-BolIta.ttf */; };
+		2A00E517174D9A7E00C35F14 /* Lato-Hai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E50D174D9A7E00C35F14 /* Lato-Hai.ttf */; };
+		2A00E518174D9A7E00C35F14 /* Lato-HaiIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E50E174D9A7E00C35F14 /* Lato-HaiIta.ttf */; };
+		2A00E519174D9A7E00C35F14 /* Lato-Lig.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E50F174D9A7E00C35F14 /* Lato-Lig.ttf */; };
+		2A00E51A174D9A7E00C35F14 /* Lato-LigIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E510174D9A7E00C35F14 /* Lato-LigIta.ttf */; };
+		2A00E51B174D9A7E00C35F14 /* Lato-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E511174D9A7E00C35F14 /* Lato-Reg.ttf */; };
+		2A00E51C174D9A7E00C35F14 /* Lato-RegIta.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E512174D9A7E00C35F14 /* Lato-RegIta.ttf */; };
+		2A00E520174D9E2100C35F14 /* UIColor+THColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E51F174D9E2100C35F14 /* UIColor+THColor.m */; };
+		2A00E529174E69E000C35F14 /* ipad-characters@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E523174E69E000C35F14 /* ipad-characters@2x.png */; };
+		2A00E52A174E69E000C35F14 /* ipad-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E524174E69E000C35F14 /* ipad-close@2x.png */; };
+		2A00E52B174E69E000C35F14 /* ipad-delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E525174E69E000C35F14 /* ipad-delete@2x.png */; };
+		2A00E52C174E69E000C35F14 /* ipad-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E526174E69E000C35F14 /* ipad-info@2x.png */; };
+		2A00E52D174E69E000C35F14 /* ipad-outline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E527174E69E000C35F14 /* ipad-outline@2x.png */; };
+		2A00E52E174E69E000C35F14 /* ipad-research@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E528174E69E000C35F14 /* ipad-research@2x.png */; };
+		2A00E534174E6CEE00C35F14 /* ProjectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E533174E6CEE00C35F14 /* ProjectButton.m */; };
+		2A00E536174E7E0500C35F14 /* ipad-outline2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E535174E7E0500C35F14 /* ipad-outline2@2x.png */; };
+		2A00E539174EC5B300C35F14 /* IPadProjectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */; };
+		2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E53B174FCE7B00C35F14 /* THUtil.m */; };
 		2A1BD43F173C805C00E2CE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD43E173C805C00E2CE33 /* UIKit.framework */; };
 		2A1BD441173C805C00E2CE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD440173C805C00E2CE33 /* Foundation.framework */; };
 		2A1BD443173C805C00E2CE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD442173C805C00E2CE33 /* CoreGraphics.framework */; };
@@ -25,7 +46,6 @@
 		2A1BD46D173C805C00E2CE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BD46B173C805C00E2CE33 /* InfoPlist.strings */; };
 		2A1BD470173C805C00E2CE33 /* Paperback_WriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD46F173C805C00E2CE33 /* Paperback_WriterTests.m */; };
 		2A1BD483173DBDBF00E2CE33 /* IPadProjectMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */; };
-		2A1BD489173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BD487173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib */; };
 		2A1BD48D173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD48B173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m */; };
 		2A1BD492173FEC4800E2CE33 /* THGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD491173FEC4800E2CE33 /* THGridMenu.m */; };
 		2A1BD495173FED8800E2CE33 /* IPadGridRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD494173FED8700E2CE33 /* IPadGridRootViewController.m */; };
@@ -51,7 +71,6 @@
 		2A2A8ECD17468FB000D00631 /* loopback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC517468FB000D00631 /* loopback@2x.png */; };
 		2A2A8ECE17468FB000D00631 /* right_fade.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC617468FB000D00631 /* right_fade.png */; };
 		2A2A8ECF17468FB000D00631 /* right_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC717468FB000D00631 /* right_fade@2x.png */; };
-		2A2A8ED51746CB6C00D00631 /* IPadProjectInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8ED41746CB6A00D00631 /* IPadProjectInfoTableViewController.m */; };
 		2ACC4ED517405EBB00450083 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED417405EBB00450083 /* Project.m */; };
 		2ACC4ED817405ED100450083 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED717405ED100450083 /* Character.m */; };
 		2ACC4EDC1740812D00450083 /* IPadNewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */; };
@@ -73,6 +92,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A00E509174D9A7E00C35F14 /* Lato-Bla.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bla.ttf"; sourceTree = "<group>"; };
+		2A00E50A174D9A7E00C35F14 /* Lato-BlaIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlaIta.ttf"; sourceTree = "<group>"; };
+		2A00E50B174D9A7E00C35F14 /* Lato-Bol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bol.ttf"; sourceTree = "<group>"; };
+		2A00E50C174D9A7E00C35F14 /* Lato-BolIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BolIta.ttf"; sourceTree = "<group>"; };
+		2A00E50D174D9A7E00C35F14 /* Lato-Hai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Hai.ttf"; sourceTree = "<group>"; };
+		2A00E50E174D9A7E00C35F14 /* Lato-HaiIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-HaiIta.ttf"; sourceTree = "<group>"; };
+		2A00E50F174D9A7E00C35F14 /* Lato-Lig.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Lig.ttf"; sourceTree = "<group>"; };
+		2A00E510174D9A7E00C35F14 /* Lato-LigIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LigIta.ttf"; sourceTree = "<group>"; };
+		2A00E511174D9A7E00C35F14 /* Lato-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Reg.ttf"; sourceTree = "<group>"; };
+		2A00E512174D9A7E00C35F14 /* Lato-RegIta.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-RegIta.ttf"; sourceTree = "<group>"; };
+		2A00E51E174D9E2100C35F14 /* UIColor+THColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+THColor.h"; sourceTree = "<group>"; };
+		2A00E51F174D9E2100C35F14 /* UIColor+THColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+THColor.m"; sourceTree = "<group>"; };
+		2A00E523174E69E000C35F14 /* ipad-characters@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-characters@2x.png"; sourceTree = "<group>"; };
+		2A00E524174E69E000C35F14 /* ipad-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-close@2x.png"; sourceTree = "<group>"; };
+		2A00E525174E69E000C35F14 /* ipad-delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-delete@2x.png"; sourceTree = "<group>"; };
+		2A00E526174E69E000C35F14 /* ipad-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-info@2x.png"; sourceTree = "<group>"; };
+		2A00E527174E69E000C35F14 /* ipad-outline@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-outline@2x.png"; sourceTree = "<group>"; };
+		2A00E528174E69E000C35F14 /* ipad-research@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-research@2x.png"; sourceTree = "<group>"; };
+		2A00E532174E6CEE00C35F14 /* ProjectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectButton.h; sourceTree = "<group>"; };
+		2A00E533174E6CEE00C35F14 /* ProjectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectButton.m; sourceTree = "<group>"; };
+		2A00E535174E7E0500C35F14 /* ipad-outline2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad-outline2@2x.png"; sourceTree = "<group>"; };
+		2A00E537174EC5B300C35F14 /* IPadProjectInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectInformationViewController.h; sourceTree = "<group>"; };
+		2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectInformationViewController.m; sourceTree = "<group>"; };
+		2A00E53A174FCE7B00C35F14 /* THUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THUtil.h; sourceTree = "<group>"; };
+		2A00E53B174FCE7B00C35F14 /* THUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUtil.m; sourceTree = "<group>"; };
 		2A1BD43B173C805C00E2CE33 /* Paperback Writer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paperback Writer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1BD43E173C805C00E2CE33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A1BD440173C805C00E2CE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,7 +140,6 @@
 		2A1BD46F173C805C00E2CE33 /* Paperback_WriterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Paperback_WriterTests.m; sourceTree = "<group>"; };
 		2A1BD480173DBDBF00E2CE33 /* IPadProjectMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectMenuViewController.h; sourceTree = "<group>"; };
 		2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectMenuViewController.m; sourceTree = "<group>"; };
-		2A1BD487173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadProjectInfoViewController.xib; sourceTree = "<group>"; };
 		2A1BD48A173DDD2B00E2CE33 /* IPadProjectCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectCharacterViewController.h; sourceTree = "<group>"; };
 		2A1BD48B173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectCharacterViewController.m; sourceTree = "<group>"; };
 		2A1BD490173FEC4800E2CE33 /* THGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGridMenu.h; sourceTree = "<group>"; };
@@ -134,8 +177,6 @@
 		2A2A8EC517468FB000D00631 /* loopback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loopback@2x.png"; sourceTree = "<group>"; };
 		2A2A8EC617468FB000D00631 /* right_fade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_fade.png; sourceTree = "<group>"; };
 		2A2A8EC717468FB000D00631 /* right_fade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_fade@2x.png"; sourceTree = "<group>"; };
-		2A2A8ED31746CB6A00D00631 /* IPadProjectInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectInfoTableViewController.h; sourceTree = "<group>"; };
-		2A2A8ED41746CB6A00D00631 /* IPadProjectInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectInfoTableViewController.m; sourceTree = "<group>"; };
 		2ACC4ED317405EBB00450083 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		2ACC4ED417405EBB00450083 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		2ACC4ED617405ED100450083 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -180,6 +221,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A00E51D174D9E0C00C35F14 /* THColor */ = {
+			isa = PBXGroup;
+			children = (
+				2A00E51E174D9E2100C35F14 /* UIColor+THColor.h */,
+				2A00E51F174D9E2100C35F14 /* UIColor+THColor.m */,
+			);
+			name = THColor;
+			sourceTree = "<group>";
+		};
+		2A00E522174E699900C35F14 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2A00E535174E7E0500C35F14 /* ipad-outline2@2x.png */,
+				2A00E523174E69E000C35F14 /* ipad-characters@2x.png */,
+				2A00E524174E69E000C35F14 /* ipad-close@2x.png */,
+				2A00E525174E69E000C35F14 /* ipad-delete@2x.png */,
+				2A00E526174E69E000C35F14 /* ipad-info@2x.png */,
+				2A00E527174E69E000C35F14 /* ipad-outline@2x.png */,
+				2A00E528174E69E000C35F14 /* ipad-research@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2A00E52F174E69FF00C35F14 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2A1BD458173C805C00E2CE33 /* Paperback_Writer.xcdatamodeld */,
+				2A2A8E9517441F7400D00631 /* Scene.h */,
+				2A2A8E9617441F7400D00631 /* Scene.m */,
+				2A2A8E9217441F6000D00631 /* Outline.h */,
+				2A2A8E9317441F6100D00631 /* Outline.m */,
+				2ACC4ED317405EBB00450083 /* Project.h */,
+				2ACC4ED417405EBB00450083 /* Project.m */,
+				2ACC4ED617405ED100450083 /* Character.h */,
+				2ACC4ED717405ED100450083 /* Character.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
 		2A1BD432173C805C00E2CE33 = {
 			isa = PBXGroup;
 			children = (
@@ -216,20 +296,14 @@
 		2A1BD446173C805C00E2CE33 /* Paperback Writer */ = {
 			isa = PBXGroup;
 			children = (
+				2A00E52F174E69FF00C35F14 /* CoreData */,
+				2A00E522174E699900C35F14 /* Images */,
+				2A00E51D174D9E0C00C35F14 /* THColor */,
 				2ACC4EE0174293CE00450083 /* CHSlideController */,
 				2A1BD48F173FEBFA00E2CE33 /* THGridMenu */,
 				2A1BD47A173DBBB700E2CE33 /* IPadViewControllers */,
 				2A1BD44F173C805C00E2CE33 /* AppDelegate.h */,
 				2A1BD450173C805C00E2CE33 /* AppDelegate.m */,
-				2A1BD458173C805C00E2CE33 /* Paperback_Writer.xcdatamodeld */,
-				2A2A8E9517441F7400D00631 /* Scene.h */,
-				2A2A8E9617441F7400D00631 /* Scene.m */,
-				2A2A8E9217441F6000D00631 /* Outline.h */,
-				2A2A8E9317441F6100D00631 /* Outline.m */,
-				2ACC4ED317405EBB00450083 /* Project.h */,
-				2ACC4ED417405EBB00450083 /* Project.m */,
-				2ACC4ED617405ED100450083 /* Character.h */,
-				2ACC4ED717405ED100450083 /* Character.m */,
 				2A1BD447173C805C00E2CE33 /* Supporting Files */,
 				2ACC4EE71742B99A00450083 /* GlobalProject.h */,
 				2ACC4EE81742B99B00450083 /* GlobalProject.m */,
@@ -237,6 +311,8 @@
 				2A2A8E841742FC5300D00631 /* THGridMenuItem+ProjectItem.m */,
 				2A2A8E871743047900D00631 /* THGridMenuItem+CharacterItem.h */,
 				2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */,
+				2A00E53A174FCE7B00C35F14 /* THUtil.h */,
+				2A00E53B174FCE7B00C35F14 /* THUtil.m */,
 			);
 			path = "Paperback Writer";
 			sourceTree = "<group>";
@@ -244,6 +320,16 @@
 		2A1BD447173C805C00E2CE33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A00E509174D9A7E00C35F14 /* Lato-Bla.ttf */,
+				2A00E50A174D9A7E00C35F14 /* Lato-BlaIta.ttf */,
+				2A00E50B174D9A7E00C35F14 /* Lato-Bol.ttf */,
+				2A00E50C174D9A7E00C35F14 /* Lato-BolIta.ttf */,
+				2A00E50D174D9A7E00C35F14 /* Lato-Hai.ttf */,
+				2A00E50E174D9A7E00C35F14 /* Lato-HaiIta.ttf */,
+				2A00E50F174D9A7E00C35F14 /* Lato-Lig.ttf */,
+				2A00E510174D9A7E00C35F14 /* Lato-LigIta.ttf */,
+				2A00E511174D9A7E00C35F14 /* Lato-Reg.ttf */,
+				2A00E512174D9A7E00C35F14 /* Lato-RegIta.ttf */,
 				2A2A8EC017468FAF00D00631 /* indicator.png */,
 				2A2A8EC117468FAF00D00631 /* indicator@2x.png */,
 				2A2A8EC217468FAF00D00631 /* left_fade.png */,
@@ -287,9 +373,10 @@
 		2A1BD47A173DBBB700E2CE33 /* IPadViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A00E537174EC5B300C35F14 /* IPadProjectInformationViewController.h */,
+				2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */,
 				2A1BD480173DBDBF00E2CE33 /* IPadProjectMenuViewController.h */,
 				2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */,
-				2A1BD487173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib */,
 				2A1BD48A173DDD2B00E2CE33 /* IPadProjectCharacterViewController.h */,
 				2A1BD48B173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m */,
 				2A1BD493173FED8700E2CE33 /* IPadGridRootViewController.h */,
@@ -310,8 +397,8 @@
 				2A2A8EA71744629400D00631 /* IPadProjectSceneTableViewController.h */,
 				2A2A8EA81744629400D00631 /* IPadProjectSceneTableViewController.m */,
 				2A2A8EA91744629400D00631 /* IPadProjectSceneTableViewController.xib */,
-				2A2A8ED31746CB6A00D00631 /* IPadProjectInfoTableViewController.h */,
-				2A2A8ED41746CB6A00D00631 /* IPadProjectInfoTableViewController.m */,
+				2A00E532174E6CEE00C35F14 /* ProjectButton.h */,
+				2A00E533174E6CEE00C35F14 /* ProjectButton.m */,
 			);
 			name = IPadViewControllers;
 			sourceTree = "<group>";
@@ -413,7 +500,6 @@
 				2A1BD453173C805C00E2CE33 /* Default.png in Resources */,
 				2A1BD455173C805C00E2CE33 /* Default@2x.png in Resources */,
 				2A1BD457173C805C00E2CE33 /* Default-568h@2x.png in Resources */,
-				2A1BD489173DBE1E00E2CE33 /* IPadProjectInfoViewController.xib in Resources */,
 				2ACC4EDD1740812D00450083 /* IPadNewProjectViewController.xib in Resources */,
 				2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */,
 				2A2A8EA117444DE500D00631 /* IPadNewSceneViewController.xib in Resources */,
@@ -428,6 +514,23 @@
 				2A2A8ECD17468FB000D00631 /* loopback@2x.png in Resources */,
 				2A2A8ECE17468FB000D00631 /* right_fade.png in Resources */,
 				2A2A8ECF17468FB000D00631 /* right_fade@2x.png in Resources */,
+				2A00E513174D9A7E00C35F14 /* Lato-Bla.ttf in Resources */,
+				2A00E514174D9A7E00C35F14 /* Lato-BlaIta.ttf in Resources */,
+				2A00E515174D9A7E00C35F14 /* Lato-Bol.ttf in Resources */,
+				2A00E516174D9A7E00C35F14 /* Lato-BolIta.ttf in Resources */,
+				2A00E517174D9A7E00C35F14 /* Lato-Hai.ttf in Resources */,
+				2A00E518174D9A7E00C35F14 /* Lato-HaiIta.ttf in Resources */,
+				2A00E519174D9A7E00C35F14 /* Lato-Lig.ttf in Resources */,
+				2A00E51A174D9A7E00C35F14 /* Lato-LigIta.ttf in Resources */,
+				2A00E51B174D9A7E00C35F14 /* Lato-Reg.ttf in Resources */,
+				2A00E51C174D9A7E00C35F14 /* Lato-RegIta.ttf in Resources */,
+				2A00E529174E69E000C35F14 /* ipad-characters@2x.png in Resources */,
+				2A00E52A174E69E000C35F14 /* ipad-close@2x.png in Resources */,
+				2A00E52B174E69E000C35F14 /* ipad-delete@2x.png in Resources */,
+				2A00E52C174E69E000C35F14 /* ipad-info@2x.png in Resources */,
+				2A00E52D174E69E000C35F14 /* ipad-outline@2x.png in Resources */,
+				2A00E52E174E69E000C35F14 /* ipad-research@2x.png in Resources */,
+				2A00E536174E7E0500C35F14 /* ipad-outline2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +615,10 @@
 				2A2A8E9717441F7500D00631 /* Scene.m in Sources */,
 				2A2A8EA017444DE500D00631 /* IPadNewSceneViewController.m in Sources */,
 				2A2A8EAA1744629500D00631 /* IPadProjectSceneTableViewController.m in Sources */,
-				2A2A8ED51746CB6C00D00631 /* IPadProjectInfoTableViewController.m in Sources */,
+				2A00E520174D9E2100C35F14 /* UIColor+THColor.m in Sources */,
+				2A00E534174E6CEE00C35F14 /* ProjectButton.m in Sources */,
+				2A00E539174EC5B300C35F14 /* IPadProjectInformationViewController.m in Sources */,
+				2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

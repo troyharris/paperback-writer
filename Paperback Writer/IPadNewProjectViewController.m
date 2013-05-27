@@ -43,8 +43,8 @@ static const int kGenrePicker = 1;
     NSManagedObjectContext *context = apd.managedObjectContext;
     Project *project = [NSEntityDescription insertNewObjectForEntityForName:@"Project" inManagedObjectContext:context];
     project.title = _projectTitle.text;
-    project.genre = (NSString *)[_genres objectAtIndex:[self.typePicker currentSelectedIndex]];
-    project.type =(NSString *)[_types objectAtIndex:[self.genrePicker currentSelectedIndex]];
+    project.genre = (NSString *)[_genres objectAtIndex:[self.genrePicker currentSelectedIndex]];
+    project.type =(NSString *)[_types objectAtIndex:[self.typePicker currentSelectedIndex]];
     NSError *error = nil;
     if ([context save:&error]) {
         NSLog(@"The save was successful!");

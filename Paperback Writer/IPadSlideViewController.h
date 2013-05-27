@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "CHSlideController.h"
-#import "IPadProjectInfoTableViewController.h"
+#import "IPadProjectInformationViewController.h"
 #import "IPadProjectMenuViewController.h"
 #import "Project.h"
 
 @interface IPadSlideViewController : CHSlideController <ProjectMenuDelegate>
 
 @property (nonatomic, strong) IPadProjectMenuViewController *menuController;
-@property (nonatomic, strong) IPadProjectInfoTableViewController *infoController;
+@property (nonatomic, strong) IPadProjectInformationViewController *infoController;
 @property (nonatomic, strong) UIViewController *slideController;
 @property (nonatomic, strong) Project *project;
 
