@@ -36,7 +36,7 @@
         label.font = [UIFont fontWithName:@"Lato-Black" size:14];
         label.text = text;
         label.backgroundColor = [UIColor clearColor];
-        label.textColor = [UIColor colorFromHex:@"fdebc7" withAlpha:1.0];
+        label.textColor = [UIColor projectLightTextColor];
         [self addSubview:imgView];
         [self addSubview:label];
         //self.backgroundColor = [UIColor blackColor];

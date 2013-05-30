@@ -35,7 +35,7 @@
     self = [super init];
     if (self) {
         self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
-        self.view.backgroundColor = [UIColor colorFromHex:@"c4f6ea" withAlpha:1.0];
+        self.view.backgroundColor = [UIColor projectBackgroundColor];
         self.view.autoresizesSubviews = YES;
         [self viewDidLoad];
     }
@@ -60,7 +60,7 @@
     CGRect titleFrame = CGRectMake(20, 20, [THUtil getRealDeviceWidth] - 40, 70);
     _projectTitle = [[UITextField alloc] initWithFrame:titleFrame];
     _projectTitle.font = [UIFont fontWithName:@"Lato-Light" size:60.0];
-    _projectTitle.textColor = [UIColor colorFromHex:@"45200d" withAlpha:1];
+    _projectTitle.textColor = [UIColor projectDarkTextColor];
     _projectTitle.textAlignment = NSTextAlignmentCenter;
     _projectTitle.adjustsFontSizeToFitWidth = YES;
     _projectTitle.text = _project.title;

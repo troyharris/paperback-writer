@@ -7,6 +7,7 @@
 //
 
 #import "UIColor+THColor.h"
+#import <UIColor+FlatUI.h>
 
 @implementation UIColor (THColor)
 
@@ -51,5 +52,78 @@
     float blueFloat = (float)blue / 255;
     return [UIColor colorWithRed:redFloat green:greenFloat blue:blueFloat alpha:alpha];
 }
+
++(UIColor *) projectDarkColor {
+    return [UIColor midnightBlueColor];
+}
+
++(UIColor *) projectBackgroundColor {
+    return [UIColor cloudsColor];
+}
+
++(UIColor *) projectHighlightColor {
+    return [UIColor greenSeaColor];
+}
+
++(UIColor *) projectNavBarColor {
+    return [UIColor emerlandColor];
+}
+
++(UIColor *) projectLightTextColor {
+    return [UIColor cloudsColor];
+}
+
++(UIColor *) projectDarkTextColor {
+    return [self colorFromHex:@"000000" withAlpha:1.0];
+}
+
+/*
+ +(UIColor *) projectDarkColor {
+ return [self colorFromHex:@"008011" withAlpha:1.0];
+ }
+ 
+ +(UIColor *) projectBackgroundColor {
+ return [self colorFromHex:@"1fe2ff" withAlpha:1.0];
+ }
+ 
+ +(UIColor *) projectHighlightColor {
+ return [self colorFromHex:@"341d43" withAlpha:1.0];
+ }
+ 
+ +(UIColor *) projectNavBarColor {
+ return [self colorFromHex:@"1fff3d" withAlpha:1.0];
+ }
+ 
+ +(UIColor *) projectLightTextColor {
+ return [self colorFromHex:@"bdf6ff" withAlpha:1.0];
+ }
+ 
+ +(UIColor *) projectDarkTextColor {
+ return [self colorFromHex:@"000000" withAlpha:1.0];
+ }
+ */
+
+/*
++(UIColor *) projectDarkColor {
+    return [self colorFromHex:@"45200d" withAlpha:1.0];
+}
+
++(UIColor *) projectBackgroundColor {
+    return [self colorFromHex:@"c4f6ea" withAlpha:1.0];
+}
+
++(UIColor *) projectHighlightColor {
+    return [self colorFromHex:@"a57f2c" withAlpha:1.0];
+}
+
++(UIColor *) projectLightTextColor {
+    return [self colorFromHex:@"fdebc7" withAlpha:1.0];
+}
+
++(UIColor *) projectDarkTextColor {
+    return [self colorFromHex:@"45200d" withAlpha:1.0];
+}
+ */
+
 
 @end

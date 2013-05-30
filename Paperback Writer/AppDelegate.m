@@ -25,7 +25,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         IPadGridRootViewController *rootController = [[IPadGridRootViewController alloc] init];
        self.navController = [[UINavigationController alloc] initWithRootViewController:rootController];
-        [self.navController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorFromHex:@"a57f2c" withAlpha:1.0] cornerRadius:0] forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];
+        [self.navController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor projectNavBarColor] cornerRadius:0] forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];
         NSMutableDictionary *titleTextAttributes = [[self.navController.navigationBar titleTextAttributes] mutableCopy];
         if (!titleTextAttributes) {
             titleTextAttributes = [NSMutableDictionary dictionary];
@@ -33,7 +33,7 @@
         [titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
         [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
         [titleTextAttributes setValue:[UIFont fontWithName:@"Lato-Black" size:20] forKey:UITextAttributeFont];
-        [titleTextAttributes setValue:[UIColor colorFromHex:@"fdebc7" withAlpha:1.0] forKey:UITextAttributeTextColor];
+        [titleTextAttributes setValue:[UIColor projectLightTextColor] forKey:UITextAttributeTextColor];
         [self.navController.navigationBar setTitleTextAttributes:titleTextAttributes];
         [self.navController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor] cornerRadius:0]];
         [self.navController.navigationItem setTitle:@"Proser"];

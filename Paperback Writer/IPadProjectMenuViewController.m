@@ -96,7 +96,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorFromHex:@"45200d" withAlpha:1.0];
+    self.view.backgroundColor = [UIColor projectDarkColor];
     
     UIImage *infoIcon = [UIImage imageNamed:@"ipad-info"];
     CGPoint infoOrigin = CGPointMake(20, 20);

@@ -13,10 +13,12 @@
 #import "AppDelegate.h"
 #import "Project.h"
 #import "IPadNewProjectViewController.h"
+#import "IPadProjectNewViewController.h"
 #import "IPadSlideViewController.h"
 #import "GlobalProject.h"
 #import "UIColor+THColor.h"
 #import <UIImage+FlatUI.h>
+#import "TDSemiModal.h"
 
 @interface IPadGridRootViewController ()
 
@@ -50,9 +52,13 @@
 }
 
 -(void)showNewProject {
-    IPadNewProjectViewController *newProjectVC = [[IPadNewProjectViewController alloc] initWithNibName:@"IPadNewProjectViewController" bundle:nil];
+    
+    IPadProjectNewViewController *newProjectVC = [[IPadProjectNewViewController alloc] init];
+/*
     [newProjectVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self presentViewController:newProjectVC animated:YES completion:nil];
+ */
+    [self presentSemiModalViewController:newProjectVC];
 }
 
 -(void)buildProjectsList {
@@ -87,7 +93,7 @@
 -(void)menuReset {
     _menuView = nil;
     _menuView = [[THGridMenu alloc] initWithColumns:2 marginSize:30 gutterSize:30 rowHeight:100];
-    _menuView.backgroundColor = [UIColor colorFromHex:@"c4f6ea" withAlpha:1.0];
+    _menuView.backgroundColor = [UIColor projectBackgroundColor];
     self.view = _menuView;
 }
 
@@ -103,7 +109,15 @@
     [self presentViewController:slideController animated:YES completion:nil];
 }
 
+-(void)pressAdd {
+    
+}
+
 -(void)populateMenu {
+    THGridMenuItem *newProject = [_menuView createMenuItem];
+    newProject.title.text = @"New Project";
+    [newProject addTarget:self action:@selector(showNewProject) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:newProject];
     for (Project *p in _projects) {
         THGridMenuItem *box = [_menuView createMenuItem];
         box.title.text = p.title;

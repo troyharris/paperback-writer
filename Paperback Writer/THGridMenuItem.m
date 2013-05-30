@@ -19,11 +19,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setAutoresizesSubviews:YES];
-        self.backgroundColor = [UIColor colorFromHex:@"a57f2c" withAlpha:1.0];
+        self.backgroundColor = [UIColor projectHighlightColor];
         CGRect titleFrame = CGRectMake(10, 0, self.frame.size.width - 20, self.frame.size.height);
         _title = [[UILabel alloc] initWithFrame:titleFrame];
-        _title.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        _title.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+        _title.textColor = [UIColor whiteColor];
+        _title.backgroundColor = [UIColor clearColor];
         _title.font = [UIFont fontWithName:@"Lato-Light" size:30];
         _title.textAlignment = NSTextAlignmentCenter;
         _title.adjustsFontSizeToFitWidth = YES;
@@ -32,8 +32,8 @@
         [self addSubview:_title];
         CGRect typeFrame = CGRectMake((self.frame.size.width / 2) - 10, 64, self.frame.size.width / 2, 20);
         _type = [[UILabel alloc] initWithFrame:typeFrame];
-        _type.textColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-        _type.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+        _type.textColor = [UIColor whiteColor];
+        _type.backgroundColor = [UIColor clearColor];
         _type.font = [UIFont fontWithName:@"Lato-Light" size:14];
         _type.adjustsFontSizeToFitWidth = YES;
         [self addSubview:_type];

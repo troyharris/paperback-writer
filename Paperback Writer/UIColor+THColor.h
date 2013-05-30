@@ -11,5 +11,11 @@
 @interface UIColor (THColor)
 
 +(UIColor *)colorFromHex:(NSString *)hex withAlpha:(CGFloat)alpha;
++(UIColor *) projectDarkColor;
++(UIColor *) projectBackgroundColor;
++(UIColor *) projectHighlightColor;
++(UIColor *) projectLightTextColor;
++(UIColor *) projectDarkTextColor;
++(UIColor *) projectNavBarColor;
 
 @end

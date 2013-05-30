@@ -83,7 +83,7 @@
 -(void)menuReset {
     _menuView = nil;
     _menuView = [[THGridMenu alloc] initWithColumns:2 marginSize:30 gutterSize:30 rowHeight:100];
-    _menuView.backgroundColor = [UIColor colorFromHex:@"c4f6ea" withAlpha:1.0];
+    _menuView.backgroundColor = [UIColor projectBackgroundColor];
     self.view = _menuView;
 }
 
@@ -113,5 +113,7 @@
     // Return YES for supported orientations
 	return YES;
 }
+
+
 
 @end
