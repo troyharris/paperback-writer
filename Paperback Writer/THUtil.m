@@ -21,4 +21,23 @@
     return deviceWidth;
 }
 
++(CGFloat)getRealDeviceHeight {
+    CGFloat deviceHeight;
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if(UIInterfaceOrientationIsLandscape(orientation)) {
+        deviceHeight = [UIScreen mainScreen].bounds.size.width;
+    } else {
+        deviceHeight = [UIScreen mainScreen].bounds.size.height;
+    }
+    return deviceHeight;
+}
+
++(UIInterfaceOrientation)orientation {
+    return [UIApplication sharedApplication].statusBarOrientation;
+}
+
++(CGFloat)getViewBottomOrigin:(UIView *)view {
+    return view.frame.origin.y + view.frame.size.height;
+}
+
 @end

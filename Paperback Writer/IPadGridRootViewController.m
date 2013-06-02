@@ -28,6 +28,10 @@
 @synthesize menuView = _menuView;
 @synthesize projects = _projects;
 
+-(void)closedSemiModal {
+    [self viewWillAppear:YES];
+}
+
 -(AppDelegate *)ad {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
@@ -53,12 +57,15 @@
 
 -(void)showNewProject {
     
-    IPadProjectNewViewController *newProjectVC = [[IPadProjectNewViewController alloc] init];
+    _addProjectVC = [[IPadProjectNewViewController alloc] init];
+    _addProjectVC.delegate = self;
+    //[_addProjectVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
 /*
     [newProjectVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self presentViewController:newProjectVC animated:YES completion:nil];
  */
-    [self presentSemiModalViewController:newProjectVC];
+    [self presentSemiModalViewController:_addProjectVC];
 }
 
 -(void)buildProjectsList {
@@ -145,6 +152,8 @@
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
      [_menuView orientationChange];
+    [_addProjectVC fixYOriginWithRootView:self.view];
+    [_addProjectVC resetPickers];
     
 }
 

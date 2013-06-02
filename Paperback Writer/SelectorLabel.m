@@ -37,6 +37,7 @@ static int kRight = 1;
     newFrame = CGRectMake(x, 170, width, 30);
     self = [super initWithFrame:newFrame];
     if (self) {
+        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         self.font = [UIFont fontWithName:@"Lato-Black" size:20];
         self.backgroundColor = [UIColor clearColor];
         self.textColor = [UIColor projectLightTextColor];

@@ -11,5 +11,8 @@
 @interface THUtil : NSObject
 
 +(CGFloat)getRealDeviceWidth;
++(CGFloat)getRealDeviceHeight;
++(UIInterfaceOrientation)orientation;
++(CGFloat)getViewBottomOrigin:(UIView *)view;
 
 @end

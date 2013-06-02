@@ -22,17 +22,20 @@
     
 	coverView.frame = rootView.bounds;
     coverView.alpha = 0.0f;
-    
-    modalView.frame = CGRectMake(0, 0, rootView.bounds.size.width, rootView.bounds.size.height / 2);
-	modalView.center = self.offscreenCenter;
-	
+    CGFloat height = 384.0;
+    NSLog(@"%f", height);
+    CGFloat top = (rootView.bounds.size.height - height) / 2;
+    modalView.frame = CGRectMake(0, top, rootView.bounds.size.width, height);
+//	modalView.center = self.offscreenCenter;
+    modalView.alpha = 0.0;
 	[rootView addSubview:coverView];
 	[rootView addSubview:modalView];
 	
     [UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.6];
 	
-	modalView.frame = CGRectMake(0, 0, modalView.frame.size.width, modalView.frame.size.height);
+	//modalView.frame = CGRectMake(0, 10, modalView.frame.size.width, modalView.frame.size.height);
+    modalView.alpha = 1.0;
 	coverView.alpha = 0.5;
     
 	[UIView commitAnimations];
@@ -50,7 +53,8 @@
 	[UIView setAnimationDelegate:self];
 	[UIView setAnimationDidStopSelector:@selector(dismissSemiModalViewControllerEnded:finished:context:)];
 	
-    modalView.center = [self offscreenCenter];
+    //modalView.center = [self offscreenCenter];
+    modalView.alpha = 0.0f;
 	coverView.alpha = 0.0f;
 
 	[UIView commitAnimations];
@@ -94,5 +98,6 @@
     
     return offScreenCenter;
 }
+
 
 @end

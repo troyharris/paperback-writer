@@ -38,6 +38,7 @@ static int kRight = 1;
 	CGRect tmpFrame = CGRectMake(x, y, width, pickerHeight);
     self = [super initWithFrame:tmpFrame];
     if (self) {
+        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         self.backgroundColor   = [UIColor projectBackgroundColor];
         self.selectedTextColor = [UIColor projectDarkTextColor];
         self.textColor   = [UIColor projectHighlightColor];
@@ -54,6 +55,20 @@ static int kRight = 1;
 
 -(id)initWithRightSideAndTag:(int)tag {
     return [self initWithSide:kRight withTag:tag];
+}
+
+-(void)updateWidthForLeft {
+    CGFloat margin = 20.0f;
+    CGFloat width = (([THUtil getRealDeviceWidth] - (margin * 2.0f)) / 2) - 10;
+    CGRect tmpFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
+    self.frame = tmpFrame;
+}
+
+-(void)updateWidthForRight {
+    CGFloat margin = 20.0f;
+    CGFloat width = (([THUtil getRealDeviceWidth] - (margin * 2.0f)) / 2) - 10;
+    CGRect tmpFrame = CGRectMake(margin + width + (margin / 2), self.frame.origin.y,width, self.frame.size.height);
+    self.frame = tmpFrame;
 }
 
 /*

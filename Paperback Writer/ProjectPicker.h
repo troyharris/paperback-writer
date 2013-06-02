@@ -12,5 +12,7 @@
 
 -(id)initWithLeftSideAndTag:(int)tag;
 -(id)initWithRightSideAndTag:(int)tag;
+-(void)updateWidthForLeft;
+-(void)updateWidthForRight;
 
 @end

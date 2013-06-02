@@ -11,12 +11,17 @@
 #import "AppDelegate.h"
 #import "UIColor+THColor.h"
 #import "THUtil.h"
+#import "UIView+THAutoLayout.h"
+#import "THLabel.h"
 
 @interface IPadProjectInformationViewController ()
 
 @end
 
 @implementation IPadProjectInformationViewController
+
+static float kGutter = 20.0f;
+static float kMargin = 20.0f;
 
 -(AppDelegate *)ad {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -35,8 +40,9 @@
     self = [super init];
     if (self) {
         self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
-        self.view.backgroundColor = [UIColor projectBackgroundColor];
-        self.view.autoresizesSubviews = YES;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHeight:) name:UIKeyboardDidShowNotification object:nil];
+        //[self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        //self.view.autoresizesSubviews = YES;
         [self viewDidLoad];
     }
     return self;
@@ -45,8 +51,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _scrollView = [[UIScrollView alloc] init];
+    CGRect tmpFrame = CGRectMake(0, 0, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight]);
+    _scrollView.frame = tmpFrame;
+    _scrollView.contentSize = _scrollView.frame.size;
+    _scrollView.scrollEnabled = YES;
+//    [_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    _contentView = [[UIView alloc] init];
+//    CGRect contFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+//    _scrollView.frame = contFrame;
+//    [_contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    [_scrollView addSubview:_contentView];
+    
+    NSLog(@"Okay, the root view width is %f and height is %f", self.view.bounds.size.width, self.view.bounds.size.height);
+    //[_scrollView setContentSize:self.view.bounds.size];
+    NSLog(@"The scrollview content size is %f width & %f height", _scrollView.contentSize.width, _scrollView.contentSize.height);
+    
+    
+   // _scrollView.frame = self.view.frame;
+    self.view.backgroundColor = [UIColor projectBackgroundColor];
+    //[_scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_scrollView];
+    /*
+    UIView *mainView = self.view;
+
+    [self.view addConstraintsWithString:@"H:|[_scrollView(==mainView)]|" bindings:NSDictionaryOfVariableBindings(_scrollView, mainView)];
+    [self.view addConstraintsWithString:@"V:|[_scrollView(==mainView)]|" bindings:NSDictionaryOfVariableBindings(_scrollView, mainView)];
+    [self.view addConstraintsWithString:@"H:|[_contentView(==mainView)]|" bindings:NSDictionaryOfVariableBindings(_contentView, mainView)];
+    [self.scrollView addConstraintsWithString:@"V:|[_contentView]|" bindings:NSDictionaryOfVariableBindings(_contentView)];
+     */
+    
     [self buildProject];
     [self makeTitleField];
+    [self makeDescriptionField];
+    [self makeStatBoxes];
+    
+    //[self.contentView systemLayoutSizeFittingSize:_scrollView.contentSize];
+    NSLog(@"The contentview size is %f width & %f height", self.contentView.frame.size.width, self.contentView.frame.size.height);
 	// Do any additional setup after loading the view.
 }
 
@@ -57,28 +98,181 @@
 
 -(void)makeTitleField {
     
-    CGRect titleFrame = CGRectMake(20, 20, [THUtil getRealDeviceWidth] - 40, 70);
-    _projectTitle = [[UITextField alloc] initWithFrame:titleFrame];
+    //CGRect titleFrame = CGRectMake(20, 20, [THUtil getRealDeviceWidth] - 40, 70);
+    //_projectTitle = [[UITextField alloc] initWithFrame:titleFrame];
+    _projectTitle = [[UITextField alloc] init];
+    _projectTitle.frame = CGRectMake(kGutter, kGutter, [THUtil getRealDeviceWidth] - (kGutter * 2), 70);
     _projectTitle.font = [UIFont fontWithName:@"Lato-Light" size:60.0];
     _projectTitle.textColor = [UIColor projectDarkTextColor];
     _projectTitle.textAlignment = NSTextAlignmentCenter;
     _projectTitle.adjustsFontSizeToFitWidth = YES;
     _projectTitle.text = _project.title;
-    [self.view addSubview:_projectTitle];
+    //[_projectTitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.scrollView addSubview:_projectTitle];
     _projectTitle.borderStyle = UITextBorderStyleNone;
     _projectTitle.backgroundColor = [UIColor clearColor];
+    /*
+    NSArray *titleConst = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_projectTitle]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_projectTitle)];
+    [self.view addConstraints:titleConst];
+    */
+    
+    _typeAndGenre = [[THLabel alloc] init];
+    _typeAndGenre.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_projectTitle] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 20);
+    [_typeAndGenre setFont:[UIFont fontWithName:@"Lato-Black" size:18]];
+    _typeAndGenre.text = [NSString stringWithFormat:@"A %@ %@", _project.genre, _project.type];
+    _typeAndGenre.textAlignment = NSTextAlignmentCenter;
+    [self.scrollView addSubview:_typeAndGenre];
+    
+    _hr = [[UIView alloc] init];
+    _hr.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_typeAndGenre] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 1);
+    //[_hr setTranslatesAutoresizingMaskIntoConstraints:NO];
+    _hr.backgroundColor = [UIColor projectDarkColor];
+    [self.scrollView addSubview:_hr];
+    /*
+    [self.contentView addConstraintsWithString:@"H:|-(gutter)-[_projectTitle]-(gutter)-|" bindings:NSDictionaryOfVariableBindings(_projectTitle)];
+    [self.contentView addConstraintsWithString:@"H:|-[_typeAndGenre]-|" bindings:NSDictionaryOfVariableBindings(_typeAndGenre)];
+    [self.contentView addConstraintsWithString:@"H:|-(gutter)-[_hr]-(gutter)-|" bindings:NSDictionaryOfVariableBindings(_hr)];
+    [self.contentView addConstraintsWithString:@"V:|-(gutter)-[_projectTitle]-[_typeAndGenre]-(margin)-[_hr(1)]" bindings:NSDictionaryOfVariableBindings(_projectTitle, _typeAndGenre, _hr)];
+     */
+}
+
+-(void)makeDescriptionField {
+    _synopsis = [[THLabel alloc] init];
+    _synopsis.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_hr] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 30);
+    _synopsis.text = @"Synopsis";
+    [self.scrollView addSubview:_synopsis];
+    
+    
+    _desc = [[UITextView alloc] init];
+    _desc.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_synopsis] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 20);
+    _desc.delegate = self;
+    [_desc setTranslatesAutoresizingMaskIntoConstraints:NO];
+    _desc.font = [UIFont fontWithName:@"Lato-Light" size:16.0];
+    _desc.textColor = [UIColor projectDarkTextColor];
+    _desc.backgroundColor = [UIColor clearColor];
+    _desc.text = @"This is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a test";
+    _desc.scrollEnabled = NO;
+    [_desc sizeToFit];
+    [self updateTextViewSize];
+    [self.scrollView addSubview:_desc];
+    /*
+    [self.contentView addConstraintsWithString:@"H:|-(gutter)-[_synopsis]" bindings:NSDictionaryOfVariableBindings(_synopsis)];
+    [self.contentView addConstraintsWithString:@"H:|-(gutter)-[_desc]-(gutter)-|" bindings:NSDictionaryOfVariableBindings(_desc)];
+    [self redoTextConstWithHeight:40];
+    [self redoTextConstWithHeight:200];
+     */
+ //   [self.contentView addConstraintsWithString:@"V:[_hr]-(margin)-[_synopsis]-[_desc(>=40)]-|" bindings:NSDictionaryOfVariableBindings(_hr, _synopsis, _desc)];
+
+}
+
+-(void)makeStatBoxes {
+    _statView = [[UIView alloc] initWithFrame:CGRectMake(0, [THUtil getViewBottomOrigin:_desc] + (kMargin * 2), [THUtil getRealDeviceWidth], 200)];
+    [self.scrollView addSubview:_statView];
+    CGFloat width = (_statView.frame.size.width - (kMargin *2) - (kGutter * 2)) / 3;
+    _charBox = [[StatBox alloc] initWithFrame:CGRectMake(kGutter, 0, width, 200)];
+    _charBox.statNum.text = @"12";
+    _charBox.statTitle.text = @"Characters";
+    [self.statView addSubview:_charBox];
+    
+    _sceneBox = [[StatBox alloc] initWithFrame:CGRectMake(_charBox.frame.origin.x + kMargin + width, 0, width, 200)];
+    _sceneBox.statNum.text = @"63";
+    _sceneBox.statTitle.text = @"Scenes";
+    [self.statView addSubview:_sceneBox];
+    
+    _noteBox = [[StatBox alloc] initWithFrame:CGRectMake(_sceneBox.frame.origin.x + kMargin + width, 0, width, 200)];
+    _noteBox.statNum.text = @"4";
+    _noteBox.statTitle.text = @"Notes";
+    [self.statView addSubview:_noteBox];
+    
+    
+    
+}
+
+-(void)redoTextConstWithHeight:(CGFloat)height {
+    if (_textConst) {
+        [self.contentView removeConstraints:_textConst];
+    }
+    NSDictionary *metrics = [self.view projectMetrics];
+    NSString *vfl = [NSString stringWithFormat:@"V:[_hr]-(margin)-[_synopsis]-[_desc(%f)]-|", height];
+    _textConst = [NSLayoutConstraint constraintsWithVisualFormat:vfl options:0 metrics:metrics views:NSDictionaryOfVariableBindings(_hr, _synopsis, _desc)];
+    [self.contentView addConstraints:_textConst];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     GlobalProject *gp = [GlobalProject sharedProject];
     _project = gp.project;
     [super viewWillAppear:animated];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - TextViewDelegate functions
+
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    CGFloat keyboardSize;
+    if (UIInterfaceOrientationIsLandscape([THUtil orientation])) {
+        keyboardSize = 420;
+    } else {
+        keyboardSize = 330;
+    }
+    CGRect frame = _scrollView.frame;
+    CGFloat newHeight = frame.size.height - keyboardSize;
+    frame.size.height = newHeight;
+    _scrollView.frame = frame;
+     
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView {
+    CGRect frame = _scrollView.frame;
+    CGFloat newHeight = [THUtil getRealDeviceHeight];
+    frame.size.height = newHeight;
+    _scrollView.frame = frame;
+     
+}
+
+-(void)textViewDidChange:(UITextView *)textView {
+    [self updateTextViewSize];
+    [self updateScrollViewSize];
+}
+
+-(void)updateTextViewSize {
+    CGRect frame = _desc.frame;
+    frame.size.height = _desc.contentSize.height;
+    NSLog(@"textbox height is %f", _desc.contentSize.height);
+    NSLog(@"scrollview content height is %f", _scrollView.frame.size.height);
+    NSLog(@"scrollview frame height is %f", _scrollView.contentSize.height);
+    _desc.frame = frame;
+    CGFloat statBoxOrigin = [THUtil getViewBottomOrigin:_desc] + (kMargin * 2);
+    _statView.frame = CGRectMake(_statView.frame.origin.x, statBoxOrigin, _statView.frame.size.width, _statView.frame.size.height);
+}
+
+-(void)updateScrollViewSize {
+    CGSize contentSize = _scrollView.contentSize;
+    contentSize.height = _statView.frame.origin.y + _statView.frame.size.height + (kGutter *4);
+    _scrollView.contentSize = contentSize;
+}
+
+-(void)keyboardHeight:(NSNotification*)notification {
+    NSDictionary* keyboardInfo = [notification userInfo];
+    _keyHeight = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+}
+    
+-(CGFloat)realKeyboardHeight {
+    CGFloat height;
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    if(UIInterfaceOrientationIsLandscape(orientation)) {
+        height = [_keyHeight CGRectValue].size.width;
+    } else {
+        height = [_keyHeight CGRectValue].size.height;
+    }
+    NSLog(@"Keyboard Height is %f", [_keyHeight CGRectValue].size.height);
+    return height;
 }
 
 @end

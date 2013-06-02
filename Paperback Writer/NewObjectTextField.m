@@ -26,6 +26,7 @@
     CGRect newFrame = CGRectMake(20, 70, deviceWidth - 40, 80);
     self = [super initWithFrame:newFrame];
     if (self) {
+        [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         self.backgroundColor = [UIColor projectBackgroundColor];
         self.font = [UIFont fontWithName:@"Lato-Light" size:48];
         self.textAlignment = NSTextAlignmentCenter;

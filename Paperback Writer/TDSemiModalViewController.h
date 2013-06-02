@@ -11,5 +11,6 @@
 @interface TDSemiModalViewController : UIViewController
 
 @property (nonatomic, strong) UIView *coverView;
+-(void)fixYOriginWithRootView:(UIView *)rootView;
 
 @end

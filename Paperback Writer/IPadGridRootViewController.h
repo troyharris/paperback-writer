@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "THGridMenu.h"
 #import "AppDelegate.h"
+#import "IPadProjectNewViewController.h"
 
-@interface IPadGridRootViewController : UIViewController
+@interface IPadGridRootViewController : UIViewController <NewProjectDelegate>
 
+@property (nonatomic, strong) IPadProjectNewViewController *addProjectVC;
 @property (nonatomic, strong) THGridMenu *menuView;
 @property (nonatomic, strong) NSArray *projects;
 

@@ -59,11 +59,14 @@ static const int kGenrePicker = 1;
 -(void)pressCancel {
    // [self dismissViewControllerAnimated:YES completion:nil];
     [self dismissSemiModalViewController:self];
+    [self.delegate closedSemiModal];
 }
 
 -(void)pressAdd {
     [self addProject];
-    [self dismissViewControllerAnimated:YES completion:nil];
+   // [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissSemiModalViewController:self];
+    [self.delegate closedSemiModal];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -79,35 +82,63 @@ static const int kGenrePicker = 1;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor projectHighlightColor];
     _header = [[NewObjectLabel alloc] init];
     _header.text = @"New Project";
+
     [self.view addSubview:_header];
+    
+    NSArray *contraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_header]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_header)];
+    [self.view addConstraints:contraints];
+    
     
     _projectTitle = [[NewObjectTextField alloc] init];
     [self.view addSubview:_projectTitle];
+    
+    NSArray *titleConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_projectTitle]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_projectTitle)];
+    [self.view addConstraints:titleConsts];
+    
     
     _genreLabel = [[SelectorLabel alloc] initWithRightSide];
     _typeLabel = [[SelectorLabel alloc] initWithLeftSide];
     _genreLabel.text = @"Genre";
     _typeLabel.text = @"Type";
+    [_genreLabel invalidateIntrinsicContentSize];
+    [_typeLabel invalidateIntrinsicContentSize];
     [self.view addSubview:_genreLabel];
     [self.view addSubview:_typeLabel];
     
+    
     _typePicker = [[ProjectPicker alloc] initWithLeftSideAndTag:kTypePicker];
+    [_typePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_typePicker invalidateIntrinsicContentSize];
     _typePicker.delegate = self;
     _typePicker.dataSource = self;
     [self.view addSubview:_typePicker];
     
     _genrePicker = [[ProjectPicker alloc] initWithRightSideAndTag:kGenrePicker];
+    [_genrePicker setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_genrePicker invalidateIntrinsicContentSize];
     _genrePicker.delegate = self;
     _genrePicker.dataSource = self;
     [self.view addSubview:_genrePicker];
+    
+    
+    
+    
+    //NSArray *pickerConst = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_typePicker(==pickerWidth)]-[_genrePicker(==pickerWidth)]-|" options:0 metrics:metrics views:NSDictionaryOfVariableBindings(_typePicker, _genrePicker)];
+    //[self.view addConstraints:pickerConst];
+    
+    NSArray *pickerLabConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_typeLabel(>=200)]-[_genreLabel(==_typeLabel)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_typeLabel, _genreLabel)];
+    [self.view addConstraints:pickerLabConsts];
     
     CGFloat buttonWidth = ([THUtil getRealDeviceWidth] - 60) / 2;
     
     CGRect addFrame = CGRectMake(20, 300, buttonWidth, 60);
     _add = [[FUIButton alloc] initWithFrame:addFrame];
+    //[_add invalidateIntrinsicContentSize];
+    [_add setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_add setTitle:@"Add" forState:UIControlStateNormal];
     _add.buttonColor = [UIColor projectBackgroundColor];
     _add.shadowColor = [UIColor projectHighlightColor];
@@ -121,6 +152,8 @@ static const int kGenrePicker = 1;
     
     CGRect cancelFrame = CGRectMake(buttonWidth + 30, 300, buttonWidth, 60);
     _cancel = [[FUIButton alloc] initWithFrame:cancelFrame];
+    //[_cancel invalidateIntrinsicContentSize];
+    [_cancel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_cancel setTitle:@"Cancel" forState:UIControlStateNormal];
     _cancel.buttonColor = [UIColor projectBackgroundColor];
     _cancel.shadowColor = [UIColor projectHighlightColor];
@@ -132,6 +165,16 @@ static const int kGenrePicker = 1;
     [_cancel addTarget:self action:@selector(pressCancel) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cancel];
     
+    NSArray *buttonConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_add(>=200)]-20-[_cancel(==_add)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_add, _cancel)];
+    [self.view addConstraints:buttonConsts];
+    
+    NSArray *addButtonHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_add(60)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_add)];
+    [self.view addConstraints:addButtonHeight];
+    
+    NSArray *cancelButtonHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_cancel(60)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_cancel)];
+    [self.view addConstraints:cancelButtonHeight];
+    
+    [self resetPickers];
     /*
     CGFloat margin = 80.0f;
 	CGFloat width = self.view.bounds.size.width - (margin * 2.0f);
@@ -180,7 +223,30 @@ static const int kGenrePicker = 1;
 
 }
 
+
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self resetPickers];
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    NSLog(@"Rotating New Project");
+    [_typePicker updateWidthForLeft];
+    [_genrePicker updateWidthForRight];
+}
+
+-(BOOL)shouldAutorotate {
+    return YES;
+}
+
+-(NSUInteger) supportedInterfaceOrientations {
+    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationPortraitUpsideDown;
+}
+
+-(void)resetPickers {
+    [_typePicker updateWidthForLeft];
+    [_genrePicker updateWidthForRight];
     [self buildTypes];
     [self buildGenres];
     [self.typePicker reloadData];

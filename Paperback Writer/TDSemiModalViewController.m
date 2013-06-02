@@ -15,7 +15,7 @@
     [super viewDidLoad];
 	self.coverView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
 
-	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
 	coverView.backgroundColor = UIColor.blackColor;
 	self.coverView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -34,5 +34,12 @@
 	self.coverView = nil;
 }
 
+-(void)fixYOriginWithRootView:(UIView *)rootView {
+    CGFloat height = 384.0;
+    NSLog(@"%f", height);
+    CGFloat top = (rootView.bounds.size.height - height) / 2;
+    CGRect tmpFrame = CGRectMake(self.view.frame.origin.x, top, self.view.frame.size.width, self.view.frame.size.height);
+    self.view.frame = tmpFrame;
+}
 
 @end

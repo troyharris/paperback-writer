@@ -78,6 +78,10 @@
 		2AAD4CAB1756EEC600484B48 /* ProjectPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CAA1756EEC600484B48 /* ProjectPicker.m */; };
 		2AAD4CB2175717A800484B48 /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CAF175717A800484B48 /* TDSemiModalViewController.m */; };
 		2AAD4CB3175717A800484B48 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CB1175717A800484B48 /* UIViewController+TDSemiModalExtension.m */; };
+		2AAD4CBA1759154A00484B48 /* UIView+THAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CB91759154A00484B48 /* UIView+THAutoLayout.m */; };
+		2AAD4CBC175915C100484B48 /* projectMetrics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD4CBB175915C100484B48 /* projectMetrics.plist */; };
+		2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CBE17593F2200484B48 /* THLabel.m */; };
+		2AAD4CEF175BC81900484B48 /* StatBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CEE175BC81800484B48 /* StatBox.m */; };
 		2ACC4ED517405EBB00450083 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED417405EBB00450083 /* Project.m */; };
 		2ACC4ED817405ED100450083 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED717405ED100450083 /* Character.m */; };
 		2ACC4EDC1740812D00450083 /* IPadNewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */; };
@@ -199,6 +203,13 @@
 		2AAD4CAF175717A800484B48 /* TDSemiModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSemiModalViewController.m; sourceTree = "<group>"; };
 		2AAD4CB0175717A800484B48 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		2AAD4CB1175717A800484B48 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
+		2AAD4CB81759154A00484B48 /* UIView+THAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+THAutoLayout.h"; sourceTree = "<group>"; };
+		2AAD4CB91759154A00484B48 /* UIView+THAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+THAutoLayout.m"; sourceTree = "<group>"; };
+		2AAD4CBB175915C100484B48 /* projectMetrics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = projectMetrics.plist; sourceTree = "<group>"; };
+		2AAD4CBD17593F2200484B48 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
+		2AAD4CBE17593F2200484B48 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
+		2AAD4CED175BC81700484B48 /* StatBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatBox.h; sourceTree = "<group>"; };
+		2AAD4CEE175BC81800484B48 /* StatBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatBox.m; sourceTree = "<group>"; };
 		2ACC4ED317405EBB00450083 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		2ACC4ED417405EBB00450083 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		2ACC4ED617405ED100450083 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -318,6 +329,7 @@
 		2A1BD446173C805C00E2CE33 /* Paperback Writer */ = {
 			isa = PBXGroup;
 			children = (
+				2AAD4CB7175914EF00484B48 /* THAutoLayout */,
 				2AAD4CAC1757175E00484B48 /* TDSemiModal */,
 				2AAD4C9F1756DEB700484B48 /* CustomViewElements */,
 				2A00E52F174E69FF00C35F14 /* CoreData */,
@@ -451,6 +463,10 @@
 				2AAD4CA71756E9F500484B48 /* SelectorLabel.m */,
 				2AAD4CA91756EEC600484B48 /* ProjectPicker.h */,
 				2AAD4CAA1756EEC600484B48 /* ProjectPicker.m */,
+				2AAD4CBD17593F2200484B48 /* THLabel.h */,
+				2AAD4CBE17593F2200484B48 /* THLabel.m */,
+				2AAD4CED175BC81700484B48 /* StatBox.h */,
+				2AAD4CEE175BC81800484B48 /* StatBox.m */,
 			);
 			name = CustomViewElements;
 			sourceTree = "<group>";
@@ -465,6 +481,16 @@
 				2AAD4CB1175717A800484B48 /* UIViewController+TDSemiModalExtension.m */,
 			);
 			name = TDSemiModal;
+			sourceTree = "<group>";
+		};
+		2AAD4CB7175914EF00484B48 /* THAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				2AAD4CB81759154A00484B48 /* UIView+THAutoLayout.h */,
+				2AAD4CB91759154A00484B48 /* UIView+THAutoLayout.m */,
+				2AAD4CBB175915C100484B48 /* projectMetrics.plist */,
+			);
+			name = THAutoLayout;
 			sourceTree = "<group>";
 		};
 		2ACC4EE0174293CE00450083 /* CHSlideController */ = {
@@ -584,6 +610,7 @@
 				2A00E52D174E69E000C35F14 /* ipad-outline@2x.png in Resources */,
 				2A00E52E174E69E000C35F14 /* ipad-research@2x.png in Resources */,
 				2A00E536174E7E0500C35F14 /* ipad-outline2@2x.png in Resources */,
+				2AAD4CBC175915C100484B48 /* projectMetrics.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +706,9 @@
 				2AAD4CAB1756EEC600484B48 /* ProjectPicker.m in Sources */,
 				2AAD4CB2175717A800484B48 /* TDSemiModalViewController.m in Sources */,
 				2AAD4CB3175717A800484B48 /* UIViewController+TDSemiModalExtension.m in Sources */,
+				2AAD4CBA1759154A00484B48 /* UIView+THAutoLayout.m in Sources */,
+				2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */,
+				2AAD4CEF175BC81900484B48 /* StatBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
