@@ -215,8 +215,9 @@
 		}
         cell.contentView.hidden = NO;
         Scene *scene = (Scene *)[_scenes objectAtIndex:indexPath.row];
+        //Temp for testing. Should be scene.characters
         cell.characters = _project.characters;
-        cell.sceneTitle.text = sce1````ne.title;
+        cell.sceneTitle.text = scene.title;
         cell.detailTextLabel.text = [scene.orderNum stringValue];
         /*
         cell.wantedHeight = [NSNumber numberWithFloat:cell.sceneTitle.frame.size.height + 100];

@@ -55,7 +55,6 @@
 		2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */; };
 		2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */; };
 		2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */; };
-		2A2A8E9117441D3200D00631 /* IPadProjectOutlineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E9017441D3100D00631 /* IPadProjectOutlineTableViewController.m */; };
 		2A2A8E9417441F6100D00631 /* Outline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E9317441F6100D00631 /* Outline.m */; };
 		2A2A8E9717441F7500D00631 /* Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E9617441F7400D00631 /* Scene.m */; };
 		2A2A8EA017444DE500D00631 /* IPadNewSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E9E17444DE400D00631 /* IPadNewSceneViewController.m */; };
@@ -85,8 +84,6 @@
 		2AAD4CF2175C0CA700484B48 /* SceneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CF1175C0CA600484B48 /* SceneCell.m */; };
 		2ACC4ED517405EBB00450083 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED417405EBB00450083 /* Project.m */; };
 		2ACC4ED817405ED100450083 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED717405ED100450083 /* Character.m */; };
-		2ACC4EDC1740812D00450083 /* IPadNewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */; };
-		2ACC4EDD1740812D00450083 /* IPadNewProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2ACC4EDB1740812D00450083 /* IPadNewProjectViewController.xib */; };
 		2ACC4EE31742940300450083 /* CHSlideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EE21742940300450083 /* CHSlideController.m */; };
 		2ACC4EE61742954A00450083 /* IPadSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EE51742954A00450083 /* IPadSlideViewController.m */; };
 		2ACC4EE91742B99B00450083 /* GlobalProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EE81742B99B00450083 /* GlobalProject.m */; };
@@ -169,8 +166,6 @@
 		2A2A8E8A174314E500D00631 /* IPadNewCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNewCharacterViewController.h; sourceTree = "<group>"; };
 		2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNewCharacterViewController.m; sourceTree = "<group>"; };
 		2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadNewCharacterViewController.xib; sourceTree = "<group>"; };
-		2A2A8E8F17441D3100D00631 /* IPadProjectOutlineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectOutlineTableViewController.h; sourceTree = "<group>"; };
-		2A2A8E9017441D3100D00631 /* IPadProjectOutlineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectOutlineTableViewController.m; sourceTree = "<group>"; };
 		2A2A8E9217441F6000D00631 /* Outline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Outline.h; sourceTree = "<group>"; };
 		2A2A8E9317441F6100D00631 /* Outline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Outline.m; sourceTree = "<group>"; };
 		2A2A8E9517441F7400D00631 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
@@ -217,9 +212,6 @@
 		2ACC4ED417405EBB00450083 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		2ACC4ED617405ED100450083 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		2ACC4ED717405ED100450083 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
-		2ACC4ED91740812D00450083 /* IPadNewProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNewProjectViewController.h; sourceTree = "<group>"; };
-		2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNewProjectViewController.m; sourceTree = "<group>"; };
-		2ACC4EDB1740812D00450083 /* IPadNewProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadNewProjectViewController.xib; sourceTree = "<group>"; };
 		2ACC4EE11742940300450083 /* CHSlideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSlideController.h; sourceTree = "<group>"; };
 		2ACC4EE21742940300450083 /* CHSlideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSlideController.m; sourceTree = "<group>"; };
 		2ACC4EE41742954A00450083 /* IPadSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadSlideViewController.h; sourceTree = "<group>"; };
@@ -420,24 +412,17 @@
 				2A1BD48B173DDD2B00E2CE33 /* IPadProjectCharacterViewController.m */,
 				2A1BD493173FED8700E2CE33 /* IPadGridRootViewController.h */,
 				2A1BD494173FED8700E2CE33 /* IPadGridRootViewController.m */,
-				2ACC4ED91740812D00450083 /* IPadNewProjectViewController.h */,
-				2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */,
-				2ACC4EDB1740812D00450083 /* IPadNewProjectViewController.xib */,
 				2ACC4EE41742954A00450083 /* IPadSlideViewController.h */,
 				2ACC4EE51742954A00450083 /* IPadSlideViewController.m */,
 				2A2A8E8A174314E500D00631 /* IPadNewCharacterViewController.h */,
 				2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */,
 				2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */,
-				2A2A8E8F17441D3100D00631 /* IPadProjectOutlineTableViewController.h */,
-				2A2A8E9017441D3100D00631 /* IPadProjectOutlineTableViewController.m */,
 				2A2A8E9D17444DE400D00631 /* IPadNewSceneViewController.h */,
 				2A2A8E9E17444DE400D00631 /* IPadNewSceneViewController.m */,
 				2A2A8E9F17444DE500D00631 /* IPadNewSceneViewController.xib */,
 				2A2A8EA71744629400D00631 /* IPadProjectSceneTableViewController.h */,
 				2A2A8EA81744629400D00631 /* IPadProjectSceneTableViewController.m */,
 				2A2A8EA91744629400D00631 /* IPadProjectSceneTableViewController.xib */,
-				2A00E532174E6CEE00C35F14 /* ProjectButton.h */,
-				2A00E533174E6CEE00C35F14 /* ProjectButton.m */,
 				2A00E53D175646FB00C35F14 /* IPadProjectNewViewController.h */,
 				2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */,
 			);
@@ -472,6 +457,8 @@
 				2AAD4CEE175BC81800484B48 /* StatBox.m */,
 				2AAD4CF0175C0CA500484B48 /* SceneCell.h */,
 				2AAD4CF1175C0CA600484B48 /* SceneCell.m */,
+				2A00E532174E6CEE00C35F14 /* ProjectButton.h */,
+				2A00E533174E6CEE00C35F14 /* ProjectButton.m */,
 			);
 			name = CustomViewElements;
 			sourceTree = "<group>";
@@ -584,7 +571,6 @@
 				2A1BD453173C805C00E2CE33 /* Default.png in Resources */,
 				2A1BD455173C805C00E2CE33 /* Default@2x.png in Resources */,
 				2A1BD457173C805C00E2CE33 /* Default-568h@2x.png in Resources */,
-				2ACC4EDD1740812D00450083 /* IPadNewProjectViewController.xib in Resources */,
 				2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */,
 				2A2A8EA117444DE500D00631 /* IPadNewSceneViewController.xib in Resources */,
 				2A2A8EAB1744629500D00631 /* IPadProjectSceneTableViewController.xib in Resources */,
@@ -688,14 +674,12 @@
 				2A1BD498173FF66200E2CE33 /* THGridMenuItem.m in Sources */,
 				2ACC4ED517405EBB00450083 /* Project.m in Sources */,
 				2ACC4ED817405ED100450083 /* Character.m in Sources */,
-				2ACC4EDC1740812D00450083 /* IPadNewProjectViewController.m in Sources */,
 				2ACC4EE31742940300450083 /* CHSlideController.m in Sources */,
 				2ACC4EE61742954A00450083 /* IPadSlideViewController.m in Sources */,
 				2ACC4EE91742B99B00450083 /* GlobalProject.m in Sources */,
 				2A2A8E851742FC5300D00631 /* THGridMenuItem+ProjectItem.m in Sources */,
 				2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */,
 				2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */,
-				2A2A8E9117441D3200D00631 /* IPadProjectOutlineTableViewController.m in Sources */,
 				2A2A8E9417441F6100D00631 /* Outline.m in Sources */,
 				2A2A8E9717441F7500D00631 /* Scene.m in Sources */,
 				2A2A8EA017444DE500D00631 /* IPadNewSceneViewController.m in Sources */,
