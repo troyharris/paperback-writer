@@ -82,6 +82,7 @@
 		2AAD4CBC175915C100484B48 /* projectMetrics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD4CBB175915C100484B48 /* projectMetrics.plist */; };
 		2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CBE17593F2200484B48 /* THLabel.m */; };
 		2AAD4CEF175BC81900484B48 /* StatBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CEE175BC81800484B48 /* StatBox.m */; };
+		2AAD4CF2175C0CA700484B48 /* SceneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CF1175C0CA600484B48 /* SceneCell.m */; };
 		2ACC4ED517405EBB00450083 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED417405EBB00450083 /* Project.m */; };
 		2ACC4ED817405ED100450083 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4ED717405ED100450083 /* Character.m */; };
 		2ACC4EDC1740812D00450083 /* IPadNewProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC4EDA1740812D00450083 /* IPadNewProjectViewController.m */; };
@@ -210,6 +211,8 @@
 		2AAD4CBE17593F2200484B48 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
 		2AAD4CED175BC81700484B48 /* StatBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatBox.h; sourceTree = "<group>"; };
 		2AAD4CEE175BC81800484B48 /* StatBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatBox.m; sourceTree = "<group>"; };
+		2AAD4CF0175C0CA500484B48 /* SceneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneCell.h; sourceTree = "<group>"; };
+		2AAD4CF1175C0CA600484B48 /* SceneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneCell.m; sourceTree = "<group>"; };
 		2ACC4ED317405EBB00450083 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		2ACC4ED417405EBB00450083 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		2ACC4ED617405ED100450083 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
@@ -467,6 +470,8 @@
 				2AAD4CBE17593F2200484B48 /* THLabel.m */,
 				2AAD4CED175BC81700484B48 /* StatBox.h */,
 				2AAD4CEE175BC81800484B48 /* StatBox.m */,
+				2AAD4CF0175C0CA500484B48 /* SceneCell.h */,
+				2AAD4CF1175C0CA600484B48 /* SceneCell.m */,
 			);
 			name = CustomViewElements;
 			sourceTree = "<group>";
@@ -709,6 +714,7 @@
 				2AAD4CBA1759154A00484B48 /* UIView+THAutoLayout.m in Sources */,
 				2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */,
 				2AAD4CEF175BC81900484B48 /* StatBox.m in Sources */,
+				2AAD4CF2175C0CA700484B48 /* SceneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

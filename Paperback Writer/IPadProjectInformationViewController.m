@@ -13,6 +13,7 @@
 #import "THUtil.h"
 #import "UIView+THAutoLayout.h"
 #import "THLabel.h"
+#import "Outline.h"
 
 @interface IPadProjectInformationViewController ()
 
@@ -27,6 +28,24 @@ static float kMargin = 20.0f;
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
+-(void)saveProject {
+    AppDelegate *apd = [self ad];
+    NSManagedObjectContext *context = apd.managedObjectContext;
+    _project.title = _projectTitle.text;
+    _project.desc = _desc.text;
+    NSError *error;
+    if ([context save:&error]) {
+        NSLog(@"The save was successful!");
+    } else {
+        NSLog(@"The save wasn't successful: %@", [error userInfo]);
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self saveProject];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +53,49 @@ static float kMargin = 20.0f;
         // Custom initialization
     }
     return self;
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.view endEditing:YES];
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    CGFloat widthWithGutter = [THUtil getRealDeviceWidth] - (kGutter * 2);
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.4];
+    
+    CGRect scrollFrame = _scrollView.frame;
+    scrollFrame.size.width = [THUtil getRealDeviceWidth];
+    _scrollView.frame = scrollFrame;
+    
+    CGRect titleFrame = _projectTitle.frame;
+    titleFrame.size.width = widthWithGutter;
+    _projectTitle.frame = titleFrame;
+    
+    CGRect typeFrame = _typeAndGenre.frame;
+    typeFrame.size.width = widthWithGutter;
+    _typeAndGenre.frame = typeFrame;
+    
+    CGRect hrFrame = _hr.frame;
+    hrFrame.size.width = widthWithGutter;
+    _hr.frame = hrFrame;
+    
+    CGRect synopsisFrame = _synopsis.frame;
+    synopsisFrame.size.width = widthWithGutter;
+    _synopsis.frame = synopsisFrame;
+    
+    CGRect descFrame = _desc.frame;
+    descFrame.size.width = widthWithGutter;
+    _desc.frame = descFrame;
+    
+    CGRect statFrame = _statView.frame;
+   statFrame.size.width = [THUtil getRealDeviceWidth];
+    _statView.frame = statFrame;
+    [self resizeStatBoxes];
+    
+    
+    [UIView commitAnimations];
 }
 
 -(id)init {
@@ -117,6 +179,7 @@ static float kMargin = 20.0f;
     */
     
     _typeAndGenre = [[THLabel alloc] init];
+    [_typeAndGenre setTranslatesAutoresizingMaskIntoConstraints:YES];
     _typeAndGenre.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_projectTitle] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 20);
     [_typeAndGenre setFont:[UIFont fontWithName:@"Lato-Black" size:18]];
     _typeAndGenre.text = [NSString stringWithFormat:@"A %@ %@", _project.genre, _project.type];
@@ -138,6 +201,7 @@ static float kMargin = 20.0f;
 
 -(void)makeDescriptionField {
     _synopsis = [[THLabel alloc] init];
+    [_synopsis setTranslatesAutoresizingMaskIntoConstraints:YES];
     _synopsis.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_hr] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 30);
     _synopsis.text = @"Synopsis";
     [self.scrollView addSubview:_synopsis];
@@ -146,11 +210,11 @@ static float kMargin = 20.0f;
     _desc = [[UITextView alloc] init];
     _desc.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_synopsis] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 20);
     _desc.delegate = self;
-    [_desc setTranslatesAutoresizingMaskIntoConstraints:NO];
+    //[_desc setTranslatesAutoresizingMaskIntoConstraints:NO];
     _desc.font = [UIFont fontWithName:@"Lato-Light" size:16.0];
     _desc.textColor = [UIColor projectDarkTextColor];
     _desc.backgroundColor = [UIColor clearColor];
-    _desc.text = @"This is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a testThis is a test";
+    _desc.text = _project.desc;
     _desc.scrollEnabled = NO;
     [_desc sizeToFit];
     [self updateTextViewSize];
@@ -170,22 +234,41 @@ static float kMargin = 20.0f;
     [self.scrollView addSubview:_statView];
     CGFloat width = (_statView.frame.size.width - (kMargin *2) - (kGutter * 2)) / 3;
     _charBox = [[StatBox alloc] initWithFrame:CGRectMake(kGutter, 0, width, 200)];
-    _charBox.statNum.text = @"12";
+    _charBox.statNum.text = [NSString stringWithFormat:@"%d", [_project.characters count]];
     _charBox.statTitle.text = @"Characters";
     [self.statView addSubview:_charBox];
     
+    NSArray *outlines = [_project.outlines allObjects];
+    Outline *outline = [outlines objectAtIndex:0];
+    
     _sceneBox = [[StatBox alloc] initWithFrame:CGRectMake(_charBox.frame.origin.x + kMargin + width, 0, width, 200)];
-    _sceneBox.statNum.text = @"63";
+    _sceneBox.statNum.text = [NSString stringWithFormat:@"%d", [outline.scenes count]];
     _sceneBox.statTitle.text = @"Scenes";
     [self.statView addSubview:_sceneBox];
     
     _noteBox = [[StatBox alloc] initWithFrame:CGRectMake(_sceneBox.frame.origin.x + kMargin + width, 0, width, 200)];
-    _noteBox.statNum.text = @"4";
+    _noteBox.statNum.text = [NSString stringWithFormat:@"%d", [_project.researches count]];
     _noteBox.statTitle.text = @"Notes";
     [self.statView addSubview:_noteBox];
+}
+
+-(void)resizeStatBoxes {
     
+    CGFloat width = (_statView.frame.size.width - (kMargin *2) - (kGutter * 2)) / 3;
     
+    CGRect charFrame = _charBox.frame;
+    charFrame.size.width = width;
+    _charBox.frame = charFrame;
     
+    CGRect sceneFrame = _sceneBox.frame;
+    sceneFrame.size.width = width;
+    sceneFrame.origin.x = _charBox.frame.origin.x + kMargin + width;
+    _sceneBox.frame = sceneFrame;
+    
+    CGRect noteFrame = _noteBox.frame;
+    noteFrame.size.width = width;
+    noteFrame.origin.x = _sceneBox.frame.origin.x + kMargin + width;
+    _noteBox.frame = noteFrame;
 }
 
 -(void)redoTextConstWithHeight:(CGFloat)height {
@@ -233,6 +316,7 @@ static float kMargin = 20.0f;
     CGFloat newHeight = [THUtil getRealDeviceHeight];
     frame.size.height = newHeight;
     _scrollView.frame = frame;
+    [self saveProject];
      
 }
 

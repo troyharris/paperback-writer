@@ -12,6 +12,7 @@
 #import "GlobalProject.h"
 #import "AppDelegate.h"
 #import "IPadNewSceneViewController.h"
+#import "SceneCell.h"
 
 
 @interface IPadProjectOutlineTableViewController ()
@@ -115,9 +116,9 @@
 {
     NSLog(@"I'm getting in here.");
 	static NSString *cellIdentifier = @"MoveCell";
-	FMMoveTableViewCell *cell = (FMMoveTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	SceneCell *cell = (SceneCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[FMMoveTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[SceneCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     if ([tableView indexPathIsMovingIndexPath:indexPath])
 	{
@@ -137,7 +138,7 @@
 		}
         
         Scene *scene = (Scene *)[_scenes objectAtIndex:indexPath.row];
-        cell.textLabel.text = scene.title;
+        cell.sceneTitle.text = scene.title;
         NSLog(@"Scene title is: %@", scene.title);
     }
 

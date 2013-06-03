@@ -12,6 +12,7 @@
 #import "GlobalProject.h"
 #import "AppDelegate.h"
 #import "IPadNewSceneViewController.h"
+#import "SceneCell.h"
 
 @interface IPadProjectSceneTableViewController ()
 
@@ -192,9 +193,9 @@
 {
   //  NSLog(@"I'm getting in here.");
 	static NSString *cellIdentifier = @"MoveCell";
-	FMMoveTableViewCell *cell = (FMMoveTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	SceneCell *cell = (SceneCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[FMMoveTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [[SceneCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     if ([tableView indexPathIsMovingIndexPath:indexPath])
 	{
@@ -212,10 +213,20 @@
 		if ([tableView movingIndexPath]) {
             indexPath = [tableView adaptedIndexPathForRowAtIndexPath:indexPath];
 		}
-        
+        cell.contentView.hidden = NO;
         Scene *scene = (Scene *)[_scenes objectAtIndex:indexPath.row];
-        cell.textLabel.text = scene.title;
+        cell.characters = _project.characters;
+        cell.sceneTitle.text = sce1````ne.title;
         cell.detailTextLabel.text = [scene.orderNum stringValue];
+        /*
+        cell.wantedHeight = [NSNumber numberWithFloat:cell.sceneTitle.frame.size.height + 100];
+        CGRect frame = cell.frame;
+        frame.size.height = cell.sceneTitle.frame.size.height + 100;
+        cell.frame = frame;
+        CGRect contentFrame = cell.contentView.frame;
+        contentFrame.size.height = cell.sceneTitle.frame.size.height + 100;
+        cell.contentView.frame = contentFrame;
+         */
       //  NSLog(@"Scene title is: %@", scene.title);
     }
     
@@ -223,6 +234,12 @@
     
     return cell;
 }
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 130;
+}
+
 
 - (BOOL)moveTableView:(FMMoveTableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {

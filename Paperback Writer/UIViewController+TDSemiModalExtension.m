@@ -36,7 +36,7 @@
 	
 	//modalView.frame = CGRectMake(0, 10, modalView.frame.size.width, modalView.frame.size.height);
     modalView.alpha = 1.0;
-	coverView.alpha = 0.5;
+	coverView.alpha = 0.8;
     
 	[UIView commitAnimations];
 

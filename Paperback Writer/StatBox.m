@@ -29,7 +29,7 @@
         
         _statNum = [[UILabel alloc] init];
         [_statNum setTranslatesAutoresizingMaskIntoConstraints:NO];
-        _statNum.font = [UIFont fontWithName:@"Lato-Light" size:98];
+        _statNum.font = [UIFont fontWithName:@"Lato-Hairline" size:98];
         _statNum.textAlignment = NSTextAlignmentCenter;
         _statNum.textColor = [UIColor projectLightTextColor];
         _statNum.backgroundColor = [UIColor clearColor];

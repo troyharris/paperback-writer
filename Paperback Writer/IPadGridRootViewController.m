@@ -145,9 +145,11 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [_menuView orientationChange];
     [self buildProjectsList];
     [self menuReset];
     [self populateMenu];
+    [super viewWillAppear:animated];
 }
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
