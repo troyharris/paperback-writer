@@ -58,6 +58,19 @@
     return self;
 }
 
+-(id)initWithColumns:(int)col marginSize:(CGFloat)margin gutterSize:(CGFloat)gutter rowHeight:(CGFloat)height topBuffer:(CGFloat)top {
+    self = [self init];
+    if (self) {
+        _columns = col;
+        _marginSize = margin;
+        _gutterSize = gutter;
+        _rowHeight = height;
+        _xOffset = gutter;
+        _yOffset = gutter + top;
+    }
+    return self;
+}
+
 -(void)orientationChange {
  //   NSLog(@"Bound height is w: %f h: %f", [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     CGFloat deviceWidth;
