@@ -9,6 +9,8 @@
 #import "IPadProjectNewViewController.h"
 #import "AppDelegate.h"
 #import "Project.h"
+#import "Outline.h"
+#import "Scene.h"
 #import "UIColor+THColor.h"
 #import "THUtil.h"
 #import "TDSemiModal.h"
@@ -33,6 +35,9 @@ static const int kGenrePicker = 1;
     project.title = _projectTitle.text;
     project.genre = (NSString *)[_genres objectAtIndex:[self.genrePicker currentSelectedIndex]];
     project.type =(NSString *)[_types objectAtIndex:[self.typePicker currentSelectedIndex]];
+    Outline *mainOutline = [NSEntityDescription insertNewObjectForEntityForName:@"Outline" inManagedObjectContext:context];
+    mainOutline.title = @"Main";
+    [project addOutlinesObject:mainOutline];
     NSError *error = nil;
     if ([context save:&error]) {
         NSLog(@"The save was successful!");

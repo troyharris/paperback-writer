@@ -40,4 +40,11 @@
     return view.frame.origin.y + view.frame.size.height;
 }
 
++(CGPoint)getViewRealCenter:(UIView *)view {
+    CGPoint realCenter;
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    realCenter = UIInterfaceOrientationIsLandscape(orientation) ? CGPointMake(view.center.y, view.center.x) : view.center;
+    return realCenter;
+}
+
 @end

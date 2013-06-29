@@ -12,7 +12,6 @@
 #import "IPadProjectMenuViewController.h"
 #import "AppDelegate.h"
 #import "Project.h"
-#import "IPadNewProjectViewController.h"
 #import "IPadProjectNewViewController.h"
 #import "IPadSlideViewController.h"
 #import "GlobalProject.h"

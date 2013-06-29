@@ -14,5 +14,6 @@
 +(CGFloat)getRealDeviceHeight;
 +(UIInterfaceOrientation)orientation;
 +(CGFloat)getViewBottomOrigin:(UIView *)view;
++(CGPoint)getViewRealCenter:(UIView *)view;
 
 @end
