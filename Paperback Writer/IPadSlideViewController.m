@@ -98,9 +98,9 @@
 -(void)buildSlideNav {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_slideController];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressedMenuButton)];
-    [UIBarButtonItem configureFlatButtonsWithColor:[UIColor projectDarkColor] highlightedColor:[UIColor projectLightTextColor] cornerRadius:5.0];
+//    [UIBarButtonItem configureFlatButtonsWithColor:[UIColor projectDarkColor] highlightedColor:[UIColor projectLightTextColor] cornerRadius:5.0];
     
-    [nav.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor projectNavBarColor] cornerRadius:0] forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];
+//    [nav.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor projectNavBarColor] cornerRadius:0] forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];
     NSMutableDictionary *titleTextAttributes = [[nav.navigationBar titleTextAttributes] mutableCopy];
     if (!titleTextAttributes) {
         titleTextAttributes = [NSMutableDictionary dictionary];
@@ -108,10 +108,11 @@
     [titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
     [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
     [titleTextAttributes setValue:[UIFont fontWithName:@"Lato-Black" size:20] forKey:UITextAttributeFont];
-    [titleTextAttributes setValue:[UIColor projectLightTextColor] forKey:UITextAttributeTextColor];
+    [titleTextAttributes setValue:[UIColor projectDarkTextColor] forKey:UITextAttributeTextColor];
     [nav.navigationBar setTitleTextAttributes:titleTextAttributes];
     [nav.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor] cornerRadius:0]];
-    [nav.navigationItem setTitle:@"Proser"];
+    nav.navigationBar.barTintColor = [UIColor projectNavBarColor];
+    [nav.navigationItem setTitle:@"Prosey"];
     
     _slideController.navigationItem.leftBarButtonItem = button;
     self.slidingViewController = nav;

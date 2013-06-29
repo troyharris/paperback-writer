@@ -82,7 +82,7 @@
 
 -(void)menuReset {
     _menuView = nil;
-    _menuView = [[THGridMenu alloc] initWithColumns:2 marginSize:30 gutterSize:30 rowHeight:100];
+    _menuView = [[THGridMenu alloc] initWithColumns:2 marginSize:30 gutterSize:30 rowHeight:100 topBuffer:80];
     _menuView.backgroundColor = [UIColor projectBackgroundColor];
     self.view = _menuView;
 }

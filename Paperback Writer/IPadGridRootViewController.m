@@ -137,7 +137,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"Proser";
+    self.navigationItem.title = @"Prosey";
     [self buildProjectsList];
     [self populateMenu];
 	// Do any additional setup after loading the view.
