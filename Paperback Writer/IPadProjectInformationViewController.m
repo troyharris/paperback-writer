@@ -208,15 +208,15 @@ static float kMargin = 20.0f;
     
     
     _desc = [[UITextView alloc] init];
-    _desc.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_synopsis] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 20);
+    _desc.frame = CGRectMake(kGutter, [THUtil getViewBottomOrigin:_synopsis] + kMargin, [THUtil getRealDeviceWidth] - (kGutter * 2), 200);
     _desc.delegate = self;
     //[_desc setTranslatesAutoresizingMaskIntoConstraints:NO];
     _desc.font = [UIFont fontWithName:@"Lato-Light" size:16.0];
     _desc.textColor = [UIColor projectDarkTextColor];
     _desc.backgroundColor = [UIColor clearColor];
     _desc.text = _project.desc;
-    _desc.scrollEnabled = NO;
-    [_desc sizeToFit];
+    _desc.scrollEnabled = YES;
+    //[_desc sizeToFit];
     [self updateTextViewSize];
     [self.scrollView addSubview:_desc];
     /*
