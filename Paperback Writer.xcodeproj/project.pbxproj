@@ -71,6 +71,8 @@
 		2A2A8ECD17468FB000D00631 /* loopback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC517468FB000D00631 /* loopback@2x.png */; };
 		2A2A8ECE17468FB000D00631 /* right_fade.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC617468FB000D00631 /* right_fade.png */; };
 		2A2A8ECF17468FB000D00631 /* right_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC717468FB000D00631 /* right_fade@2x.png */; };
+		2A3453B61781153F0030F530 /* IPadProjectResearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3453B41781153F0030F530 /* IPadProjectResearchTableViewController.m */; };
+		2A3453B71781153F0030F530 /* IPadProjectResearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3453B51781153F0030F530 /* IPadProjectResearchTableViewController.xib */; };
 		2AAD4CA21756DF4400484B48 /* NewObjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA11756DF4400484B48 /* NewObjectLabel.m */; };
 		2AAD4CA51756E72D00484B48 /* NewObjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA41756E72D00484B48 /* NewObjectTextField.m */; };
 		2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA71756E9F500484B48 /* SelectorLabel.m */; };
@@ -186,6 +188,13 @@
 		2A2A8EC517468FB000D00631 /* loopback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loopback@2x.png"; sourceTree = "<group>"; };
 		2A2A8EC617468FB000D00631 /* right_fade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_fade.png; sourceTree = "<group>"; };
 		2A2A8EC717468FB000D00631 /* right_fade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_fade@2x.png"; sourceTree = "<group>"; };
+		2A3453AF178112C90030F530 /* Research.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Research.h; sourceTree = "<group>"; };
+		2A3453B0178112C90030F530 /* Research.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Research.m; sourceTree = "<group>"; };
+		2A3453B1178112C90030F530 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		2A3453B2178112C90030F530 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		2A3453B31781153F0030F530 /* IPadProjectResearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectResearchTableViewController.h; sourceTree = "<group>"; };
+		2A3453B41781153F0030F530 /* IPadProjectResearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectResearchTableViewController.m; sourceTree = "<group>"; };
+		2A3453B51781153F0030F530 /* IPadProjectResearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadProjectResearchTableViewController.xib; sourceTree = "<group>"; };
 		2AAD4CA01756DF4400484B48 /* NewObjectLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewObjectLabel.h; sourceTree = "<group>"; };
 		2AAD4CA11756DF4400484B48 /* NewObjectLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewObjectLabel.m; sourceTree = "<group>"; };
 		2AAD4CA31756E72D00484B48 /* NewObjectTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewObjectTextField.h; sourceTree = "<group>"; };
@@ -284,6 +293,10 @@
 				2ACC4ED417405EBB00450083 /* Project.m */,
 				2ACC4ED617405ED100450083 /* Character.h */,
 				2ACC4ED717405ED100450083 /* Character.m */,
+				2A3453B1178112C90030F530 /* Note.h */,
+				2A3453B2178112C90030F530 /* Note.m */,
+				2A3453AF178112C90030F530 /* Research.h */,
+				2A3453B0178112C90030F530 /* Research.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -425,6 +438,9 @@
 				2A2A8EA91744629400D00631 /* IPadProjectSceneTableViewController.xib */,
 				2A00E53D175646FB00C35F14 /* IPadProjectNewViewController.h */,
 				2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */,
+				2A3453B31781153F0030F530 /* IPadProjectResearchTableViewController.h */,
+				2A3453B41781153F0030F530 /* IPadProjectResearchTableViewController.m */,
+				2A3453B51781153F0030F530 /* IPadProjectResearchTableViewController.xib */,
 			);
 			name = IPadViewControllers;
 			sourceTree = "<group>";
@@ -591,6 +607,7 @@
 				2A00E517174D9A7E00C35F14 /* Lato-Hai.ttf in Resources */,
 				2A00E518174D9A7E00C35F14 /* Lato-HaiIta.ttf in Resources */,
 				2A00E519174D9A7E00C35F14 /* Lato-Lig.ttf in Resources */,
+				2A3453B71781153F0030F530 /* IPadProjectResearchTableViewController.xib in Resources */,
 				2A00E51A174D9A7E00C35F14 /* Lato-LigIta.ttf in Resources */,
 				2A00E51B174D9A7E00C35F14 /* Lato-Reg.ttf in Resources */,
 				2A00E51C174D9A7E00C35F14 /* Lato-RegIta.ttf in Resources */,
@@ -672,6 +689,7 @@
 				2A1BD492173FEC4800E2CE33 /* THGridMenu.m in Sources */,
 				2A1BD495173FED8800E2CE33 /* IPadGridRootViewController.m in Sources */,
 				2A1BD498173FF66200E2CE33 /* THGridMenuItem.m in Sources */,
+				2A3453B61781153F0030F530 /* IPadProjectResearchTableViewController.m in Sources */,
 				2ACC4ED517405EBB00450083 /* Project.m in Sources */,
 				2ACC4ED817405ED100450083 /* Character.m in Sources */,
 				2ACC4EE31742940300450083 /* CHSlideController.m in Sources */,

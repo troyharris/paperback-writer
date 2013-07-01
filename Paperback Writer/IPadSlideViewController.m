@@ -9,6 +9,7 @@
 #import "IPadSlideViewController.h"
 #import "IPadProjectCharacterViewController.h"
 #import "IPadProjectSceneTableViewController.h"
+#import "IPadProjectResearchTableViewController.h"
 #import <objc/runtime.h>
 #import <UIImage+FlatUI.h>
 #import "UIColor+THColor.h"
@@ -48,7 +49,7 @@
         }
             break;
         case 4: {
-            _slideController = [[IPadProjectCharacterViewController alloc] init];
+            _slideController = [[IPadProjectResearchTableViewController alloc] init];
             [self buildSlideNav];
         }
             break;
