@@ -119,8 +119,7 @@
     UIImage *researchIcon = [UIImage imageNamed:@"ipad-research"];
     CGPoint researchOrigin = CGPointMake(20, 320);
     ProjectButton *researchButton = [[ProjectButton alloc] initWithOrigin:researchOrigin image:researchIcon buttonText:@"Research"];
-    [researchButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
-        [researchButton addTarget:self action:@selector(pressCharacter) forControlEvents:UIControlEventTouchUpInside];
+    [researchButton addTarget:self action:@selector(pressResearch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:researchButton];
     
     UIImage *closeIcon = [UIImage imageNamed:@"ipad-close"];

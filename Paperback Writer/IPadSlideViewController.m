@@ -9,6 +9,7 @@
 #import "IPadSlideViewController.h"
 #import "IPadProjectCharacterViewController.h"
 #import "IPadProjectSceneTableViewController.h"
+#import "IPadProjectResearchTableViewController.h"
 #import <objc/runtime.h>
 #import <UIImage+FlatUI.h>
 #import "UIColor+THColor.h"
@@ -48,7 +49,7 @@
         }
             break;
         case 4: {
-            _slideController = [[IPadProjectCharacterViewController alloc] init];
+            _slideController = [[IPadProjectResearchTableViewController alloc] init];
             [self buildSlideNav];
         }
             break;
@@ -97,7 +98,10 @@
 
 -(void)buildSlideNav {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_slideController];
-    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(pressedMenuButton)];
+    nav.navigationBar.tintColor = [UIColor projectHighlightColor];
+    //UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonItemStylePlain target:self action:@selector(pressedMenuButton)];
+    UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(pressedMenuButton)];
+    //button.title = @"Menu";
 //    [UIBarButtonItem configureFlatButtonsWithColor:[UIColor projectDarkColor] highlightedColor:[UIColor projectLightTextColor] cornerRadius:5.0];
     
 //    [nav.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor projectNavBarColor] cornerRadius:0] forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];

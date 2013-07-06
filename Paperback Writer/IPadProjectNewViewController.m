@@ -135,7 +135,7 @@ static const int kGenrePicker = 1;
     //NSArray *pickerConst = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_typePicker(==pickerWidth)]-[_genrePicker(==pickerWidth)]-|" options:0 metrics:metrics views:NSDictionaryOfVariableBindings(_typePicker, _genrePicker)];
     //[self.view addConstraints:pickerConst];
     
-    NSArray *pickerLabConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_typeLabel(>=200)]-[_genreLabel(==_typeLabel)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_typeLabel, _genreLabel)];
+    NSArray *pickerLabConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_typeLabel]-[_genreLabel(==_typeLabel)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_typeLabel, _genreLabel)];
     [self.view addConstraints:pickerLabConsts];
     
     CGFloat buttonWidth = ([THUtil getRealDeviceWidth] - 60) / 2;
