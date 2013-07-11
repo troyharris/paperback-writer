@@ -15,5 +15,6 @@
 +(UIInterfaceOrientation)orientation;
 +(CGFloat)getViewBottomOrigin:(UIView *)view;
 +(CGPoint)getViewRealCenter:(UIView *)view;
++(UIColor *)getRandomColor:(NSArray *)colors;
 
 @end

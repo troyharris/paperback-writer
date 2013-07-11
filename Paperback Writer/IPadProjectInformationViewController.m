@@ -29,6 +29,8 @@ static float kMargin = 20.0f;
 }
 
 -(void)saveProject {
+    [_desc resignFirstResponder];
+    [_projectTitle resignFirstResponder];
     AppDelegate *apd = [self ad];
     NSManagedObjectContext *context = apd.managedObjectContext;
     _project.title = _projectTitle.text;
@@ -102,7 +104,8 @@ static float kMargin = 20.0f;
     self = [super init];
     if (self) {
         self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHeight:) name:UIKeyboardDidShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHasShown:) name:UIKeyboardDidShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHasHid:) name:UIKeyboardWillHideNotification object:nil];
         //[self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
         //self.view.autoresizesSubviews = YES;
         [self viewDidLoad];
@@ -113,7 +116,9 @@ static float kMargin = 20.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveProject)];
     _scrollView = [[UIScrollView alloc] init];
+    _scrollView.delegate = self;
     CGRect tmpFrame = CGRectMake(0, 0, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight]);
     _scrollView.frame = tmpFrame;
     _scrollView.contentSize = _scrollView.frame.size;
@@ -215,10 +220,11 @@ static float kMargin = 20.0f;
     _desc.textColor = [UIColor projectDarkTextColor];
     _desc.backgroundColor = [UIColor clearColor];
     _desc.text = _project.desc;
-    _desc.scrollEnabled = YES;
+    _desc.scrollEnabled = NO;
     //[_desc sizeToFit];
-    [self updateTextViewSize];
     [self.scrollView addSubview:_desc];
+    [self updateTextViewSize];
+    [self updateScrollViewSize];
     /*
     [self.contentView addConstraintsWithString:@"H:|-(gutter)-[_synopsis]" bindings:NSDictionaryOfVariableBindings(_synopsis)];
     [self.contentView addConstraintsWithString:@"H:|-(gutter)-[_desc]-(gutter)-|" bindings:NSDictionaryOfVariableBindings(_desc)];
@@ -284,6 +290,9 @@ static float kMargin = 20.0f;
 -(void)viewWillAppear:(BOOL)animated {
     GlobalProject *gp = [GlobalProject sharedProject];
     _project = gp.project;
+    [self updateTextViewSize];
+    [self updateScrollViewSize];
+    [_scrollView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
     [super viewWillAppear:animated];
     
     
@@ -298,24 +307,30 @@ static float kMargin = 20.0f;
 #pragma mark - TextViewDelegate functions
 
 -(void)textViewDidBeginEditing:(UITextView *)textView {
+    /*
     CGFloat keyboardSize;
     if (UIInterfaceOrientationIsLandscape([THUtil orientation])) {
-        keyboardSize = 420;
+       // keyboardSize = 420;
+        keyboardSize = [self realKeyboardHeight];
     } else {
-        keyboardSize = 330;
+       // keyboardSize = 330;
+        keyboardSize = [self realKeyboardHeight];
     }
     CGRect frame = _scrollView.frame;
     CGFloat newHeight = frame.size.height - keyboardSize;
     frame.size.height = newHeight;
     _scrollView.frame = frame;
+     */
      
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView {
+    /*
     CGRect frame = _scrollView.frame;
     CGFloat newHeight = [THUtil getRealDeviceHeight];
     frame.size.height = newHeight;
     _scrollView.frame = frame;
+     */
     [self saveProject];
      
 }
@@ -323,14 +338,21 @@ static float kMargin = 20.0f;
 -(void)textViewDidChange:(UITextView *)textView {
     [self updateTextViewSize];
     [self updateScrollViewSize];
+    [_desc setNeedsLayout];
+    [_scrollView setNeedsLayout];
 }
 
 -(void)updateTextViewSize {
     CGRect frame = _desc.frame;
-    frame.size.height = _desc.contentSize.height;
-    NSLog(@"textbox height is %f", _desc.contentSize.height);
-    NSLog(@"scrollview content height is %f", _scrollView.frame.size.height);
-    NSLog(@"scrollview frame height is %f", _scrollView.contentSize.height);
+    //frame.size.height = _desc.contentSize.height;
+    NSLayoutManager *layout = [_desc layoutManager];
+    NSRange charRange = NSMakeRange(0, _desc.text.length);
+    CGRect glyphRect = [layout boundingRectForGlyphRange:charRange inTextContainer:[_desc textContainer]];
+    frame.size.height = glyphRect.size.height + 10;
+    //frame.size.height = _desc.intrinsicContentSize.height;
+    NSLog(@"textbox height is %f", glyphRect.size.height);
+    NSLog(@"scrollview content height is %f", _scrollView.contentSize.height);
+    NSLog(@"scrollview frame height is %f", _scrollView.frame.size.height);
     _desc.frame = frame;
     CGFloat statBoxOrigin = [THUtil getViewBottomOrigin:_desc] + (kMargin * 2);
     _statView.frame = CGRectMake(_statView.frame.origin.x, statBoxOrigin, _statView.frame.size.width, _statView.frame.size.height);
@@ -340,23 +362,90 @@ static float kMargin = 20.0f;
     CGSize contentSize = _scrollView.contentSize;
     contentSize.height = _statView.frame.origin.y + _statView.frame.size.height + (kGutter *4);
     _scrollView.contentSize = contentSize;
+            [self scrollToCursor];
 }
 
 -(void)keyboardHeight:(NSNotification*)notification {
     NSDictionary* keyboardInfo = [notification userInfo];
     _keyHeight = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    NSLog(@"Keyboard height changed to %f", [_keyHeight CGRectValue].size.height);
+    //_keyHeight = [keyboardInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
 }
-    
+
+-(void)keyboardHasShown:(NSNotification *)notification {
+    NSDictionary* keyboardInfo = [notification userInfo];
+    _keyHeight = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+    CGFloat keyboardSize;
+    if (UIInterfaceOrientationIsLandscape([THUtil orientation])) {
+        // keyboardSize = 420;
+        keyboardSize = [self realKeyboardHeight];
+    } else {
+        // keyboardSize = 330;
+        keyboardSize = [self realKeyboardHeight];
+    }
+    CGRect frame = _scrollView.frame;
+    CGFloat newHeight = frame.size.height - keyboardSize;
+    frame.size.height = newHeight;
+    _scrollView.frame = frame;
+    NSLog(@"THE SCROLLVIEW FRAME SIZE HEIGHT IS %f", _scrollView.frame.size.height);
+    [self scrollToCursor];
+    self.navigationItem.rightBarButtonItem = _doneButton;
+}
+
+-(void)keyboardHasHid:(NSNotification *)notification {
+        [_desc setNeedsLayout];
+    CGRect frame = _scrollView.frame;
+    CGFloat newHeight = [THUtil getRealDeviceHeight];
+    frame.size.height = newHeight;
+    _scrollView.frame = frame;
+    self.navigationItem.rightBarButtonItem = nil;
+}
+
 -(CGFloat)realKeyboardHeight {
     CGFloat height;
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     if(UIInterfaceOrientationIsLandscape(orientation)) {
         height = [_keyHeight CGRectValue].size.width;
+        //height = [_keyHeight CGRectValue].size.height;
     } else {
         height = [_keyHeight CGRectValue].size.height;
     }
-    NSLog(@"Keyboard Height is %f", [_keyHeight CGRectValue].size.height);
+    NSLog(@"Keyboard Height is %f", height);
     return height;
 }
+
+- (void)scrollToCursor
+{
+    // if there is a selection cursor…
+    if(_desc.selectedRange.location != NSNotFound) {
+        NSLog(@"WEEEARESCROLLING>...");
+       // NSLog(@"selectedRange: %d %d", noteTextView.selectedRange.location, noteTextView.selectedRange.length);
+        
+        // work out how big the text view would be if the text only went up to the cursor
+        NSRange range;
+        range.location = _desc.selectedRange.location;
+        range.length = _desc.text.length - range.location;
+        NSString *string = [_desc.text stringByReplacingCharactersInRange:range withString:@""];
+        CGSize size = [string sizeWithFont:_desc.font constrainedToSize:_desc.bounds.size lineBreakMode:NSLineBreakByWordWrapping];
+        
+        // work out where that position would be relative to the textView's frame
+        CGRect viewRect = _desc.frame;
+        float scrollHeight = viewRect.origin.y + size.height;
+        CGRect finalRect = CGRectMake(1, scrollHeight, 1, 30);
+        
+        // scroll to it
+        NSLog(@"SCROLL TO %f", scrollHeight);
+        [_scrollView scrollRectToVisible:finalRect animated:YES];
+    }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"SV delegate at your service");
+    [_desc setNeedsLayout];
+   // [_scrollView setNeedsLayout];
+   // [_scrollView layoutIfNeeded];
+   // [_scrollView layoutSubviews];
+}
+
 
 @end

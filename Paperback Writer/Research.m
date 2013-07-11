@@ -16,5 +16,6 @@
 @dynamic type;
 @dynamic notes;
 @dynamic project;
+@dynamic color;
 
 @end

@@ -47,4 +47,11 @@
     return realCenter;
 }
 
++(UIColor *)getRandomColor:(NSArray *)colors {
+    int amount = [colors count];
+    int rand = arc4random() % amount;
+    UIColor *luckyColor = (UIColor *)[colors objectAtIndex:rand];
+    return luckyColor;
+}
+
 @end

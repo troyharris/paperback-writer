@@ -29,6 +29,8 @@
 		2A00E539174EC5B300C35F14 /* IPadProjectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */; };
 		2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E53B174FCE7B00C35F14 /* THUtil.m */; };
 		2A00E53F175646FC00C35F14 /* IPadProjectNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */; };
+		2A0B12CB178CEBEB00829310 /* IPadProjectResearchCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B12CA178CEBEB00829310 /* IPadProjectResearchCollectViewController.m */; };
+		2A0B12CE178CF21F00829310 /* ReferenceCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B12CD178CF21F00829310 /* ReferenceCollectCell.m */; };
 		2A1BD43F173C805C00E2CE33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD43E173C805C00E2CE33 /* UIKit.framework */; };
 		2A1BD441173C805C00E2CE33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD440173C805C00E2CE33 /* Foundation.framework */; };
 		2A1BD443173C805C00E2CE33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1BD442173C805C00E2CE33 /* CoreGraphics.framework */; };
@@ -73,6 +75,8 @@
 		2A2A8ECF17468FB000D00631 /* right_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC717468FB000D00631 /* right_fade@2x.png */; };
 		2A3453C2178118170030F530 /* IPadProjectResearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3453C0178118170030F530 /* IPadProjectResearchTableViewController.m */; };
 		2A3453C3178118170030F530 /* IPadProjectResearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */; };
+		2A4C3067178E26F600D71270 /* ReferenceNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C3066178E26F600D71270 /* ReferenceNewCell.m */; };
+		2A4C306A178EF2A500D71270 /* IPadNoteImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C3069178EF2A400D71270 /* IPadNoteImageViewController.m */; };
 		2AAD4CA21756DF4400484B48 /* NewObjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA11756DF4400484B48 /* NewObjectLabel.m */; };
 		2AAD4CA51756E72D00484B48 /* NewObjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA41756E72D00484B48 /* NewObjectTextField.m */; };
 		2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA71756E9F500484B48 /* SelectorLabel.m */; };
@@ -131,6 +135,10 @@
 		2A00E53B174FCE7B00C35F14 /* THUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUtil.m; sourceTree = "<group>"; };
 		2A00E53D175646FB00C35F14 /* IPadProjectNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectNewViewController.h; sourceTree = "<group>"; };
 		2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectNewViewController.m; sourceTree = "<group>"; };
+		2A0B12C9178CEBEB00829310 /* IPadProjectResearchCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectResearchCollectViewController.h; sourceTree = "<group>"; };
+		2A0B12CA178CEBEB00829310 /* IPadProjectResearchCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectResearchCollectViewController.m; sourceTree = "<group>"; };
+		2A0B12CC178CF21F00829310 /* ReferenceCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceCollectCell.h; sourceTree = "<group>"; };
+		2A0B12CD178CF21F00829310 /* ReferenceCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceCollectCell.m; sourceTree = "<group>"; };
 		2A1BD43B173C805C00E2CE33 /* Paperback Writer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paperback Writer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1BD43E173C805C00E2CE33 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2A1BD440173C805C00E2CE33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +200,10 @@
 		2A3453BF178118170030F530 /* IPadProjectResearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectResearchTableViewController.h; sourceTree = "<group>"; };
 		2A3453C0178118170030F530 /* IPadProjectResearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectResearchTableViewController.m; sourceTree = "<group>"; };
 		2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadProjectResearchTableViewController.xib; sourceTree = "<group>"; };
+		2A4C3065178E26F600D71270 /* ReferenceNewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceNewCell.h; sourceTree = "<group>"; };
+		2A4C3066178E26F600D71270 /* ReferenceNewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceNewCell.m; sourceTree = "<group>"; };
+		2A4C3068178EF2A400D71270 /* IPadNoteImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNoteImageViewController.h; sourceTree = "<group>"; };
+		2A4C3069178EF2A400D71270 /* IPadNoteImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNoteImageViewController.m; sourceTree = "<group>"; };
 		2AAC534D1782569A0047A41B /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2AAC534E1782569A0047A41B /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2AAC534F1782569B0047A41B /* Research.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Research.h; sourceTree = "<group>"; };
@@ -446,6 +458,10 @@
 				2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */,
 				2AFD0749178129AF000AF00A /* IPadNewResearchViewController.h */,
 				2AFD074A178129AF000AF00A /* IPadNewResearchViewController.m */,
+				2A0B12C9178CEBEB00829310 /* IPadProjectResearchCollectViewController.h */,
+				2A0B12CA178CEBEB00829310 /* IPadProjectResearchCollectViewController.m */,
+				2A4C3068178EF2A400D71270 /* IPadNoteImageViewController.h */,
+				2A4C3069178EF2A400D71270 /* IPadNoteImageViewController.m */,
 			);
 			name = IPadViewControllers;
 			sourceTree = "<group>";
@@ -480,6 +496,10 @@
 				2AAD4CF1175C0CA600484B48 /* SceneCell.m */,
 				2A00E532174E6CEE00C35F14 /* ProjectButton.h */,
 				2A00E533174E6CEE00C35F14 /* ProjectButton.m */,
+				2A0B12CC178CF21F00829310 /* ReferenceCollectCell.h */,
+				2A0B12CD178CF21F00829310 /* ReferenceCollectCell.m */,
+				2A4C3065178E26F600D71270 /* ReferenceNewCell.h */,
+				2A4C3066178E26F600D71270 /* ReferenceNewCell.m */,
 			);
 			name = CustomViewElements;
 			sourceTree = "<group>";
@@ -704,6 +724,7 @@
 				2A2A8E851742FC5300D00631 /* THGridMenuItem+ProjectItem.m in Sources */,
 				2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */,
 				2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */,
+				2A0B12CB178CEBEB00829310 /* IPadProjectResearchCollectViewController.m in Sources */,
 				2A2A8E9417441F6100D00631 /* Outline.m in Sources */,
 				2A2A8E9717441F7500D00631 /* Scene.m in Sources */,
 				2A2A8EA017444DE500D00631 /* IPadNewSceneViewController.m in Sources */,
@@ -714,14 +735,17 @@
 				2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */,
 				2A00E53F175646FC00C35F14 /* IPadProjectNewViewController.m in Sources */,
 				2AAD4CA21756DF4400484B48 /* NewObjectLabel.m in Sources */,
+				2A0B12CE178CF21F00829310 /* ReferenceCollectCell.m in Sources */,
 				2AAD4CA51756E72D00484B48 /* NewObjectTextField.m in Sources */,
 				2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */,
 				2AAD4CAB1756EEC600484B48 /* ProjectPicker.m in Sources */,
 				2AAD4CB2175717A800484B48 /* TDSemiModalViewController.m in Sources */,
 				2AAD4CB3175717A800484B48 /* UIViewController+TDSemiModalExtension.m in Sources */,
 				2AAD4CBA1759154A00484B48 /* UIView+THAutoLayout.m in Sources */,
+				2A4C306A178EF2A500D71270 /* IPadNoteImageViewController.m in Sources */,
 				2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */,
 				2AAD4CEF175BC81900484B48 /* StatBox.m in Sources */,
+				2A4C3067178E26F600D71270 /* ReferenceNewCell.m in Sources */,
 				2AAD4CF2175C0CA700484B48 /* SceneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

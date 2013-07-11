@@ -11,7 +11,7 @@
 #import "THLabel.h"
 #import "StatBox.h"
 
-@interface IPadProjectInformationViewController : UIViewController <UITextViewDelegate>
+@interface IPadProjectInformationViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) Project *project;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -30,5 +30,6 @@
 @property (nonatomic, strong) StatBox *charBox;
 @property (nonatomic, strong) StatBox *sceneBox;
 @property (nonatomic, strong) StatBox *noteBox;
+@property (nonatomic, strong) UIBarButtonItem *doneButton;
 
 @end

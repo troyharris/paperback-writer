@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) Note *notes;
 @property (nonatomic, retain) Project *project;
+@property (nonatomic, retain) UIColor *color;
 
 @end

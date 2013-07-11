@@ -20,13 +20,12 @@
 
 @end
 
-@interface IPadNewResearchViewController : UIViewController <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate>
+@interface IPadNewResearchViewController : UIViewController <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) FUIButton *add;
 @property (nonatomic, strong) FUIButton *cancel;
 @property (nonatomic, strong) NewObjectLabel *header;
 @property (nonatomic, strong) NewObjectTextField *researchTitle;
-@property (nonatomic, strong) ProjectPicker *typePicker;
 @property (nonatomic, strong) SelectorLabel *typeLabel;
 @property (nonatomic, strong) NSArray *types;
 @property (nonatomic, strong) UIView *topView;
@@ -40,5 +39,10 @@
 @property (nonatomic, strong) UITextView *noteText;
 @property (nonatomic, strong) UITextField *urlText;
 @property (nonatomic, strong) UISegmentedControl *typeSwitch;
+@property (nonatomic, strong) UIImagePickerController *galleryPicker;
+@property (nonatomic, strong) UIImagePickerController *cameraPicker;
+@property (nonatomic, strong) NSData *imageData;
+@property (nonatomic, strong) NSArray *noteColors;
+@property (nonatomic, strong) NSArray *urlColors;
 
 @end
