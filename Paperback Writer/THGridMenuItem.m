@@ -22,7 +22,7 @@
         self.backgroundColor = [UIColor projectHighlightColor];
         CGRect titleFrame = CGRectMake(10, 0, self.frame.size.width - 20, self.frame.size.height);
         _title = [[UILabel alloc] initWithFrame:titleFrame];
-        _title.textColor = [UIColor whiteColor];
+        _title.textColor = [UIColor colorFromHex:@"#b0291b" withAlpha:1.0];
         _title.backgroundColor = [UIColor clearColor];
         _title.font = [UIFont fontWithName:@"Lato-Light" size:30];
         _title.textAlignment = NSTextAlignmentCenter;
@@ -32,7 +32,7 @@
         [self addSubview:_title];
         CGRect typeFrame = CGRectMake((self.frame.size.width / 2) - 10, 64, self.frame.size.width / 2, 20);
         _type = [[UILabel alloc] initWithFrame:typeFrame];
-        _type.textColor = [UIColor whiteColor];
+        _type.textColor = [UIColor projectDarkColor];
         _type.backgroundColor = [UIColor clearColor];
         _type.font = [UIFont fontWithName:@"Lato-Light" size:14];
         _type.adjustsFontSizeToFitWidth = YES;

@@ -1,15 +1,16 @@
 //
-//  ReferenceCollectCell.m
+//  ProjectCell.m
 //  Paperback Writer
 //
-//  Created by Troy HARRIS on 7/9/13.
+//  Created by Troy HARRIS on 7/11/13.
 //  Copyright (c) 2013 Lone Yeti. All rights reserved.
 //
 
-#import "ReferenceCollectCell.h"
+#import "ProjectCell.h"
+#import <FLKAutoLayout/UIView+FLKAutoLayout.h>
 #import "UIColor+THColor.h"
 
-@implementation ReferenceCollectCell
+@implementation ProjectCell
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -19,27 +20,38 @@
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         [_imageView setClipsToBounds:YES];
         [self addSubview:_imageView];
-        _cellTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, (self.bounds.size.height / 2) - 30, self.bounds.size.width, 60)];
+        _cellTitle = [[UILabel alloc] init];
         [_cellTitle setTextAlignment:NSTextAlignmentCenter];
-        _cellTitle.font = [UIFont fontWithName:@"Lato-Black" size:30];
-        [_cellTitle adjustsFontSizeToFitWidth];
+        _cellTitle.font = [UIFont fontWithName:@"Lato-Light" size:30];
         _cellTitle.textAlignment = NSTextAlignmentCenter;
-        _cellTitle.textColor = [UIColor whiteColor];
+        _cellTitle.textColor = [UIColor blackColor];
+        [_cellTitle adjustsFontSizeToFitWidth];
+        
         [self addSubview:_cellTitle];
+        
+        [_cellTitle alignTop:@"0" bottom:@"0" toView:_cellTitle.superview];
+        [_cellTitle alignLeading:@"0" trailing:@"0" toView:_cellTitle.superview];
+        
+        _subTitle = [[UILabel alloc] init];
+        _subTitle.font = [UIFont fontWithName:@"Lato-Light" size:14];
+        _subTitle.textColor = [UIColor blackColor];
+        [self addSubview:_subTitle];
+        
+        [_subTitle alignTrailingEdgeWithView:[_subTitle superview] predicate:@"-20"];
+        [_subTitle alignBottomEdgeWithView:[_subTitle superview] predicate:@"-20"];
+        
         [self setClipsToBounds:YES];
-        // Initialization code
         
         self.layer.borderColor = [UIColor colorFromHex:@"e0e0e0" withAlpha:1.0].CGColor;
         self.layer.borderWidth = 1;
+        // Initialization code
     }
     return self;
 }
 
 -(void)willRotate {
-    _cellTitle.frame = CGRectMake(0, (self.bounds.size.height / 2) - 30, self.bounds.size.width, 60);
-    _imageView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

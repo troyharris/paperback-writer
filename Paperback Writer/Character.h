@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * bio;
 @property (nonatomic, retain) NSString * gender;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSSet *notes;
 @property (nonatomic, retain) Project *project;
 @property (nonatomic, retain) NSSet *scenes;

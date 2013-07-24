@@ -58,6 +58,32 @@
 }
 
 +(UIColor *) projectBackgroundColor {
+    return [UIColor whiteColor];
+}
+
++(UIColor *) projectHighlightColor {
+    return [UIColor colorWithRed:0.96 green:0.97 blue:0.95 alpha:1.0];
+}
+
++(UIColor *) projectNavBarColor {
+    return [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0];
+}
+
++(UIColor *) projectLightTextColor {
+    return [UIColor colorFromHex:@"6d8b5f" withAlpha:1.0];
+}
+
++(UIColor *) projectDarkTextColor {
+    return [self colorFromHex:@"3a2b1f" withAlpha:1.0];
+}
+
+
+/* VERSION 0.1 COLORS
++(UIColor *) projectDarkColor {
+    return [UIColor midnightBlueColor];
+}
+
++(UIColor *) projectBackgroundColor {
     return [UIColor cloudsColor];
 }
 
@@ -76,6 +102,8 @@
 +(UIColor *) projectDarkTextColor {
     return [self colorFromHex:@"000000" withAlpha:1.0];
 }
+
+ */
 
 /*
  +(UIColor *) projectDarkColor {

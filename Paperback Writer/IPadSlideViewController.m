@@ -11,6 +11,7 @@
 #import "IPadProjectSceneTableViewController.h"
 #import "IPadProjectResearchTableViewController.h"
 #import "IPadProjectResearchCollectViewController.h"
+#import "IPadProjectCharacterCollectionViewController.h"
 #import <objc/runtime.h>
 #import <UIImage+FlatUI.h>
 #import "UIColor+THColor.h"
@@ -40,7 +41,7 @@
         }
             break;
         case 2: {
-            _slideController = [[IPadProjectCharacterViewController alloc] init];
+            _slideController = [[IPadProjectCharacterCollectionViewController alloc] init];
             [self buildSlideNav];
         }
             break;
@@ -99,7 +100,7 @@
 
 -(void)buildSlideNav {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:_slideController];
-    nav.navigationBar.tintColor = [UIColor projectHighlightColor];
+    nav.navigationBar.tintColor = [UIColor projectDarkTextColor];
     //UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonItemStylePlain target:self action:@selector(pressedMenuButton)];
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(pressedMenuButton)];
     //button.title = @"Menu";

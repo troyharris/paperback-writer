@@ -8,8 +8,10 @@
 
 #import "AppDelegate.h"
 #import "IPadGridRootViewController.h"
+#import "IPadRootCollectionViewController.h"
 #import "UIColor+THColor.h"
 #import <UIImage+FlatUI.h>
+#import <UIColor+FlatUI.h>
 
 @implementation AppDelegate
 
@@ -23,25 +25,26 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     NSLog(@"tt0001m_: %@", [UIFont fontNamesForFamilyName:@"Lato"]);
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        IPadGridRootViewController *rootController = [[IPadGridRootViewController alloc] init];
+        IPadRootCollectionViewController *rootController = [[IPadRootCollectionViewController alloc] init];
        self.navController = [[UINavigationController alloc] initWithRootViewController:rootController];
  //       [self.navController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor projectNavBarColor] cornerRadius:0] forBarMetrics:UIBarMetricsDefault & UIBarMetricsLandscapePhone];
         NSMutableDictionary *titleTextAttributes = [[self.navController.navigationBar titleTextAttributes] mutableCopy];
         if (!titleTextAttributes) {
             titleTextAttributes = [NSMutableDictionary dictionary];
         }
-        [titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
-        [titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
-        [titleTextAttributes setValue:[UIFont fontWithName:@"Lato-Black" size:20] forKey:UITextAttributeFont];
-        [titleTextAttributes setValue:[UIColor projectDarkTextColor] forKey:UITextAttributeTextColor];
+        //[titleTextAttributes setValue:[UIColor clearColor] forKey:UITextAttributeTextShadowColor];
+        //[titleTextAttributes setValue:[NSValue valueWithUIOffset:UIOffsetMake(0, 0)] forKey:UITextAttributeTextShadowOffset];
+        [titleTextAttributes setValue:[UIFont fontWithName:@"Lato-Black" size:20] forKey:NSFontAttributeName];
+        [titleTextAttributes setValue:[UIColor projectDarkTextColor] forKey:NSForegroundColorAttributeName];
         [self.navController.navigationBar setTitleTextAttributes:titleTextAttributes];
 //        [self.navController.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor clearColor] cornerRadius:0]];
         [self.navController.navigationItem setTitle:@"Prosey"];
         self.navController.navigationBar.barTintColor = [UIColor projectNavBarColor];
+        self.navController.navigationBar.tintColor = [UIColor pomegranateColor];
         [self.window setRootViewController:_navController];
         [self.window makeKeyAndVisible];
     } else {
-        IPadGridRootViewController *rootController = [[IPadGridRootViewController alloc] init];
+        IPadRootCollectionViewController *rootController = [[IPadRootCollectionViewController alloc] init];
         self.navController = [[UINavigationController alloc] initWithRootViewController:rootController];
         [self.window setRootViewController:_navController];
         [self.window makeKeyAndVisible];

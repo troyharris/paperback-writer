@@ -17,6 +17,7 @@
 @dynamic bio;
 @dynamic gender;
 @dynamic name;
+@dynamic type;
 @dynamic notes;
 @dynamic project;
 @dynamic scenes;

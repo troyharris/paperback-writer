@@ -16,6 +16,7 @@
 #import "UIColor+THColor.h"
 #import <UIColor+FlatUI.h>
 #import "ReferenceNewCell.h"
+#import "ProjectCell.h"
 #import "IPadNoteImageViewController.h"
 
 @interface IPadProjectResearchCollectViewController ()
@@ -42,16 +43,18 @@
     if (self) {
         // Custom initialization
         _layoutFlow = [[UICollectionViewFlowLayout alloc] init];
-        CGFloat square = [THUtil getRealDeviceWidth] / 2;
-        _layoutFlow.itemSize = CGSizeMake(square, square);
+ //       CGFloat square = [THUtil getRealDeviceWidth] / 2;
+//        _layoutFlow.itemSize = CGSizeMake(square, square);
         _layoutFlow.minimumInteritemSpacing = 0;
         _layoutFlow.minimumLineSpacing = 0;
         _collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight]) collectionViewLayout:_layoutFlow];
-        [_collectView registerClass:[ReferenceCollectCell class] forCellWithReuseIdentifier:@"aCell"];
+        [_collectView registerClass:[ProjectCell class] forCellWithReuseIdentifier:@"aCell"];
         [_collectView registerClass:[ReferenceNewCell class] forCellWithReuseIdentifier:@"newCell"];
         _collectView.delegate = self;
         _collectView.dataSource = self;
         _collectView.backgroundColor = [UIColor whiteColor];
+        _layoutFlow.minimumInteritemSpacing = 0;
+        _layoutFlow.minimumLineSpacing = 10;
         self.view = _collectView;
         [_collectView setContentInset:UIEdgeInsetsMake(80, 0, 0, 0)];
     }
@@ -87,28 +90,29 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row != [_researches count]) {
         NSLog(@"GOtta get a cell");
         static NSString *reuse = @"aCell";
-        ReferenceCollectCell *cell = [_collectView dequeueReusableCellWithReuseIdentifier:reuse forIndexPath:indexPath];
+        ProjectCell *cell = [_collectView dequeueReusableCellWithReuseIdentifier:reuse forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor projectHighlightColor];
         [cell willRotate];
+    if (indexPath.row != [_researches count]) {
         //cell.backgroundView.backgroundColor = [UIColor lightGrayColor];
         Research *r = [_researches objectAtIndex:indexPath.row];
         cell.cellTitle.text = r.notes.desc;
+        cell.subTitle.text = [NSString stringWithFormat:@"A %@", r.type];
         cell.imageView.image = [UIImage imageWithData:r.notes.image];
         CGImageRef cgref = [cell.imageView.image CGImage];
         CIImage *cim = [cell.imageView.image CIImage];
         if (cim != nil || cgref != NULL) {
             cell.cellTitle.hidden = YES;
         }
-        cell.backgroundColor = r.color;
-        return cell;
+        //cell.backgroundColor = r.color;
     } else {
-        NSLog(@"Got that new cell");
-        ReferenceNewCell *newCell = [_collectView dequeueReusableCellWithReuseIdentifier:@"newCell" forIndexPath:indexPath];
-        return newCell;
+        cell.cellTitle.text = @"+";
+        cell.subTitle.text = @"";
+        cell.cellTitle.font = [UIFont fontWithName:@"Lato-Hairline" size:100];
     }
-    return nil;
+    return cell;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -127,7 +131,7 @@
     if (indexPath.row == [_researches count]) {
         [self showNewResearch];
     } else {
-        ReferenceCollectCell *cell = (ReferenceCollectCell *)[_collectView cellForItemAtIndexPath:indexPath];
+        ProjectCell *cell = (ProjectCell *)[_collectView cellForItemAtIndexPath:indexPath];
         CGImageRef cgref = [cell.imageView.image CGImage];
         CIImage *cim = [cell.imageView.image CIImage];
         if (cim != nil || cgref != NULL) {
@@ -136,6 +140,11 @@
             [self.navigationController pushViewController:imageVC animated:YES];
         }
     }
+}
+
+-(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat square = ([THUtil getRealDeviceWidth] / 2) - 40;
+    return CGSizeMake(square, 150);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

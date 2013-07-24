@@ -15,14 +15,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _plus = [[UILabel alloc] initWithFrame:CGRectMake(0, (self.bounds.size.height / 2) - 120, self.bounds.size.width, 200)];
-        _plus.font = [UIFont fontWithName:@"Lato-Hairline" size:200];
+        _plus = [[UILabel alloc] initWithFrame:CGRectMake(0, (self.bounds.size.height / 2) - 120, self.bounds.size.width, 100)];
+        _plus.font = [UIFont fontWithName:@"Lato-Hairline" size:100];
         _plus.text = @"+";
         self.backgroundColor = [UIColor projectNavBarColor];
         _plus.textColor = [UIColor projectDarkTextColor];
         //_plus.backgroundColor = [UIColor whiteColor];
         _plus.textAlignment = NSTextAlignmentCenter;
         _plus.numberOfLines = 0;
+        
+        self.layer.borderColor = [UIColor colorFromHex:@"e0e0e0" withAlpha:1.0].CGColor;
+        self.layer.borderWidth = 1;
+        
         [self addSubview:_plus];
         
         // Initialization code

@@ -16,5 +16,7 @@
 +(CGFloat)getViewBottomOrigin:(UIView *)view;
 +(CGPoint)getViewRealCenter:(UIView *)view;
 +(UIColor *)getRandomColor:(NSArray *)colors;
++(CGFloat)getFontSizeFromIPadFontSize:(CGFloat)fontSize;
++(CGFloat)getFontSizeFromIPhoneFontSize:(CGFloat)fontSize;
 
 @end

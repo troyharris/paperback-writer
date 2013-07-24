@@ -54,4 +54,18 @@
     return luckyColor;
 }
 
++(CGFloat)getFontSizeFromIPadFontSize:(CGFloat)fontSize {
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        fontSize = fontSize / 2.591;
+    }
+    return fontSize;
+}
+
++(CGFloat)getFontSizeFromIPhoneFontSize:(CGFloat)fontSize {
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        fontSize = fontSize * 2.591;
+    }
+    return fontSize;
+}
+
 @end

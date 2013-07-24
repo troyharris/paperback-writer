@@ -1,6 +1,7 @@
-platform :ios, '5.0'
+platform :ios, '6.0'
 pod 'ViewDeck', '~>2.2.11'
 pod 'FMMoveTableView', '~>1.1.2'
 pod 'V8HorizontalPickerView', '~> 1.0.0'
 pod 'PrettyKit'
 pod 'FlatUIKit', '~> 1.0.0'
+pod 'FLKAutoLayout'
