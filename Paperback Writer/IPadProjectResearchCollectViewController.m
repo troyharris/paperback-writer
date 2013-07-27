@@ -18,6 +18,7 @@
 #import "ReferenceNewCell.h"
 #import "ProjectCell.h"
 #import "IPadNoteImageViewController.h"
+#import "IPadNoteWebViewController.h"
 
 @interface IPadProjectResearchCollectViewController ()
 
@@ -138,6 +139,11 @@
             IPadNoteImageViewController *imageVC = [[IPadNoteImageViewController alloc] init];
             imageVC.imageView.image = cell.imageView.image;
             [self.navigationController pushViewController:imageVC animated:YES];
+        } else if ([cell.subTitle.text isEqualToString:@"A URL"]) {
+            IPadNoteWebViewController *webVC = [[IPadNoteWebViewController alloc] init];
+            Research *r = (Research *)[_researches objectAtIndex:indexPath.row];
+            webVC.url = r.notes.content;
+            [self.navigationController pushViewController:webVC animated:YES];
         }
     }
 }
