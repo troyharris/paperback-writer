@@ -77,6 +77,7 @@
 		2A3453C2178118170030F530 /* IPadProjectResearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3453C0178118170030F530 /* IPadProjectResearchTableViewController.m */; };
 		2A3453C3178118170030F530 /* IPadProjectResearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */; };
 		2A3E590F17A372B8004CD762 /* IPadNoteWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E590E17A372B8004CD762 /* IPadNoteWebViewController.m */; };
+		2A3E591217A4374F004CD762 /* IPadNoteTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E591117A4374F004CD762 /* IPadNoteTextViewController.m */; };
 		2A4C3067178E26F600D71270 /* ReferenceNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C3066178E26F600D71270 /* ReferenceNewCell.m */; };
 		2A4C306A178EF2A500D71270 /* IPadNoteImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C3069178EF2A400D71270 /* IPadNoteImageViewController.m */; };
 		2A89AA4A178F9AA90048DC8F /* IPadRootCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89AA49178F9AA90048DC8F /* IPadRootCollectionViewController.m */; };
@@ -208,6 +209,8 @@
 		2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadProjectResearchTableViewController.xib; sourceTree = "<group>"; };
 		2A3E590D17A372B8004CD762 /* IPadNoteWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNoteWebViewController.h; sourceTree = "<group>"; };
 		2A3E590E17A372B8004CD762 /* IPadNoteWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNoteWebViewController.m; sourceTree = "<group>"; };
+		2A3E591017A4374F004CD762 /* IPadNoteTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNoteTextViewController.h; sourceTree = "<group>"; };
+		2A3E591117A4374F004CD762 /* IPadNoteTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNoteTextViewController.m; sourceTree = "<group>"; };
 		2A4C3065178E26F600D71270 /* ReferenceNewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReferenceNewCell.h; sourceTree = "<group>"; };
 		2A4C3066178E26F600D71270 /* ReferenceNewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReferenceNewCell.m; sourceTree = "<group>"; };
 		2A4C3068178EF2A400D71270 /* IPadNoteImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNoteImageViewController.h; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 				2A2A9CD91799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.m */,
 				2A3E590D17A372B8004CD762 /* IPadNoteWebViewController.h */,
 				2A3E590E17A372B8004CD762 /* IPadNoteWebViewController.m */,
+				2A3E591017A4374F004CD762 /* IPadNoteTextViewController.h */,
+				2A3E591117A4374F004CD762 /* IPadNoteTextViewController.m */,
 			);
 			name = IPadViewControllers;
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 				2A2A8E9717441F7500D00631 /* Scene.m in Sources */,
 				2A2A8EA017444DE500D00631 /* IPadNewSceneViewController.m in Sources */,
 				2A2A8EAA1744629500D00631 /* IPadProjectSceneTableViewController.m in Sources */,
+				2A3E591217A4374F004CD762 /* IPadNoteTextViewController.m in Sources */,
 				2A00E520174D9E2100C35F14 /* UIColor+THColor.m in Sources */,
 				2A00E534174E6CEE00C35F14 /* ProjectButton.m in Sources */,
 				2A2A9CDA1799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.m in Sources */,

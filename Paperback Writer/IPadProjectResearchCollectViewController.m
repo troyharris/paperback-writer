@@ -19,6 +19,7 @@
 #import "ProjectCell.h"
 #import "IPadNoteImageViewController.h"
 #import "IPadNoteWebViewController.h"
+#import "IPadNoteTextViewController.h"
 
 @interface IPadProjectResearchCollectViewController ()
 
@@ -144,6 +145,11 @@
             Research *r = (Research *)[_researches objectAtIndex:indexPath.row];
             webVC.url = r.notes.content;
             [self.navigationController pushViewController:webVC animated:YES];
+        } else if ([cell.subTitle.text isEqualToString:@"A Note"]) {
+            IPadNoteTextViewController *textVC = [[IPadNoteTextViewController alloc] init];
+            Research *r = (Research *)[_researches objectAtIndex:indexPath.row];
+            textVC.research = r;
+            [self.navigationController pushViewController:textVC animated:YES];
         }
     }
 }
