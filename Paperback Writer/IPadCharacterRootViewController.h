@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iPadCharacterRootViewController : UIViewController
+@interface IPadCharacterRootViewController : UIViewController <UITabBarDelegate>
+
+@property (nonatomic, strong) IBOutlet UITabBar *tabBar;
+@property (nonatomic, strong) IBOutlet UITabBarItem *basicItem;
+@property (nonatomic, strong) IBOutlet UITabBarItem *bioItem;
+@property (nonatomic, strong) IBOutlet UITabBarItem *notesItem;
+@property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, strong) UIViewController *selectedVC;
 
 @end

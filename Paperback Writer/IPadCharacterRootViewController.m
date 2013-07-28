@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Lone Yeti. All rights reserved.
 //
 
-#import "iPadCharacterRootViewController.h"
+#import "IPadCharacterRootViewController.h"
 
-@interface iPadCharacterRootViewController ()
+@interface IPadCharacterRootViewController ()
 
 @end
 
-@implementation iPadCharacterRootViewController
+@implementation IPadCharacterRootViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _tabBar.delegate = self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -33,6 +34,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if (item == _basicItem) {
+        NSLog(@"Clicked on Basic");
+    } else if (item == _bioItem) {
+        NSLog(@"Clicked on Bio");
+    } else if (item == _notesItem){
+        NSLog(@"Clicked on Notes");
+    }
 }
 
 @end
