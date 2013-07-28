@@ -13,6 +13,7 @@
 #import "THUtil.h"
 #import "UIColor+THColor.h"
 #import "Character.h"
+#import "IPadCharacterRootViewController.h"
 
 @interface IPadProjectCharacterCollectionViewController ()
 
@@ -93,7 +94,8 @@ static NSString *kNewCellID = @"NewCell";
 }
 
 -(void)pressCharacter:(Character *)c {
-    
+    IPadCharacterRootViewController *characterVC = [[IPadCharacterRootViewController alloc] init];
+    [self.navigationController pushViewController:characterVC animated:YES];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
