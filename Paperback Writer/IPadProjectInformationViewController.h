@@ -11,7 +11,7 @@
 #import "THLabel.h"
 #import "StatBox.h"
 
-@interface IPadProjectInformationViewController : UIViewController <UITextViewDelegate, UIScrollViewDelegate>
+@interface IPadProjectInformationViewController : UIViewController <UITextViewDelegate>
 
 @property (nonatomic, strong) Project *project;
 @property (nonatomic, strong) UIScrollView *scrollView;

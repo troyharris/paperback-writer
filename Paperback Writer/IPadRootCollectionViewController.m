@@ -17,6 +17,7 @@
 
 @interface IPadRootCollectionViewController ()
 
+
 @end
 
 @implementation IPadRootCollectionViewController
@@ -33,15 +34,8 @@ static NSString *kNewCellID = @"NewCell";
 }
 
 -(void)showNewProject {
-    
     _addProjectVC = [[IPadProjectNewViewController alloc] init];
     _addProjectVC.delegate = self;
-    //[_addProjectVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    /*
-     [newProjectVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-     [self presentViewController:newProjectVC animated:YES completion:nil];
-     */
     [self presentSemiModalViewController:_addProjectVC];
 }
 
@@ -56,11 +50,6 @@ static NSString *kNewCellID = @"NewCell";
 }
 
 -(void)pressProject:(Project *)project {
-    //    IPadProjectMenuViewController *menuController = [[IPadProjectMenuViewController alloc] initWithNibName:@"IPadProjectMenuViewController" bundle:nil];
-    //    IPadProjectInfoViewController *infoController = [[IPadProjectInfoViewController alloc] initWithNibName:@"IPadProjectInfoViewController" bundle:nil];
-    //    infoController.project = sender.project;
-    
-    //    [self.navigationController pushViewController:controller animated:YES];
     GlobalProject *gp = [GlobalProject sharedProject];
     gp.project = project;
     IPadSlideViewController *slideController = [[IPadSlideViewController alloc] init];
@@ -75,8 +64,6 @@ static NSString *kNewCellID = @"NewCell";
         self.navigationItem.title = @"Prosey";
         // Custom initialization
         _layoutFlow = [[UICollectionViewFlowLayout alloc] init];
-        CGFloat square = ([THUtil getRealDeviceWidth] / 2) - 40;
-        //_layoutFlow.itemSize = CGSizeMake(square, 150);
         _layoutFlow.minimumInteritemSpacing = 0;
         _layoutFlow.minimumLineSpacing = 10;
         _collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight]) collectionViewLayout:_layoutFlow];
@@ -167,8 +154,6 @@ static NSString *kNewCellID = @"NewCell";
 }
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-//    CGFloat square = [THUtil getRealDeviceWidth] / 2;
-//    _layoutFlow.itemSize = CGSizeMake(square, square);
     [_collectView layoutSubviews];
     [_collectView reloadData];
 }

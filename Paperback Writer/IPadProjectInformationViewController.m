@@ -118,7 +118,7 @@ static float kMargin = 20.0f;
     [super viewDidLoad];
     _doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveProject)];
     _scrollView = [[UIScrollView alloc] init];
-    _scrollView.delegate = self;
+    //_scrollView.delegate = self;
     CGRect tmpFrame = CGRectMake(0, 0, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight]);
     _scrollView.frame = tmpFrame;
     _scrollView.contentSize = _scrollView.frame.size;
@@ -439,13 +439,15 @@ static float kMargin = 20.0f;
     }
 }
 
+/*
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSLog(@"SV delegate at your service");
-    [_desc setNeedsLayout];
+    //Beta 4 fixed the need for setNeedsLayout on UITextViews. Yay!
+//    [_desc setNeedsLayout];
    // [_scrollView setNeedsLayout];
    // [_scrollView layoutIfNeeded];
    // [_scrollView layoutSubviews];
 }
-
+*/
 
 @end
