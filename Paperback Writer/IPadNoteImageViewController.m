@@ -8,6 +8,7 @@
 
 #import "IPadNoteImageViewController.h"
 #import "THUtil.h"
+#import "UIColor+THColor.h"
 
 @interface IPadNoteImageViewController ()
 
@@ -21,6 +22,7 @@
     if (self) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight])];
         self.view = _imageView;
+        _imageView.backgroundColor = [UIColor blackColor];
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
         // Custom initialization
     }
