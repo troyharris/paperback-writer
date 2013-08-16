@@ -7,6 +7,7 @@
 //
 
 #import "IPadCharacterRootViewController.h"
+#import "IPadCharacterInfoTableViewController.h"
 
 @interface IPadCharacterRootViewController ()
 
@@ -26,6 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIStoryboard *infoSB = [UIStoryboard storyboardWithName:@"IPadCharacterInfoStoryboard" bundle:nil];
+    IPadCharacterInfoTableViewController *infoVC = [infoSB instantiateViewControllerWithIdentifier:@"CharInfo"];
+    [self.view insertSubview:infoVC.view belowSubview:_tabBar];
     _tabBar.delegate = self;
     // Do any additional setup after loading the view from its nib.
 }
@@ -38,7 +42,12 @@
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     if (item == _basicItem) {
-        NSLog(@"Clicked on Basic");
+        UIStoryboard *infoSB = [UIStoryboard storyboardWithName:@"IPadCharacterInfoStoryboard" bundle:nil];
+        IPadCharacterInfoTableViewController *infoVC = [infoSB instantiateViewControllerWithIdentifier:@"CharInfo"];
+        infoVC.view.frame = self.view.frame;
+        //[self.view insertSubview:infoVC.view belowSubview:_tabBar];
+        [self addChildViewController:infoVC];
+        [self.view insertSubview:infoVC.view belowSubview:_tabBar];
     } else if (item == _bioItem) {
         NSLog(@"Clicked on Bio");
     } else if (item == _notesItem){

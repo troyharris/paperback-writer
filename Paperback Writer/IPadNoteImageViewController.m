@@ -8,7 +8,6 @@
 
 #import "IPadNoteImageViewController.h"
 #import "THUtil.h"
-#import "UIColor+THColor.h"
 
 @interface IPadNoteImageViewController ()
 
