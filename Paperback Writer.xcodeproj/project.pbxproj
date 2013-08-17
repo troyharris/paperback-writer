@@ -88,6 +88,8 @@
 		2A88215717A766A400257287 /* TableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88215617A766A400257287 /* TableTextField.m */; };
 		2A89AA4A178F9AA90048DC8F /* IPadRootCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89AA49178F9AA90048DC8F /* IPadRootCollectionViewController.m */; };
 		2A89AA4D178FA7AF0048DC8F /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A89AA4C178FA7AF0048DC8F /* ProjectCell.m */; };
+		2A9BCD3917BE8349003396F0 /* IPadCharacterBioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BCD3817BE8349003396F0 /* IPadCharacterBioViewController.m */; };
+		2A9BCD3C17BE8396003396F0 /* IPadCharacterNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BCD3B17BE8396003396F0 /* IPadCharacterNotesViewController.m */; };
 		2AAD4CA21756DF4400484B48 /* NewObjectLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA11756DF4400484B48 /* NewObjectLabel.m */; };
 		2AAD4CA51756E72D00484B48 /* NewObjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA41756E72D00484B48 /* NewObjectTextField.m */; };
 		2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA71756E9F500484B48 /* SelectorLabel.m */; };
@@ -235,6 +237,10 @@
 		2A89AA49178F9AA90048DC8F /* IPadRootCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadRootCollectionViewController.m; sourceTree = "<group>"; };
 		2A89AA4B178FA7AF0048DC8F /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectCell.h; sourceTree = "<group>"; };
 		2A89AA4C178FA7AF0048DC8F /* ProjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectCell.m; sourceTree = "<group>"; };
+		2A9BCD3717BE8349003396F0 /* IPadCharacterBioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadCharacterBioViewController.h; sourceTree = "<group>"; };
+		2A9BCD3817BE8349003396F0 /* IPadCharacterBioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadCharacterBioViewController.m; sourceTree = "<group>"; };
+		2A9BCD3A17BE8396003396F0 /* IPadCharacterNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadCharacterNotesViewController.h; sourceTree = "<group>"; };
+		2A9BCD3B17BE8396003396F0 /* IPadCharacterNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadCharacterNotesViewController.m; sourceTree = "<group>"; };
 		2AAC534D1782569A0047A41B /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		2AAC534E1782569A0047A41B /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		2AAC534F1782569B0047A41B /* Research.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Research.h; sourceTree = "<group>"; };
@@ -383,6 +389,7 @@
 		2A1BD446173C805C00E2CE33 /* Paperback Writer */ = {
 			isa = PBXGroup;
 			children = (
+				2A9BCD5317BEA431003396F0 /* Fonts */,
 				2AAD4CB7175914EF00484B48 /* THAutoLayout */,
 				2AAD4CAC1757175E00484B48 /* TDSemiModal */,
 				2AAD4C9F1756DEB700484B48 /* CustomViewElements */,
@@ -410,16 +417,6 @@
 		2A1BD447173C805C00E2CE33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2A00E509174D9A7E00C35F14 /* Lato-Bla.ttf */,
-				2A00E50A174D9A7E00C35F14 /* Lato-BlaIta.ttf */,
-				2A00E50B174D9A7E00C35F14 /* Lato-Bol.ttf */,
-				2A00E50C174D9A7E00C35F14 /* Lato-BolIta.ttf */,
-				2A00E50D174D9A7E00C35F14 /* Lato-Hai.ttf */,
-				2A00E50E174D9A7E00C35F14 /* Lato-HaiIta.ttf */,
-				2A00E50F174D9A7E00C35F14 /* Lato-Lig.ttf */,
-				2A00E510174D9A7E00C35F14 /* Lato-LigIta.ttf */,
-				2A00E511174D9A7E00C35F14 /* Lato-Reg.ttf */,
-				2A00E512174D9A7E00C35F14 /* Lato-RegIta.ttf */,
 				2A2A8EC017468FAF00D00631 /* indicator.png */,
 				2A2A8EC117468FAF00D00631 /* indicator@2x.png */,
 				2A2A8EC217468FAF00D00631 /* left_fade.png */,
@@ -507,6 +504,10 @@
 				2A88214917A7634200257287 /* IPadCharacterInfoTableViewController.h */,
 				2A88214A17A7634200257287 /* IPadCharacterInfoTableViewController.m */,
 				2A88214C17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard */,
+				2A9BCD3717BE8349003396F0 /* IPadCharacterBioViewController.h */,
+				2A9BCD3817BE8349003396F0 /* IPadCharacterBioViewController.m */,
+				2A9BCD3A17BE8396003396F0 /* IPadCharacterNotesViewController.h */,
+				2A9BCD3B17BE8396003396F0 /* IPadCharacterNotesViewController.m */,
 			);
 			name = IPadViewControllers;
 			sourceTree = "<group>";
@@ -520,6 +521,23 @@
 				2A1BD497173FF66200E2CE33 /* THGridMenuItem.m */,
 			);
 			name = THGridMenu;
+			sourceTree = "<group>";
+		};
+		2A9BCD5317BEA431003396F0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2A00E50E174D9A7E00C35F14 /* Lato-HaiIta.ttf */,
+				2A00E50F174D9A7E00C35F14 /* Lato-Lig.ttf */,
+				2A00E510174D9A7E00C35F14 /* Lato-LigIta.ttf */,
+				2A00E511174D9A7E00C35F14 /* Lato-Reg.ttf */,
+				2A00E512174D9A7E00C35F14 /* Lato-RegIta.ttf */,
+				2A00E509174D9A7E00C35F14 /* Lato-Bla.ttf */,
+				2A00E50A174D9A7E00C35F14 /* Lato-BlaIta.ttf */,
+				2A00E50B174D9A7E00C35F14 /* Lato-Bol.ttf */,
+				2A00E50C174D9A7E00C35F14 /* Lato-BolIta.ttf */,
+				2A00E50D174D9A7E00C35F14 /* Lato-Hai.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		2AAD4C9F1756DEB700484B48 /* CustomViewElements */ = {
@@ -795,6 +813,7 @@
 				2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */,
 				2A00E53F175646FC00C35F14 /* IPadProjectNewViewController.m in Sources */,
 				2AAD4CA21756DF4400484B48 /* NewObjectLabel.m in Sources */,
+				2A9BCD3C17BE8396003396F0 /* IPadCharacterNotesViewController.m in Sources */,
 				2A0B12CE178CF21F00829310 /* ReferenceCollectCell.m in Sources */,
 				2AAD4CA51756E72D00484B48 /* NewObjectTextField.m in Sources */,
 				2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */,
@@ -807,6 +826,7 @@
 				2A4C306A178EF2A500D71270 /* IPadNoteImageViewController.m in Sources */,
 				2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */,
 				2AAD4CEF175BC81900484B48 /* StatBox.m in Sources */,
+				2A9BCD3917BE8349003396F0 /* IPadCharacterBioViewController.m in Sources */,
 				2A4C3067178E26F600D71270 /* ReferenceNewCell.m in Sources */,
 				2AAD4CF2175C0CA700484B48 /* SceneCell.m in Sources */,
 			);
