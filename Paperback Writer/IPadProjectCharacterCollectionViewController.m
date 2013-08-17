@@ -56,7 +56,9 @@ static NSString *kNewCellID = @"NewCell";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.navigationItem.title = @"Prosey";
+        GlobalProject *gp = [GlobalProject sharedProject];
+        _project = gp.project;
+        self.navigationItem.title = gp.project.title;
         // Custom initialization
         _layoutFlow = [[UICollectionViewFlowLayout alloc] init];
         //_layoutFlow.itemSize = CGSizeMake(square, 150);

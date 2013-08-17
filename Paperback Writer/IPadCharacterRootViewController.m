@@ -39,6 +39,7 @@ static const int kNotes = 3;
     [super viewDidLoad];
     UIStoryboard *infoSB = [UIStoryboard storyboardWithName:@"IPadCharacterInfoStoryboard" bundle:nil];
     IPadCharacterInfoTableViewController *infoVC = [infoSB instantiateViewControllerWithIdentifier:@"CharInfo"];
+    infoVC.character = self.character;
     [self addChildViewController:infoVC];
     [self.view insertSubview:infoVC.view belowSubview:_tabBar];
     _currentTab = kBasicInfo;
@@ -46,6 +47,13 @@ static const int kNotes = 3;
     _currentView = infoVC.view;
     _tabBar.delegate = self;
     [_tabBar setSelectedItem:_basicItem];
+    /*
+    CGRect tabFrame = _tabBar.frame;
+    tabFrame.origin = CGPointMake(0, (CGRectGetMaxY(self.view.frame) - CGRectGetHeight(_tabBar.frame)) + 10);
+    tabFrame.size.height = 100;
+    _tabBar.frame = tabFrame;
+    */
+     
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -72,6 +80,7 @@ static const int kNotes = 3;
         [_currentVC removeFromParentViewController];
         [_currentView removeFromSuperview];
         IPadCharacterBioViewController *bioVC = [[IPadCharacterBioViewController alloc] init];
+        bioVC.character = self.character;
         bioVC.view.frame = self.view.frame;
         [self addChildViewController:bioVC];
         [self.view insertSubview:bioVC.view belowSubview:_tabBar];

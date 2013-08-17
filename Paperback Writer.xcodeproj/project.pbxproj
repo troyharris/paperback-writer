@@ -84,6 +84,8 @@
 		2A4C306A178EF2A500D71270 /* IPadNoteImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4C3069178EF2A400D71270 /* IPadNoteImageViewController.m */; };
 		2A60884717BFB370004F2229 /* IPadCharacterNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A60884617BFB370004F2229 /* IPadCharacterNoteViewController.m */; };
 		2A60884A17BFB5C5004F2229 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A60884917BFB5C5004F2229 /* Character.m */; };
+		2A60884D17C00B1A004F2229 /* fitzgerald1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A60884C17C00B1A004F2229 /* fitzgerald1.jpg */; };
+		2A60884F17C00BAA004F2229 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60884E17C00BAA004F2229 /* QuartzCore.framework */; };
 		2A88214B17A7634200257287 /* IPadCharacterInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88214A17A7634200257287 /* IPadCharacterInfoTableViewController.m */; };
 		2A88214D17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A88214C17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard */; };
 		2A88215417A7664A00257287 /* TableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88215317A7664A00257287 /* TableLabel.m */; };
@@ -231,6 +233,8 @@
 		2A60884617BFB370004F2229 /* IPadCharacterNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadCharacterNoteViewController.m; sourceTree = "<group>"; };
 		2A60884817BFB5C5004F2229 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		2A60884917BFB5C5004F2229 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		2A60884C17C00B1A004F2229 /* fitzgerald1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fitzgerald1.jpg; sourceTree = "<group>"; };
+		2A60884E17C00BAA004F2229 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2A88214917A7634200257287 /* IPadCharacterInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadCharacterInfoTableViewController.h; sourceTree = "<group>"; };
 		2A88214A17A7634200257287 /* IPadCharacterInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadCharacterInfoTableViewController.m; sourceTree = "<group>"; };
 		2A88214C17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPadCharacterInfoStoryboard.storyboard; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A60884F17C00BAA004F2229 /* QuartzCore.framework in Frameworks */,
 				2A1BD43F173C805C00E2CE33 /* UIKit.framework in Frameworks */,
 				2A1BD441173C805C00E2CE33 /* Foundation.framework in Frameworks */,
 				2A1BD443173C805C00E2CE33 /* CoreGraphics.framework in Frameworks */,
@@ -325,6 +330,7 @@
 		2A00E522174E699900C35F14 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2A60884C17C00B1A004F2229 /* fitzgerald1.jpg */,
 				2A00E535174E7E0500C35F14 /* ipad-outline2@2x.png */,
 				2A00E523174E69E000C35F14 /* ipad-characters@2x.png */,
 				2A00E524174E69E000C35F14 /* ipad-close@2x.png */,
@@ -379,6 +385,7 @@
 		2A1BD43D173C805C00E2CE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A60884E17C00BAA004F2229 /* QuartzCore.framework */,
 				2A1BD43E173C805C00E2CE33 /* UIKit.framework */,
 				2A1BD440173C805C00E2CE33 /* Foundation.framework */,
 				2A1BD442173C805C00E2CE33 /* CoreGraphics.framework */,
@@ -683,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A1BD44B173C805C00E2CE33 /* InfoPlist.strings in Resources */,
+				2A60884D17C00B1A004F2229 /* fitzgerald1.jpg in Resources */,
 				2A1BD453173C805C00E2CE33 /* Default.png in Resources */,
 				2A1BD455173C805C00E2CE33 /* Default@2x.png in Resources */,
 				2A1BD457173C805C00E2CE33 /* Default-568h@2x.png in Resources */,

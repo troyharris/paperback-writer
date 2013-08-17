@@ -10,4 +10,6 @@
 
 @interface TableTextField : UITextField
 
+-(void)setupLabel;
+
 @end

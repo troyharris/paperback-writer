@@ -16,10 +16,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.font = [UIFont fontWithName:@"Lato-Light" size:30];
-        self.backgroundColor = [UIColor projectHighlightColor];
     }
     return self;
+}
+
+-(void)setupLabel {
+    self.font = [UIFont fontWithName:@"Lato-Light" size:30];
+    self.backgroundColor = [UIColor projectHighlightColor];
 }
 
 /*

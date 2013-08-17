@@ -19,12 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-cG-ezV">
-                    <rect key="frame" x="0.0" y="955" width="768" height="49"/>
+                <tabBar contentMode="scaleToFill" fixedFrame="YES" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-cG-ezV">
+                    <rect key="frame" x="0.0" y="969" width="768" height="49"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <tabBarItem title="Basic Information" id="5SM-fS-lU9"/>
+                        <tabBarItem title="Basic Info" id="5SM-fS-lU9"/>
                         <tabBarItem title="Biography" id="1V0-da-FBQ"/>
                         <tabBarItem title="Notes" id="NYE-xm-hyn"/>
                     </items>

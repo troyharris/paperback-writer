@@ -7,12 +7,46 @@
 //
 
 #import "IPadCharacterInfoTableViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 
 @interface IPadCharacterInfoTableViewController ()
 
 @end
 
 @implementation IPadCharacterInfoTableViewController
+
+-(AppDelegate *)ad {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+-(void)saveCharacter {
+    AppDelegate *apd = [self ad];
+    NSManagedObjectContext *context = apd.managedObjectContext;
+    self.character.name = self.name.text;
+    self.character.gender = self.gender.text;
+    self.character.age = self.age.text;
+    self.character.weight = self.weight.text;
+    self.character.height = self.height.text;
+    self.character.hair = self.hair.text;
+    self.character.skin = self.skin.text;
+    self.character.appearance = self.notables.text;
+    self.character.myers = self.myers.text;
+    self.character.personality = self.other.text;
+    self.character.motivation = self.motivation.text;
+    self.character.role = self.role.text;
+    self.character.symbols = self.symbols.text;
+    self.character.other = self.storyOther.text;
+    self.character.traits = self.traits.text;
+    self.character.sign  = self.sign.text;
+    NSError *error = nil;
+    if ([context save:&error]) {
+        NSLog(@"The save was successful!");
+    } else {
+        NSLog(@"The save wasn't successful: %@", [error userInfo]);
+    }
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,7 +60,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    [self.name setupLabel];
+    self.name.backgroundColor = [UIColor clearColor];
+    self.name.font = [UIFont fontWithName:@"Lato-Light" size:60];
+    
+    self.portrait.layer.cornerRadius = self.portrait.frame.size.width / 2;
+    self.portrait.layer.masksToBounds = YES;
+    
+    [self mapDataToFields];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -34,10 +75,39 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self mapDataToFields];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self saveCharacter];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)mapDataToFields {
+    self.name.text = self.character.name;
+    self.gender.text = self.character.gender;
+    self.height.text = self.character.height;
+    self.weight.text = self.character.weight;
+    self.notables.text = self.character.appearance;
+    self.age.text = self.character.age;
+    self.skin.text = self.character.skin;
+    self.hair.text = self.character.hair;
+    self.myers.text = self.character.myers;
+    self.sign.text = self.character.sign;
+    self.traits.text = self.character.traits;
+    self.role.text = self.character.role;
+    self.motivation.text = self.character.motivation;
+    self.symbols.text = self.character.symbols;
+    self.storyOther.text = self.character.other;
+    self.other.text = self.character.personality;
 }
 
 #pragma mark - Table view data source

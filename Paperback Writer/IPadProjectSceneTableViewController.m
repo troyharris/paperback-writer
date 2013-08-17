@@ -42,6 +42,9 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        GlobalProject *gp = [GlobalProject sharedProject];
+        _project = gp.project;
+        self.navigationItem.title = gp.project.title;
     }
     return self;
 }

@@ -33,5 +33,6 @@
 @dynamic notes;
 @dynamic project;
 @dynamic scenes;
+@dynamic personality;
 
 @end

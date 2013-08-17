@@ -103,6 +103,9 @@ static float kMargin = 20.0f;
 -(id)init {
     self = [super init];
     if (self) {
+        GlobalProject *gp = [GlobalProject sharedProject];
+        _project = gp.project;
+        self.navigationItem.title = gp.project.title;
         self.view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHasShown:) name:UIKeyboardDidShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHasHid:) name:UIKeyboardWillHideNotification object:nil];

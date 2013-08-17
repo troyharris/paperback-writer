@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString * other;
 @property (nonatomic, retain) NSString * motivation;
 @property (nonatomic, retain) NSString * symbols;
+@property (nonatomic, retain) NSString * personality;
 @property (nonatomic, retain) NSSet *notes;
 @property (nonatomic, retain) Project *project;
 @property (nonatomic, retain) NSSet *scenes;

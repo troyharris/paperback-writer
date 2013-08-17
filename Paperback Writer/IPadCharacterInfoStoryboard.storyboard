@@ -22,13 +22,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-iL-b9y" customClass="TableTextField">
-                                                    <rect key="frame" x="188" y="70" width="560" height="59"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dv8-iL-b9y" customClass="TableTextField">
+                                                    <rect key="frame" x="188" y="60" width="560" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZ5-sx-Jiy">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fitzgerald1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OZ5-sx-Jiy">
                                                     <rect key="frame" x="20" y="25" width="150" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -190,7 +190,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notibles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jap-jf-EW5" customClass="TableLabel">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notables" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jap-jf-EW5" customClass="TableLabel">
                                                     <rect key="frame" x="20" y="0.0" width="108" height="59"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -400,12 +400,34 @@
                             <outlet property="delegate" destination="K6f-Rj-68M" id="azm-x8-7nm"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="age" destination="XDv-le-Sy7" id="20x-Yr-VoG"/>
+                        <outlet property="gender" destination="JbD-fI-uB6" id="Nxj-lu-1P4"/>
+                        <outlet property="hair" destination="n5T-Ki-G5b" id="Io0-sQ-acz"/>
+                        <outlet property="height" destination="Kh2-iX-JFe" id="tYo-4V-89b"/>
+                        <outlet property="motivation" destination="Bjp-v9-2Ss" id="Lsn-5d-OjB"/>
+                        <outlet property="myers" destination="4J8-tE-Rh6" id="HKY-0w-5Uk"/>
+                        <outlet property="name" destination="dv8-iL-b9y" id="hCb-c3-Vq1"/>
+                        <outlet property="notables" destination="uez-RB-Aid" id="nhT-hg-urV"/>
+                        <outlet property="other" destination="jTc-Ea-nnd" id="KFA-M0-JcF"/>
+                        <outlet property="portrait" destination="OZ5-sx-Jiy" id="YIj-BP-I4q"/>
+                        <outlet property="role" destination="2uo-eA-Xil" id="PjE-SM-Ehb"/>
+                        <outlet property="sign" destination="8Lm-bP-7KK" id="vrY-fJ-DJ0"/>
+                        <outlet property="skin" destination="h5E-bX-pio" id="hde-n5-Fkv"/>
+                        <outlet property="storyOther" destination="sH6-ci-Zyf" id="9fo-CK-LOr"/>
+                        <outlet property="symbols" destination="C1B-ZP-wVy" id="L8w-vv-hCR"/>
+                        <outlet property="traits" destination="A8E-aG-J0E" id="YuG-FY-Ivq"/>
+                        <outlet property="weight" destination="vlg-xp-pk5" id="cCh-M8-1n6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nil-Wb-ww6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136" y="-90"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fitzgerald1.jpg" width="455" height="320"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Character.h"
 
-@interface IPadCharacterBioViewController : UIViewController
+@interface IPadCharacterBioViewController : UIViewController <UITextViewDelegate>
 
+@property (nonatomic, strong) Character *character;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UITextField *bioHeader;
 

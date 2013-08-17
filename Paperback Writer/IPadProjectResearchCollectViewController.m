@@ -44,6 +44,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        GlobalProject *gp = [GlobalProject sharedProject];
+        _project = gp.project;
+        self.navigationItem.title = gp.project.title;
         _layoutFlow = [[UICollectionViewFlowLayout alloc] init];
  //       CGFloat square = [THUtil getRealDeviceWidth] / 2;
 //        _layoutFlow.itemSize = CGSizeMake(square, square);

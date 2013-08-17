@@ -11,6 +11,7 @@
         <attribute name="myers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="other" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personality" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sign" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="skin" optional="YES" attributeType="String" syncable="YES"/>
