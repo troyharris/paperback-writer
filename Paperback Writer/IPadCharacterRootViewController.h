@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Character.h"
 
 @interface IPadCharacterRootViewController : UIViewController <UITabBarDelegate>
 
+@property (nonatomic, strong) Character *character;
 @property (nonatomic, strong) IBOutlet UITabBar *tabBar;
 @property (nonatomic, strong) IBOutlet UITabBarItem *basicItem;
 @property (nonatomic, strong) IBOutlet UITabBarItem *bioItem;

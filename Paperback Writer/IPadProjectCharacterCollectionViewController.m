@@ -95,6 +95,7 @@ static NSString *kNewCellID = @"NewCell";
 
 -(void)pressCharacter:(Character *)c {
     IPadCharacterRootViewController *characterVC = [[IPadCharacterRootViewController alloc] init];
+    characterVC.character = c;
     [self.navigationController pushViewController:characterVC animated:YES];
 }
 
@@ -109,7 +110,7 @@ static NSString *kNewCellID = @"NewCell";
         cell.cellTitle.font = [UIFont fontWithName:@"Lato-Light" size:30];
         cell.cellTitle.text = c.name;
         //cell.backgroundColor = [UIColor projectHighlightColor];
-        cell.subTitle.text = [NSString stringWithFormat:@"A %@ %@", c.gender, c.type];
+        cell.subTitle.text = [NSString stringWithFormat:@"A %@ %@", c.gender, c.role];
         [cell.cellTitle adjustsFontSizeToFitWidth];
         return cell;
         

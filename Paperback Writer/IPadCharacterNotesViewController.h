@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Character.h"
 
-@interface IPadCharacterNotesViewController : UICollectionViewController
+@interface IPadCharacterNotesViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (nonatomic, strong) UICollectionView *collectView;
+@property (nonatomic, strong) Character *character;
+@property (nonatomic, strong) NSMutableArray *notes;
+@property (nonatomic, strong) UICollectionViewFlowLayout *layoutFlow;
 
 @end

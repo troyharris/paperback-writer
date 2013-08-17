@@ -83,6 +83,7 @@ static const int kNotes = 3;
         [_currentVC removeFromParentViewController];
         [_currentView removeFromSuperview];
         IPadCharacterNotesViewController *notesVC = [[IPadCharacterNotesViewController alloc] init];
+        notesVC.character = self.character;
         notesVC.view.frame = self.view.frame;
         [self addChildViewController:notesVC];
         [self.view insertSubview:notesVC.view belowSubview:_tabBar];
