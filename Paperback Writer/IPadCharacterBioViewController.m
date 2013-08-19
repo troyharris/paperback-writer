@@ -54,7 +54,7 @@
 {
     [super viewDidLoad];
     NSLog(@"Loading");
-    _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 60)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.textView.font = [UIFont fontWithName:@"Lato-Light" size:18];
     self.textView.text = self.character.bio;
@@ -83,7 +83,7 @@
 //    NSLog(@"topOffset: %f - Navbar height: %f", _topOffset, self.navigationController.navigationBar.frame.size.height);
     self.bioHeader.frame = CGRectMake(0, _topOffset, CGRectGetWidth(self.view.frame), 100);
     self.textEdge = UIEdgeInsetsMake(_topOffset + CGRectGetHeight(self.bioHeader.frame), 0, 0, 0);
-    self.textView.textContainerInset = self.textEdge;
+    self.textView.contentInset = self.textEdge;
 //        NSLog(@"Text view: x: %f y: %f width: %f height: %f textcontaininset top: %f left: %f bottom: %f right: %f", _textView.frame.origin.x, _textView.frame.origin.y, _textView.frame.size.width, _textView.frame.size.height, _textView.textContainerInset.top, _textView.textContainerInset.left, _textView.textContainerInset.bottom, _textView.textContainerInset.right);
 //    [self.textView layoutIfNeeded];
 //    [self.textView layoutSubviews];
@@ -99,6 +99,7 @@
     [super viewWillAppear:animated];
     self.textView.text = self.character.bio;
     self.bioHeader.text = [NSString stringWithFormat:@"%@ Biography", self.character.name];
+    [self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
 //    [self.view setNeedsLayout];
 //    [self.view layoutSubviews];
 //    [self.textView setNeedsLayout];
@@ -134,15 +135,18 @@
     self.textView.textContainerInset = contentInsets;
     self.textView.scrollIndicatorInsets = contentInsets;
      */
-    _textView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - kbSize.height);
+    _textView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - (kbSize.height));
   //      NSLog(@"CORRECT!! Text view: x: %f y: %f width: %f height: %f textcontaininset top: %f left: %f bottom: %f right: %f", _textView.frame.origin.x, _textView.frame.origin.y, _textView.frame.size.width, _textView.frame.size.height, _textView.textContainerInset.top, _textView.textContainerInset.left, _textView.textContainerInset.bottom, _textView.textContainerInset.right);
+    [self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
 }
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification {
     NSLog(@"KB was hid");
     //UIEdgeInsets contentInsets = self.textEdge;
-    self.textView.textContainerInset = self.textEdge;
+    self.textView.contentInset = self.textEdge;
     self.textView.scrollIndicatorInsets = self.textEdge;
+    _textView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 60);
+    [self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
     [self saveCharacter];
 }
 
