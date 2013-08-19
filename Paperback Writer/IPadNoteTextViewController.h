@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Research.h"
+#import "DRNRealTimeBlurView.h"
 
-@interface IPadNoteTextViewController : UIViewController
+@interface IPadNoteTextViewController : UIViewController <UITextViewDelegate>
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UITextField *titleField;
+@property (nonatomic, strong) DRNRealTimeBlurView *titleView;
 @property (nonatomic, strong) Research *research;
 
 @end

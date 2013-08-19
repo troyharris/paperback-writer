@@ -77,7 +77,7 @@
 
 - (void) viewDidLayoutSubviews {
     NSLog(@"Laying out subviews");
-    CGRect viewBounds = self.view.bounds;
+    //CGRect viewBounds = self.view.bounds;
     CGFloat statusBarHeight = self.topLayoutGuide.length;
     _topOffset = statusBarHeight + self.navigationController.navigationBar.frame.size.height;
 //    NSLog(@"topOffset: %f - Navbar height: %f", _topOffset, self.navigationController.navigationBar.frame.size.height);
@@ -130,21 +130,14 @@
     NSLog(@"KB was shown");
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    /*
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(self.textEdge.top, 0.0, kbSize.height + 100, 0.0);
-    self.textView.textContainerInset = contentInsets;
-    self.textView.scrollIndicatorInsets = contentInsets;
-     */
     _textView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - (kbSize.height));
-  //      NSLog(@"CORRECT!! Text view: x: %f y: %f width: %f height: %f textcontaininset top: %f left: %f bottom: %f right: %f", _textView.frame.origin.x, _textView.frame.origin.y, _textView.frame.size.width, _textView.frame.size.height, _textView.textContainerInset.top, _textView.textContainerInset.left, _textView.textContainerInset.bottom, _textView.textContainerInset.right);
     [self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
 }
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification {
     NSLog(@"KB was hid");
-    //UIEdgeInsets contentInsets = self.textEdge;
-    self.textView.contentInset = self.textEdge;
-    self.textView.scrollIndicatorInsets = self.textEdge;
+    //self.textView.contentInset = self.textEdge;
+    //self.textView.scrollIndicatorInsets = self.textEdge;
     _textView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 60);
     [self.textView.layoutManager ensureLayoutForTextContainer:self.textView.textContainer];
     [self saveCharacter];

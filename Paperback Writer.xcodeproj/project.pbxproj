@@ -86,6 +86,9 @@
 		2A60884A17BFB5C5004F2229 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A60884917BFB5C5004F2229 /* Character.m */; };
 		2A60884D17C00B1A004F2229 /* fitzgerald1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A60884C17C00B1A004F2229 /* fitzgerald1.jpg */; };
 		2A60884F17C00BAA004F2229 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60884E17C00BAA004F2229 /* QuartzCore.framework */; };
+		2A60886017C27754004F2229 /* DRNRealTimeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A60885D17C27754004F2229 /* DRNRealTimeBlurView.m */; };
+		2A60886117C27754004F2229 /* UIImage+BoxBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A60885F17C27754004F2229 /* UIImage+BoxBlur.m */; };
+		2A60886317C277BB004F2229 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A60886217C277BB004F2229 /* Accelerate.framework */; };
 		2A88214B17A7634200257287 /* IPadCharacterInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88214A17A7634200257287 /* IPadCharacterInfoTableViewController.m */; };
 		2A88214D17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A88214C17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard */; };
 		2A88215417A7664A00257287 /* TableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88215317A7664A00257287 /* TableLabel.m */; };
@@ -235,6 +238,11 @@
 		2A60884917BFB5C5004F2229 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
 		2A60884C17C00B1A004F2229 /* fitzgerald1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fitzgerald1.jpg; sourceTree = "<group>"; };
 		2A60884E17C00BAA004F2229 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2A60885C17C27754004F2229 /* DRNRealTimeBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRNRealTimeBlurView.h; sourceTree = "<group>"; };
+		2A60885D17C27754004F2229 /* DRNRealTimeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRNRealTimeBlurView.m; sourceTree = "<group>"; };
+		2A60885E17C27754004F2229 /* UIImage+BoxBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BoxBlur.h"; sourceTree = "<group>"; };
+		2A60885F17C27754004F2229 /* UIImage+BoxBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BoxBlur.m"; sourceTree = "<group>"; };
+		2A60886217C277BB004F2229 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		2A88214917A7634200257287 /* IPadCharacterInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadCharacterInfoTableViewController.h; sourceTree = "<group>"; };
 		2A88214A17A7634200257287 /* IPadCharacterInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadCharacterInfoTableViewController.m; sourceTree = "<group>"; };
 		2A88214C17A7637200257287 /* IPadCharacterInfoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPadCharacterInfoStoryboard.storyboard; sourceTree = "<group>"; };
@@ -295,6 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A60886317C277BB004F2229 /* Accelerate.framework in Frameworks */,
 				2A60884F17C00BAA004F2229 /* QuartzCore.framework in Frameworks */,
 				2A1BD43F173C805C00E2CE33 /* UIKit.framework in Frameworks */,
 				2A1BD441173C805C00E2CE33 /* Foundation.framework in Frameworks */,
@@ -385,6 +394,7 @@
 		2A1BD43D173C805C00E2CE33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A60886217C277BB004F2229 /* Accelerate.framework */,
 				2A60884E17C00BAA004F2229 /* QuartzCore.framework */,
 				2A1BD43E173C805C00E2CE33 /* UIKit.framework */,
 				2A1BD440173C805C00E2CE33 /* Foundation.framework */,
@@ -399,6 +409,7 @@
 		2A1BD446173C805C00E2CE33 /* Paperback Writer */ = {
 			isa = PBXGroup;
 			children = (
+				2A60885B17C2772F004F2229 /* LiveBlur */,
 				2A9BCD5317BEA431003396F0 /* Fonts */,
 				2AAD4CB7175914EF00484B48 /* THAutoLayout */,
 				2AAD4CAC1757175E00484B48 /* TDSemiModal */,
@@ -533,6 +544,17 @@
 				2A1BD497173FF66200E2CE33 /* THGridMenuItem.m */,
 			);
 			name = THGridMenu;
+			sourceTree = "<group>";
+		};
+		2A60885B17C2772F004F2229 /* LiveBlur */ = {
+			isa = PBXGroup;
+			children = (
+				2A60885C17C27754004F2229 /* DRNRealTimeBlurView.h */,
+				2A60885D17C27754004F2229 /* DRNRealTimeBlurView.m */,
+				2A60885E17C27754004F2229 /* UIImage+BoxBlur.h */,
+				2A60885F17C27754004F2229 /* UIImage+BoxBlur.m */,
+			);
+			name = LiveBlur;
 			sourceTree = "<group>";
 		};
 		2A9BCD5317BEA431003396F0 /* Fonts */ = {
@@ -843,6 +865,8 @@
 				2A9BCD3917BE8349003396F0 /* IPadCharacterBioViewController.m in Sources */,
 				2A4C3067178E26F600D71270 /* ReferenceNewCell.m in Sources */,
 				2AAD4CF2175C0CA700484B48 /* SceneCell.m in Sources */,
+				2A60886117C27754004F2229 /* UIImage+BoxBlur.m in Sources */,
+				2A60886017C27754004F2229 /* DRNRealTimeBlurView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
