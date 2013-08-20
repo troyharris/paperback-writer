@@ -11,10 +11,11 @@
 #import "IPadNewResearchViewController.h"
 
 
-@interface IPadProjectResearchCollectViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface IPadProjectResearchCollectViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIPopoverControllerDelegate, NewResearchDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectView;
 @property (nonatomic, strong) Project *project;
+@property (nonatomic, strong) UIPopoverController *popController;
 @property (nonatomic, strong) NSMutableArray *researches;
 @property (nonatomic, strong) IPadNewResearchViewController *addResearch;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layoutFlow;

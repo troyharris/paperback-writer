@@ -22,7 +22,7 @@
 @implementation IPadNewResearchViewController
 
 static const int kTypePicker = 0;
-static const float kTopSize = 300.0;
+static const float kTopSize = 170.0;
 
 -(AppDelegate *)ad {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -129,7 +129,7 @@ static const float kTopSize = 300.0;
     [_noteText setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_noteEntry addSubview:_noteText];
     
-    NSArray *contraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[noteLabel]-[_noteText(>=150)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(noteLabel, _noteText)];
+    NSArray *contraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[noteLabel]-[_noteText(>=100)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(noteLabel, _noteText)];
     NSArray *contraintsH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[noteLabel]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(noteLabel)];
     NSArray *contraintsHText = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_noteText]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_noteText)];
     [_noteEntry addConstraints:contraints];
@@ -297,6 +297,7 @@ static const float kTopSize = 300.0;
 {
     [super viewDidLoad];
     [self makeColors];
+    self.view.frame = CGRectMake(0, 0, [THUtil getRealDeviceWidth] - 40, [THUtil getRealDeviceHeight] / 1.5);
     _galleryPicker = [[UIImagePickerController alloc] init];
     _galleryPicker.allowsEditing = YES;
     _galleryPicker.delegate = self;
@@ -313,9 +314,9 @@ static const float kTopSize = 300.0;
         [_cameraPicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }
     
-    _underView = [[UIControl alloc] initWithFrame:CGRectMake(0, kTopSize, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight] - kTopSize)];
-    _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [THUtil getRealDeviceWidth], kTopSize)];
-    _bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kTopSize, [THUtil getRealDeviceWidth], [THUtil getRealDeviceHeight] - kTopSize)];
+    _underView = [[UIControl alloc] initWithFrame:CGRectMake(0, kTopSize, [THUtil getRealDeviceWidth] - 40, [THUtil getRealDeviceHeight] - kTopSize)];
+    _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [THUtil getRealDeviceWidth] - 40, kTopSize)];
+    _bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, kTopSize, [THUtil getRealDeviceWidth] - 40, [THUtil getRealDeviceHeight] - kTopSize)];
     _underView.backgroundColor = [UIColor projectDarkColor];
     _topView.backgroundColor = [UIColor projectHighlightColor];
     _bottomView.backgroundColor = [UIColor projectHighlightColor];
@@ -333,7 +334,7 @@ static const float kTopSize = 300.0;
     [_topView invalidateIntrinsicContentSize];
     [_bottomView invalidateIntrinsicContentSize];
     [_underView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    NSArray *underC = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(300)-[_underView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_underView)];
+    NSArray *underC = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(170)-[_underView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_underView)];
     NSArray *underCH = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_underView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_underView)];
     [self.view addConstraints:underC];
     [self.view addConstraints:underCH];
@@ -391,37 +392,43 @@ static const float kTopSize = 300.0;
     [_topView addConstraints:switchConsts];
     //[_topView addConstraints:switchConstsV];
     
-    NSArray *topConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(80)-[_header]-[_researchTitle]-[_typeSwitch(60)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_header, _researchTitle, _typeSwitch)];
+    NSArray *topConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_header]-[_researchTitle]-[_typeSwitch(30)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_header, _researchTitle, _typeSwitch)];
     [_topView addConstraints:topConsts];
     
     CGFloat buttonWidth = ([THUtil getRealDeviceWidth] - 60) / 2;
     
-    CGRect addFrame = CGRectMake(20, 300, buttonWidth, 60);
-    _add = [[FUIButton alloc] initWithFrame:addFrame];
-    //[_add invalidateIntrinsicContentSize];
+    CGRect addFrame = CGRectMake(20, 300, buttonWidth, 30);
+    self.add = [[UIButton alloc] initWithFrame:addFrame];
     [_add setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_add setTitle:@"Add" forState:UIControlStateNormal];
+    /*
+    _add = [[FUIButton alloc] initWithFrame:addFrame];
+    //[_add invalidateIntrinsicContentSize];
     _add.buttonColor = [UIColor projectBackgroundColor];
     _add.shadowColor = [UIColor projectHighlightColor];
     _add.shadowHeight = 3.0f;
     _add.cornerRadius = 6.0f;
+     */
     _add.titleLabel.font = [UIFont fontWithName:@"Lato-Black" size:20];
-    [_add setTitleColor:[UIColor projectDarkTextColor] forState:UIControlStateNormal];
+    [_add setTitleColor:[UIColor projectLightTextColor] forState:UIControlStateNormal];
     [_add setTitleColor:[UIColor projectDarkTextColor] forState:UIControlStateHighlighted];
     [_add addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
     [_bottomView addSubview:_add];
     
-    CGRect cancelFrame = CGRectMake(buttonWidth + 30, 300, buttonWidth, 60);
-    _cancel = [[FUIButton alloc] initWithFrame:cancelFrame];
+    CGRect cancelFrame = CGRectMake(buttonWidth + 30, 300, buttonWidth, 30);
+    _cancel = [[UIButton alloc] initWithFrame:cancelFrame];
     //[_cancel invalidateIntrinsicContentSize];
     [_cancel setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
     [_cancel setTitle:@"Cancel" forState:UIControlStateNormal];
+    /*
     _cancel.buttonColor = [UIColor projectBackgroundColor];
     _cancel.shadowColor = [UIColor projectHighlightColor];
     _cancel.shadowHeight = 3.0f;
     _cancel.cornerRadius = 6.0f;
+     */
     _cancel.titleLabel.font = [UIFont fontWithName:@"Lato-Black" size:20];
-    [_cancel setTitleColor:[UIColor projectDarkTextColor] forState:UIControlStateNormal];
+    [_cancel setTitleColor:[UIColor projectLightTextColor] forState:UIControlStateNormal];
     [_cancel setTitleColor:[UIColor projectDarkTextColor] forState:UIControlStateHighlighted];
     [_cancel addTarget:self action:@selector(pressCancel) forControlEvents:UIControlEventTouchUpInside];
     [_bottomView addSubview:_cancel];
@@ -429,10 +436,10 @@ static const float kTopSize = 300.0;
     NSArray *buttonConsts = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_add(>=200)]-20-[_cancel(==_add)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_add, _cancel)];
     [_bottomView addConstraints:buttonConsts];
     
-    NSArray *addButtonHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_add(60)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_add)];
+    NSArray *addButtonHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_add(30)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_add)];
     [_bottomView addConstraints:addButtonHeight];
     
-    NSArray *cancelButtonHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_cancel(60)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_cancel)];
+    NSArray *cancelButtonHeight = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_cancel(30)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_cancel)];
     [_bottomView addConstraints:cancelButtonHeight];
 
 }

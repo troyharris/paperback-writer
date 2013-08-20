@@ -27,9 +27,9 @@
     self = [super initWithFrame:newFrame];
     if (self) {
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-        self.font = [UIFont fontWithName:@"Lato-Black" size:32];
+        self.font = [UIFont fontWithName:@"Lato-Light" size:32];
         self.textAlignment = NSTextAlignmentCenter;
-        self.textColor = [UIColor projectLightTextColor];
+        self.textColor = [UIColor projectDarkTextColor];
         self.backgroundColor = [UIColor clearColor];
     }
     return self;

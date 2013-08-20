@@ -14,16 +14,17 @@
 #import "ProjectPicker.h"
 #import "SelectorLabel.h"
 
-@protocol NewProjectDelegate <NSObject>
+@protocol NewResearchDelegate <NSObject>
 
--(void)closedSemiModal;
+-(void)closedPopover;
 
 @end
 
 @interface IPadNewResearchViewController : UIViewController <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property (nonatomic, strong) FUIButton *add;
-@property (nonatomic, strong) FUIButton *cancel;
+@property (nonatomic, weak) id<NewResearchDelegate> delegate;
+@property (nonatomic, strong) UIButton *add;
+@property (nonatomic, strong) UIButton *cancel;
 @property (nonatomic, strong) NewObjectLabel *header;
 @property (nonatomic, strong) NewObjectTextField *researchTitle;
 @property (nonatomic, strong) SelectorLabel *typeLabel;

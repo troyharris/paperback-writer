@@ -67,9 +67,21 @@
 }
 
 -(void)showNewResearch {
-    _addResearch = [[IPadNewResearchViewController alloc] init];
-    
-    [self.navigationController pushViewController:_addResearch animated:YES];
+    self.addResearch = [[IPadNewResearchViewController alloc] init];
+    self.popController = [[UIPopoverController alloc] initWithContentViewController:self.addResearch];
+    self.popController.delegate = self;
+    self.popController.popoverContentSize = CGSizeMake(CGRectGetWidth(self.view.frame) - 40, 400);
+    [self.popController presentPopoverFromRect:CGRectMake(0, 0, 5, 5) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    //[self.navigationController pushViewController:_addResearch animated:YES];
+}
+
+-(void)closedPopover {
+    [self viewWillAppear:YES];
+    [self.popController dismissPopoverAnimated:YES];
+}
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    [self viewWillAppear:YES];
 }
 
 - (void)viewDidLoad
