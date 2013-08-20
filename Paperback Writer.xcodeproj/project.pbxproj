@@ -28,7 +28,6 @@
 		2A00E536174E7E0500C35F14 /* ipad-outline2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A00E535174E7E0500C35F14 /* ipad-outline2@2x.png */; };
 		2A00E539174EC5B300C35F14 /* IPadProjectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */; };
 		2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E53B174FCE7B00C35F14 /* THUtil.m */; };
-		2A00E53F175646FC00C35F14 /* IPadProjectNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */; };
 		2A07067817C3C3790057E35D /* ProseyPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A07067717C3C3790057E35D /* ProseyPicker.m */; };
 		2A07067A17C3C6070057E35D /* genders.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A07067917C3C6070057E35D /* genders.plist */; };
 		2A07067C17C3C6360057E35D /* roles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A07067B17C3C6360057E35D /* roles.plist */; };
@@ -54,11 +53,6 @@
 		2A1BD46D173C805C00E2CE33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A1BD46B173C805C00E2CE33 /* InfoPlist.strings */; };
 		2A1BD470173C805C00E2CE33 /* Paperback_WriterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD46F173C805C00E2CE33 /* Paperback_WriterTests.m */; };
 		2A1BD483173DBDBF00E2CE33 /* IPadProjectMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */; };
-		2A1BD492173FEC4800E2CE33 /* THGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD491173FEC4800E2CE33 /* THGridMenu.m */; };
-		2A1BD495173FED8800E2CE33 /* IPadGridRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD494173FED8700E2CE33 /* IPadGridRootViewController.m */; };
-		2A1BD498173FF66200E2CE33 /* THGridMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1BD497173FF66200E2CE33 /* THGridMenuItem.m */; };
-		2A2A8E851742FC5300D00631 /* THGridMenuItem+ProjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E841742FC5300D00631 /* THGridMenuItem+ProjectItem.m */; };
-		2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */; };
 		2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */; };
 		2A2A8E8E174314E600D00631 /* IPadNewCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */; };
 		2A2A8E9417441F6100D00631 /* Outline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A8E9317441F6100D00631 /* Outline.m */; };
@@ -78,8 +72,6 @@
 		2A2A8ECE17468FB000D00631 /* right_fade.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC617468FB000D00631 /* right_fade.png */; };
 		2A2A8ECF17468FB000D00631 /* right_fade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A2A8EC717468FB000D00631 /* right_fade@2x.png */; };
 		2A2A9CDA1799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A9CD91799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.m */; };
-		2A3453C2178118170030F530 /* IPadProjectResearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3453C0178118170030F530 /* IPadProjectResearchTableViewController.m */; };
-		2A3453C3178118170030F530 /* IPadProjectResearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */; };
 		2A3E590F17A372B8004CD762 /* IPadNoteWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E590E17A372B8004CD762 /* IPadNoteWebViewController.m */; };
 		2A3E591217A4374F004CD762 /* IPadNoteTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E591117A4374F004CD762 /* IPadNoteTextViewController.m */; };
 		2A3E591617A47EB9004CD762 /* IPadCharacterRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3E591417A47EB9004CD762 /* IPadCharacterRootViewController.m */; };
@@ -105,8 +97,6 @@
 		2AAD4CA51756E72D00484B48 /* NewObjectTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA41756E72D00484B48 /* NewObjectTextField.m */; };
 		2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CA71756E9F500484B48 /* SelectorLabel.m */; };
 		2AAD4CAB1756EEC600484B48 /* ProjectPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CAA1756EEC600484B48 /* ProjectPicker.m */; };
-		2AAD4CB2175717A800484B48 /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CAF175717A800484B48 /* TDSemiModalViewController.m */; };
-		2AAD4CB3175717A800484B48 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CB1175717A800484B48 /* UIViewController+TDSemiModalExtension.m */; };
 		2AAD4CBA1759154A00484B48 /* UIView+THAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CB91759154A00484B48 /* UIView+THAutoLayout.m */; };
 		2AAD4CBC175915C100484B48 /* projectMetrics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD4CBB175915C100484B48 /* projectMetrics.plist */; };
 		2AAD4CBF17593F2200484B48 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAD4CBE17593F2200484B48 /* THLabel.m */; };
@@ -156,8 +146,6 @@
 		2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectInformationViewController.m; sourceTree = "<group>"; };
 		2A00E53A174FCE7B00C35F14 /* THUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THUtil.h; sourceTree = "<group>"; };
 		2A00E53B174FCE7B00C35F14 /* THUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THUtil.m; sourceTree = "<group>"; };
-		2A00E53D175646FB00C35F14 /* IPadProjectNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectNewViewController.h; sourceTree = "<group>"; };
-		2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectNewViewController.m; sourceTree = "<group>"; };
 		2A07067617C3C3790057E35D /* ProseyPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProseyPicker.h; sourceTree = "<group>"; };
 		2A07067717C3C3790057E35D /* ProseyPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProseyPicker.m; sourceTree = "<group>"; };
 		2A07067917C3C6070057E35D /* genders.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = genders.plist; sourceTree = "<group>"; };
@@ -192,16 +180,6 @@
 		2A1BD46F173C805C00E2CE33 /* Paperback_WriterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Paperback_WriterTests.m; sourceTree = "<group>"; };
 		2A1BD480173DBDBF00E2CE33 /* IPadProjectMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectMenuViewController.h; sourceTree = "<group>"; };
 		2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectMenuViewController.m; sourceTree = "<group>"; };
-		2A1BD490173FEC4800E2CE33 /* THGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGridMenu.h; sourceTree = "<group>"; };
-		2A1BD491173FEC4800E2CE33 /* THGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGridMenu.m; sourceTree = "<group>"; };
-		2A1BD493173FED8700E2CE33 /* IPadGridRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadGridRootViewController.h; sourceTree = "<group>"; };
-		2A1BD494173FED8700E2CE33 /* IPadGridRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadGridRootViewController.m; sourceTree = "<group>"; };
-		2A1BD496173FF66200E2CE33 /* THGridMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THGridMenuItem.h; sourceTree = "<group>"; };
-		2A1BD497173FF66200E2CE33 /* THGridMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THGridMenuItem.m; sourceTree = "<group>"; };
-		2A2A8E831742FC5300D00631 /* THGridMenuItem+ProjectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "THGridMenuItem+ProjectItem.h"; sourceTree = "<group>"; };
-		2A2A8E841742FC5300D00631 /* THGridMenuItem+ProjectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "THGridMenuItem+ProjectItem.m"; sourceTree = "<group>"; };
-		2A2A8E871743047900D00631 /* THGridMenuItem+CharacterItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "THGridMenuItem+CharacterItem.h"; sourceTree = "<group>"; };
-		2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "THGridMenuItem+CharacterItem.m"; sourceTree = "<group>"; };
 		2A2A8E8A174314E500D00631 /* IPadNewCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNewCharacterViewController.h; sourceTree = "<group>"; };
 		2A2A8E8B174314E500D00631 /* IPadNewCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNewCharacterViewController.m; sourceTree = "<group>"; };
 		2A2A8E8C174314E500D00631 /* IPadNewCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadNewCharacterViewController.xib; sourceTree = "<group>"; };
@@ -227,9 +205,6 @@
 		2A2A8EC717468FB000D00631 /* right_fade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right_fade@2x.png"; sourceTree = "<group>"; };
 		2A2A9CD81799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectCharacterCollectionViewController.h; sourceTree = "<group>"; };
 		2A2A9CD91799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectCharacterCollectionViewController.m; sourceTree = "<group>"; };
-		2A3453BF178118170030F530 /* IPadProjectResearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadProjectResearchTableViewController.h; sourceTree = "<group>"; };
-		2A3453C0178118170030F530 /* IPadProjectResearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadProjectResearchTableViewController.m; sourceTree = "<group>"; };
-		2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPadProjectResearchTableViewController.xib; sourceTree = "<group>"; };
 		2A3E590D17A372B8004CD762 /* IPadNoteWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNoteWebViewController.h; sourceTree = "<group>"; };
 		2A3E590E17A372B8004CD762 /* IPadNoteWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPadNoteWebViewController.m; sourceTree = "<group>"; };
 		2A3E591017A4374F004CD762 /* IPadNoteTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPadNoteTextViewController.h; sourceTree = "<group>"; };
@@ -279,11 +254,6 @@
 		2AAD4CA71756E9F500484B48 /* SelectorLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectorLabel.m; sourceTree = "<group>"; };
 		2AAD4CA91756EEC600484B48 /* ProjectPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectPicker.h; sourceTree = "<group>"; };
 		2AAD4CAA1756EEC600484B48 /* ProjectPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectPicker.m; sourceTree = "<group>"; };
-		2AAD4CAD175717A800484B48 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
-		2AAD4CAE175717A800484B48 /* TDSemiModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModalViewController.h; sourceTree = "<group>"; };
-		2AAD4CAF175717A800484B48 /* TDSemiModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSemiModalViewController.m; sourceTree = "<group>"; };
-		2AAD4CB0175717A800484B48 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
-		2AAD4CB1175717A800484B48 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
 		2AAD4CB81759154A00484B48 /* UIView+THAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+THAutoLayout.h"; sourceTree = "<group>"; };
 		2AAD4CB91759154A00484B48 /* UIView+THAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+THAutoLayout.m"; sourceTree = "<group>"; };
 		2AAD4CBB175915C100484B48 /* projectMetrics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = projectMetrics.plist; sourceTree = "<group>"; };
@@ -421,23 +391,17 @@
 				2A60885B17C2772F004F2229 /* LiveBlur */,
 				2A9BCD5317BEA431003396F0 /* Fonts */,
 				2AAD4CB7175914EF00484B48 /* THAutoLayout */,
-				2AAD4CAC1757175E00484B48 /* TDSemiModal */,
 				2AAD4C9F1756DEB700484B48 /* CustomViewElements */,
 				2A00E52F174E69FF00C35F14 /* CoreData */,
 				2A00E522174E699900C35F14 /* Images */,
 				2A00E51D174D9E0C00C35F14 /* THColor */,
 				2ACC4EE0174293CE00450083 /* CHSlideController */,
-				2A1BD48F173FEBFA00E2CE33 /* THGridMenu */,
 				2A1BD47A173DBBB700E2CE33 /* IPadViewControllers */,
 				2A1BD44F173C805C00E2CE33 /* AppDelegate.h */,
 				2A1BD450173C805C00E2CE33 /* AppDelegate.m */,
 				2A1BD447173C805C00E2CE33 /* Supporting Files */,
 				2ACC4EE71742B99A00450083 /* GlobalProject.h */,
 				2ACC4EE81742B99B00450083 /* GlobalProject.m */,
-				2A2A8E831742FC5300D00631 /* THGridMenuItem+ProjectItem.h */,
-				2A2A8E841742FC5300D00631 /* THGridMenuItem+ProjectItem.m */,
-				2A2A8E871743047900D00631 /* THGridMenuItem+CharacterItem.h */,
-				2A2A8E881743047900D00631 /* THGridMenuItem+CharacterItem.m */,
 				2A00E53A174FCE7B00C35F14 /* THUtil.h */,
 				2A00E53B174FCE7B00C35F14 /* THUtil.m */,
 			);
@@ -496,8 +460,6 @@
 				2A00E538174EC5B300C35F14 /* IPadProjectInformationViewController.m */,
 				2A1BD480173DBDBF00E2CE33 /* IPadProjectMenuViewController.h */,
 				2A1BD481173DBDBF00E2CE33 /* IPadProjectMenuViewController.m */,
-				2A1BD493173FED8700E2CE33 /* IPadGridRootViewController.h */,
-				2A1BD494173FED8700E2CE33 /* IPadGridRootViewController.m */,
 				2ACC4EE41742954A00450083 /* IPadSlideViewController.h */,
 				2ACC4EE51742954A00450083 /* IPadSlideViewController.m */,
 				2A2A8E8A174314E500D00631 /* IPadNewCharacterViewController.h */,
@@ -509,11 +471,6 @@
 				2A2A8EA71744629400D00631 /* IPadProjectSceneTableViewController.h */,
 				2A2A8EA81744629400D00631 /* IPadProjectSceneTableViewController.m */,
 				2A2A8EA91744629400D00631 /* IPadProjectSceneTableViewController.xib */,
-				2A00E53D175646FB00C35F14 /* IPadProjectNewViewController.h */,
-				2A00E53E175646FC00C35F14 /* IPadProjectNewViewController.m */,
-				2A3453BF178118170030F530 /* IPadProjectResearchTableViewController.h */,
-				2A3453C0178118170030F530 /* IPadProjectResearchTableViewController.m */,
-				2A3453C1178118170030F530 /* IPadProjectResearchTableViewController.xib */,
 				2AFD0749178129AF000AF00A /* IPadNewResearchViewController.h */,
 				2AFD074A178129AF000AF00A /* IPadNewResearchViewController.m */,
 				2A0B12C9178CEBEB00829310 /* IPadProjectResearchCollectViewController.h */,
@@ -545,17 +502,6 @@
 				2A07067F17C3D8900057E35D /* IPadNewProjectVC.xib */,
 			);
 			name = IPadViewControllers;
-			sourceTree = "<group>";
-		};
-		2A1BD48F173FEBFA00E2CE33 /* THGridMenu */ = {
-			isa = PBXGroup;
-			children = (
-				2A1BD490173FEC4800E2CE33 /* THGridMenu.h */,
-				2A1BD491173FEC4800E2CE33 /* THGridMenu.m */,
-				2A1BD496173FF66200E2CE33 /* THGridMenuItem.h */,
-				2A1BD497173FF66200E2CE33 /* THGridMenuItem.m */,
-			);
-			name = THGridMenu;
 			sourceTree = "<group>";
 		};
 		2A60885B17C2772F004F2229 /* LiveBlur */ = {
@@ -619,18 +565,6 @@
 				2A07067717C3C3790057E35D /* ProseyPicker.m */,
 			);
 			name = CustomViewElements;
-			sourceTree = "<group>";
-		};
-		2AAD4CAC1757175E00484B48 /* TDSemiModal */ = {
-			isa = PBXGroup;
-			children = (
-				2AAD4CAD175717A800484B48 /* TDSemiModal.h */,
-				2AAD4CAE175717A800484B48 /* TDSemiModalViewController.h */,
-				2AAD4CAF175717A800484B48 /* TDSemiModalViewController.m */,
-				2AAD4CB0175717A800484B48 /* UIViewController+TDSemiModalExtension.h */,
-				2AAD4CB1175717A800484B48 /* UIViewController+TDSemiModalExtension.m */,
-			);
-			name = TDSemiModal;
 			sourceTree = "<group>";
 		};
 		2AAD4CB7175914EF00484B48 /* THAutoLayout */ = {
@@ -753,7 +687,6 @@
 				2A00E517174D9A7E00C35F14 /* Lato-Hai.ttf in Resources */,
 				2A00E518174D9A7E00C35F14 /* Lato-HaiIta.ttf in Resources */,
 				2A00E519174D9A7E00C35F14 /* Lato-Lig.ttf in Resources */,
-				2A3453C3178118170030F530 /* IPadProjectResearchTableViewController.xib in Resources */,
 				2A00E51A174D9A7E00C35F14 /* Lato-LigIta.ttf in Resources */,
 				2A00E51B174D9A7E00C35F14 /* Lato-Reg.ttf in Resources */,
 				2A07067C17C3C6360057E35D /* roles.plist in Resources */,
@@ -835,10 +768,6 @@
 				2A1BD45A173C805C00E2CE33 /* Paperback_Writer.xcdatamodeld in Sources */,
 				2A1BD483173DBDBF00E2CE33 /* IPadProjectMenuViewController.m in Sources */,
 				2AFD074B178129AF000AF00A /* IPadNewResearchViewController.m in Sources */,
-				2A1BD492173FEC4800E2CE33 /* THGridMenu.m in Sources */,
-				2A1BD495173FED8800E2CE33 /* IPadGridRootViewController.m in Sources */,
-				2A1BD498173FF66200E2CE33 /* THGridMenuItem.m in Sources */,
-				2A3453C2178118170030F530 /* IPadProjectResearchTableViewController.m in Sources */,
 				2A60884A17BFB5C5004F2229 /* Character.m in Sources */,
 				2A60884717BFB370004F2229 /* IPadCharacterNoteViewController.m in Sources */,
 				2ACC4ED517405EBB00450083 /* Project.m in Sources */,
@@ -849,8 +778,6 @@
 				2A88214B17A7634200257287 /* IPadCharacterInfoTableViewController.m in Sources */,
 				2A3E590F17A372B8004CD762 /* IPadNoteWebViewController.m in Sources */,
 				2ACC4EE91742B99B00450083 /* GlobalProject.m in Sources */,
-				2A2A8E851742FC5300D00631 /* THGridMenuItem+ProjectItem.m in Sources */,
-				2A2A8E891743047900D00631 /* THGridMenuItem+CharacterItem.m in Sources */,
 				2A2A8E8D174314E600D00631 /* IPadNewCharacterViewController.m in Sources */,
 				2A0B12CB178CEBEB00829310 /* IPadProjectResearchCollectViewController.m in Sources */,
 				2A2A8E9417441F6100D00631 /* Outline.m in Sources */,
@@ -864,7 +791,6 @@
 				2A2A9CDA1799D1BB00DDAA63 /* IPadProjectCharacterCollectionViewController.m in Sources */,
 				2A00E539174EC5B300C35F14 /* IPadProjectInformationViewController.m in Sources */,
 				2A00E53C174FCE7C00C35F14 /* THUtil.m in Sources */,
-				2A00E53F175646FC00C35F14 /* IPadProjectNewViewController.m in Sources */,
 				2AAD4CA21756DF4400484B48 /* NewObjectLabel.m in Sources */,
 				2A9BCD3C17BE8396003396F0 /* IPadCharacterNotesViewController.m in Sources */,
 				2A0B12CE178CF21F00829310 /* ReferenceCollectCell.m in Sources */,
@@ -872,8 +798,6 @@
 				2AAD4CA81756E9F500484B48 /* SelectorLabel.m in Sources */,
 				2A89AA4A178F9AA90048DC8F /* IPadRootCollectionViewController.m in Sources */,
 				2AAD4CAB1756EEC600484B48 /* ProjectPicker.m in Sources */,
-				2AAD4CB2175717A800484B48 /* TDSemiModalViewController.m in Sources */,
-				2AAD4CB3175717A800484B48 /* UIViewController+TDSemiModalExtension.m in Sources */,
 				2A88215417A7664A00257287 /* TableLabel.m in Sources */,
 				2AAD4CBA1759154A00484B48 /* UIView+THAutoLayout.m in Sources */,
 				2A4C306A178EF2A500D71270 /* IPadNoteImageViewController.m in Sources */,

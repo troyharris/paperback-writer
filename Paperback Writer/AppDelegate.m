@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "IPadGridRootViewController.h"
 #import "IPadRootCollectionViewController.h"
 #import "UIColor+THColor.h"
 #import <UIImage+FlatUI.h>

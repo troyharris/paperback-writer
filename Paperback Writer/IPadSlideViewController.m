@@ -8,7 +8,6 @@
 
 #import "IPadSlideViewController.h"
 #import "IPadProjectSceneTableViewController.h"
-#import "IPadProjectResearchTableViewController.h"
 #import "IPadProjectResearchCollectViewController.h"
 #import "IPadProjectCharacterCollectionViewController.h"
 #import <objc/runtime.h>
