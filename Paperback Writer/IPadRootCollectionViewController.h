@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "IPadProjectNewViewController.h"
+#import "IPadNewProjectVC.h"
 
-@interface IPadRootCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface IPadRootCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverControllerDelegate, NewProjectDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layoutFlow;
-@property (nonatomic, strong) IPadProjectNewViewController *addProjectVC;
+@property (nonatomic, strong) IPadNewProjectVC *addProjectVC;
+@property (nonatomic, strong) UIPopoverController *popController;
 @property (nonatomic, strong) NSArray *projects;
 
 @end

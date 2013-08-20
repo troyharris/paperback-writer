@@ -32,16 +32,21 @@ static NSString *kNewCellID = @"NewCell";
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
--(void)showNewProject {
+-(void)showNewProjectWithRect:(CGRect)source {
     
     _addCharacterVC = [[IPadNewCharacterViewController alloc] init];
+    self.addCharacterVC.delegate = self;
     //[_addProjectVC.view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     /*
      [newProjectVC setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
      [self presentViewController:newProjectVC animated:YES completion:nil];
      */
-    [self presentViewController:_addCharacterVC animated:YES completion:nil];
+    
+    self.popController = [[UIPopoverController alloc] initWithContentViewController:self.addCharacterVC];
+    self.popController.delegate = self;
+    [self.popController presentPopoverFromRect:source inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    //[self presentViewController:_addCharacterVC animated:YES completion:nil];
 }
 
 -(void)buildCharactersList {
@@ -148,8 +153,21 @@ static NSString *kNewCellID = @"NewCell";
         Character *c = [_characters objectAtIndex:indexPath.row];
         [self pressCharacter:c];
     } else {
-        [self showNewProject];
+        ProjectCell *cell = (ProjectCell *)[self.collectView cellForItemAtIndexPath:indexPath];
+        CGRect acellRect = cell.frame;
+        CGRect cellRect = [self.collectView convertRect:acellRect toView:self.view];
+        NSLog(@"cell rect is %f %f %f %f", cellRect.origin.x, cellRect.origin.y, cellRect.size.width, cellRect.size.height);
+        [self showNewProjectWithRect:cellRect];
     }
+}
+
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    [self viewWillAppear:YES];
+}
+
+-(void)closedPopover {
+    [self.popController dismissPopoverAnimated:YES];
+    [self viewWillAppear:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

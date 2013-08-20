@@ -7,10 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ProseyPicker.h"
 
-@interface IPadNewCharacterViewController : UIViewController
+@protocol NewCharacterDelegate <NSObject>
 
+-(void)closedPopover;
+
+@end
+
+
+@interface IPadNewCharacterViewController : UIViewController <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate>
+
+@property (nonatomic, weak) id<NewCharacterDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITextField *nameText;
+@property (nonatomic, strong) IBOutlet ProseyPicker *gender;
+@property (nonatomic, strong) IBOutlet ProseyPicker *role;
+@property (nonatomic, strong) NSArray *genders;
+@property (nonatomic, strong) NSArray *roles;
 
 -(IBAction)pressAdd;
 -(IBAction)pressCancel;

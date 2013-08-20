@@ -67,12 +67,17 @@
 //    [self.textView setNeedsLayout];
 //    NSLog(@"Text view: x: %f y: %f width: %f height: %f textcontaininset top: %f left: %f bottom: %f right: %f", _textView.frame.origin.x, _textView.frame.origin.y, _textView.frame.size.width, _textView.frame.size.height, _textView.textContainerInset.top, _textView.textContainerInset.left, _textView.textContainerInset.bottom, _textView.textContainerInset.right);
     
+    self.titleView = [[DRNRealTimeBlurView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    self.titleView.tint = [UIColor projectHighlightColor];
+    [self.view addSubview:self.titleView];
+
+    
     self.bioHeader = [[UITextField alloc] init];
     self.bioHeader.text = [NSString stringWithFormat:@"%@ Biography", self.character];
     self.bioHeader.font = [UIFont fontWithName:@"Lato-Light" size:40];
     self.bioHeader.textAlignment = NSTextAlignmentCenter;
-    self.bioHeader.backgroundColor = [UIColor projectHighlightColor];
-    [self.view addSubview:self.bioHeader];
+    //self.bioHeader.backgroundColor = [UIColor projectHighlightColor];
+    [self.titleView addSubview:self.bioHeader];
 }
 
 - (void) viewDidLayoutSubviews {
@@ -81,8 +86,10 @@
     CGFloat statusBarHeight = self.topLayoutGuide.length;
     _topOffset = statusBarHeight + self.navigationController.navigationBar.frame.size.height;
 //    NSLog(@"topOffset: %f - Navbar height: %f", _topOffset, self.navigationController.navigationBar.frame.size.height);
-    self.bioHeader.frame = CGRectMake(0, _topOffset, CGRectGetWidth(self.view.frame), 100);
-    self.textEdge = UIEdgeInsetsMake(_topOffset + CGRectGetHeight(self.bioHeader.frame), 0, 0, 0);
+    self.titleView.frame = CGRectMake(0, _topOffset, CGRectGetWidth(self.view.frame), 100);
+    self.bioHeader.frame = CGRectMake(0, 0, CGRectGetWidth(self.titleView.frame), CGRectGetHeight(self.titleView.frame));
+   // self.bioHeader.frame = CGRectMake(0, _topOffset, CGRectGetWidth(self.view.frame), 100);
+    self.textEdge = UIEdgeInsetsMake(_topOffset + CGRectGetHeight(self.titleView.frame), 0, 0, 0);
     self.textView.contentInset = self.textEdge;
 //        NSLog(@"Text view: x: %f y: %f width: %f height: %f textcontaininset top: %f left: %f bottom: %f right: %f", _textView.frame.origin.x, _textView.frame.origin.y, _textView.frame.size.width, _textView.frame.size.height, _textView.textContainerInset.top, _textView.textContainerInset.left, _textView.textContainerInset.bottom, _textView.textContainerInset.right);
 //    [self.textView layoutIfNeeded];

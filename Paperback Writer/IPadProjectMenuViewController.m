@@ -7,7 +7,6 @@
 //
 
 #import "IPadProjectMenuViewController.h"
-#import "IPadProjectCharacterViewController.h"
 #import "AppDelegate.h"
 #import "GlobalProject.h"
 #import "Project.h"

@@ -11,13 +11,14 @@
 #import "IPadNewCharacterViewController.h"
 #import "Project.h"
 
-@interface IPadProjectCharacterCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface IPadProjectCharacterCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverControllerDelegate, NewCharacterDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layoutFlow;
 @property (nonatomic, strong) IPadNewCharacterViewController *addCharacterVC;
 @property (nonatomic, strong) NSMutableArray *characters;
 @property (nonatomic, strong) Project *project;
+@property (nonatomic, strong) UIPopoverController *popController;
 
 
 @end

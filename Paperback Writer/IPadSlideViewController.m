@@ -7,7 +7,6 @@
 //
 
 #import "IPadSlideViewController.h"
-#import "IPadProjectCharacterViewController.h"
 #import "IPadProjectSceneTableViewController.h"
 #import "IPadProjectResearchTableViewController.h"
 #import "IPadProjectResearchCollectViewController.h"

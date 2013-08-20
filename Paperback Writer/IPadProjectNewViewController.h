@@ -15,17 +15,15 @@
 #import <FUIButton.h>
 #import "TDSemiModalViewController.h"
 
-@protocol NewProjectDelegate <NSObject>
+@protocol NewProjectDelegateOld <NSObject>
 
 -(void)closedSemiModal;
 
 @end
 
-@interface IPadProjectNewViewController : TDSemiModalViewController  <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate> {
-    id<NewProjectDelegate> _delegate;
-}
+@interface IPadProjectNewViewController : TDSemiModalViewController  <V8HorizontalPickerViewDataSource, V8HorizontalPickerViewDelegate>
 
-@property (nonatomic, strong) id delegate;
+@property (nonatomic, weak) id<NewProjectDelegateOld> delegate;
 @property (nonatomic, strong) FUIButton *add;
 @property (nonatomic, strong) FUIButton *cancel;
 @property (nonatomic, strong) NewObjectLabel *header;

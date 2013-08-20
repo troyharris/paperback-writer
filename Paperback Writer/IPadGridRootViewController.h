@@ -11,7 +11,7 @@
 #import "AppDelegate.h"
 #import "IPadProjectNewViewController.h"
 
-@interface IPadGridRootViewController : UIViewController <NewProjectDelegate>
+@interface IPadGridRootViewController : UIViewController <NewProjectDelegateOld>
 
 @property (nonatomic, strong) IPadProjectNewViewController *addProjectVC;
 @property (nonatomic, strong) THGridMenu *menuView;

@@ -10,7 +10,6 @@
 #import "IPadSlideViewController.h"
 #import "GlobalProject.h"
 #import "Project.h"
-#import "TDSemiModal.h"
 #import "ProjectCell.h"
 #import "THUtil.h"
 #import "UIColor+THColor.h"
@@ -25,7 +24,8 @@
 static NSString *kCellID = @"ProjectCell";
 static NSString *kNewCellID = @"NewCell";
 
--(void)closedSemiModal {
+-(void)closedPopover {
+    [self.popController dismissPopoverAnimated:YES];
     [self viewWillAppear:YES];
 }
 
@@ -33,10 +33,12 @@ static NSString *kNewCellID = @"NewCell";
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
--(void)showNewProject {
-    _addProjectVC = [[IPadProjectNewViewController alloc] init];
-    _addProjectVC.delegate = self;
-    [self presentSemiModalViewController:_addProjectVC];
+-(void)showNewProjectWithRect:(CGRect)source {
+    self.addProjectVC = [[IPadNewProjectVC alloc] init];
+    self.addProjectVC.delegate = self;
+    self.popController = [[UIPopoverController alloc] initWithContentViewController:self.addProjectVC];
+    self.popController.delegate = self;
+    [self.popController presentPopoverFromRect:source inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 -(void)buildProjectsList {
@@ -97,6 +99,10 @@ static NSString *kNewCellID = @"NewCell";
     // Dispose of any resources that can be recreated.
 }
 
+-(void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    [self viewWillAppear:YES];
+}
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Getting a cell");
     ProjectCell *cell = [_collectView dequeueReusableCellWithReuseIdentifier:kCellID forIndexPath:indexPath];
@@ -143,7 +149,11 @@ static NSString *kNewCellID = @"NewCell";
         Project *p = [_projects objectAtIndex:indexPath.row];
         [self pressProject:p];
     } else {
-        [self showNewProject];
+        ProjectCell *cell = (ProjectCell *)[self.collectView cellForItemAtIndexPath:indexPath];
+        CGRect acellRect = cell.frame;
+        CGRect cellRect = [self.collectView convertRect:acellRect toView:self.view];
+        NSLog(@"cell rect is %f %f %f %f", cellRect.origin.x, cellRect.origin.y, cellRect.size.width, cellRect.size.height);
+        [self showNewProjectWithRect:cellRect];
     }
 }
 

@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Character.h"
+#import "DRNRealTimeBlurView.h"
 
 @interface IPadCharacterBioViewController : UIViewController <UITextViewDelegate>
 
 @property (nonatomic, strong) Character *character;
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UITextField *bioHeader;
+@property (nonatomic, strong) DRNRealTimeBlurView *titleView;
 
 @end
