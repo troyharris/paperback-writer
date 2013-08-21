@@ -14,6 +14,4 @@
 @property (nonatomic, strong) UILabel *subTitle;
 @property (nonatomic, strong) UIImageView *imageView;
 
--(void)willRotate;
-
 @end
